@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiagnosticOrder xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/diagnosticorder.xsd">
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į pacientą, kuriam yra skyrimas / Reference to the patient -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/1"/>
+    </subject>
+
+    <!-- 0..1 -->
+    <!-- Nuoroda į specialistą, kuris sukurė užduotį/ Reference to the specialist who created this order -->
+    <orderer>
+        <reference value="Practitioner/123/_history/1"/>
+    </orderer>
+
+    <!-- 1..1 -->
+    <!-- Pažymos užduoties pavadinimas / Certificate request title -->
+    <clinicalNotes value="Parengti pažymos E027-1 „Vaiko sveikatos pažymėjimas I. Fizinės būklės įvertinimas“ dalį"/>
+    
+    <!-- 1..1 -->
+    <!-- Tyrimo užsakymo būsena -->
+    <status value="requested"/>
+</DiagnosticOrder>

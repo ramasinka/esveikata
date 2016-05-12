@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Condition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/condition.xsd">
+    
+    <!-- 0..1 -->
+    <!-- Diagnozės tipas (+/-/0) / Condition type (acute/chronical/other) -->
+    <!-- Values: "+" :  Ūminės ir pirmą kartą gyvenime nustatytos lėtinės ligos | "-" :  Lėtinės pirmą kartą šiais metais nustatytos ligos | "0" : Kitos ligos, pakartotinai diagnozuojamos šiais metais -->
+    <!-- data-element-1726 -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-condition#diseaseType">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/Condition/DiseaseType"/>
+                <code value="1"/>
+                <display value="+"/>  
+            </coding>
+            <text value="Ūminės ir pirmą kartą gyvenime nustatytos lėtinės ligos"/>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 0..1 -->
+    <!-- Diagnozės tipas (pagrindinė/lydinti) / Condition type (primary/secondary) -->
+    <!-- Values: "primary" : Pagrindinė | "secondary" : lydinti -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-condition#diagnosisType">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/Condition/DiagnosisType"/>
+                <code value="primary"/>
+                <display value="Pagrindinė"/>  
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į pacientą, kuriam buvo nustatyta ši diagnozė / Patient who the condition record is associated with -->
+    <subject>
+        <reference value="Patient/123456789/_history/1"/>
+    </subject>
+    
+    <!-- 1..1 -->
+    <!-- Atvykimo duomenys, kai buvo nustatyta diagnozė / Encounter during which the condition was asserted -->
+    <encounter>
+        <reference value="Encounter/1234/_history/1"/>
+    </encounter>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į specialistą, kuris nustatė šią diagnozę / Practitioner who has asserted this diagnosis -->
+    <asserter>
+        <reference value="Practitioner/123456789/_history/1"/>
+    </asserter>
+    
+    <!-- 1..1 -->
+    <!-- Ligos diagnozės data / Onset date -->
+    <!-- data-element-1730 -->
+    <dateAsserted value="2013-04-02"/>
+    
+    <!-- 1..1 -->
+    <!-- Diagnozės TLK-10-AM kodas ir pavadinimas / Diagnosis TLK-10-AM code -->
+    <!-- data-element-1932 -->
+    <code>
+        <coding>
+            <!-- 1..1 -->
+            <system value="http://esveikata.lt/classifiers/TLK-10-AM"/>
+            <code value="T21.0"/>
+            <display value="Burn of unspecified degree of trunk"/>
+        </coding>   
+    </code>
+    
+    <!-- 1..1 --> <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory --> 
+    <!-- Diagnozės būsena / he clinical status of the condition  -->
+    <!-- Values: "confirmed" nustatytai diagnozei, "refuted" - atšauktai diagnozei -->
+    <status value="confirmed"/>
+    
+    <!-- 0..1 -->
+    <!-- Aprašymas / Description -->
+    <!-- data-element-1710 -->
+    <notes value="Condition details or description"/>
+</Condition>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Device xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/device.xsd">
+    
+    <!-- 0..1 -->
+    <!-- Prietaiso pagaminimo data / Date of manufacture -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-device#manufactureDate">
+        <valueDate value="1990-01-01"></valueDate>
+    </extension>
+    
+    <!-- 0..1 -->
+    <!-- Prietaiso įsigijimo data / Date of acquisition -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-device#acquisitionDate">
+        <valueDate value="1990-01-01"></valueDate>
+    </extension>
+
+    <!-- 1..1 -->
+    <!-- Prietaiso tipas / A kind of this device -->
+    <type>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/deviceType"/>
+            <code value = "1"/>
+            <display value="Echoskopas"></display>
+        </coding>
+    </type>
+    
+    <!-- 0..1 -->
+    <!-- Prietaiso gamintojo pavadinimas / A name of the manufacturer -->
+    <manufacturer value="Pie Medical"/>
+    
+    <!-- 0..1 -->
+    <!-- Prietaiso modelis / Device model -->
+    <model value="Skaner-200 41263"/>
+    
+    <!-- 0..1 -->
+    <!-- Gamintojo nurodytas prietaiso partijos arba serijos nr. / Lot number assigned by the manufacturer -->
+    <lotNumber value="0632"/>
+    
+    <!-- 0..1 -->
+    <!-- Įstaiga, kurioje yra prietaisas / An organization where is device -->
+    <owner>
+        <reference value="Organization/f003" />
+        <display value="VŠĮ Vilniaus universiteto ligoninė Žalgirio klinika" />
+    </owner>
+</Device>

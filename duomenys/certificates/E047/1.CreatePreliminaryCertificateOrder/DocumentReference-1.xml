@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pažymos duomenys / Certificate data -->
+<DocumentReference xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/documentreference.xsd">
+
+    <!-- 1..1 -->
+    <!-- Pažymos kompozicijos id / Certificate Composition id. -->
+    <masterIdentifier>
+        <!-- 0..1 -->
+        <system value="Composition"/>
+        <value value="123456789"/>
+    </masterIdentifier>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į paciento, kuriam yra išduota pažyma / Patient of certificate -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/1"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- Dokumento tipas / Document type it references to -->
+	<!-- Classificator: doc-code -->
+    <type>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/Document/Code"/>
+            <code value="E047"/>
+        </coding>
+    </type>
+
+    <!-- 1..1 -->
+    <!-- Informacija apie pažymą pateikusį specialistą / The author of certificate -->
+    <author>
+        <reference value="Practitioner/123/_history/1"/>
+    </author>
+
+    <!-- 1..1 -->
+    <!-- Data, kada buvo sukurta ši nuoroda / When this reference was created -->
+    <indexed value="2005-12-24T09:43:41+11:00"/>
+
+    <!-- 1..1 --> <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory --> 
+    <!-- Nuorodos būsena / The status of this document reference -->
+    <!-- Values: "current" (by default) -->
+	<!-- Classificator: document-reference-status -->
+    <status value="current"/>
+
+    <!-- Dokumento būsena SODRA sistemoje / Document status in SODRA system (in case then certificate of incapacity is created) -->
+	<!-- Classificator: document-status -->
+    <docStatus>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/Document/Status"/>
+            <code value="preliminary"/>
+        </coding>
+    </docStatus>
+
+    <!-- 1..1 --> <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory --> 
+    <!-- The mime type of the source document -->
+    <!-- Values: "text/plain" (by default) -->
+    <mimeType value="text/plain"/>
+</DocumentReference>

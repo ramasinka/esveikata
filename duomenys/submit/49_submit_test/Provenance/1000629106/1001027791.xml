@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <target>
+    <reference value="DocumentReference/1000629081/_history/1001027780"/>
+  </target>
+  <recorded value="2016-01-12T14:19:48.134+02:00"/>
+  <reason>
+    <coding>
+      <system value="http://esveikata.lt/classifiers/Provenance/MedicalCertificateReason"/>
+      <code value="3"/>
+      <display value="Išduota pažyma"/>
+    </coding>
+    <text value="Išduota pažyma"/>
+  </reason>
+</Provenance>

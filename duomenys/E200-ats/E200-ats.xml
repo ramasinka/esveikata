@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/fhir-atom.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+    <entry>
+        <id>cid:1</id>
+        <!-- 1..1 -->
+        <!-- Įvykio, dėl kurio buvo pateikiamas dokumentas, aprašymas / The information of the event which cause this document submission -->
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+                
+                <!-- 1..* -->
+                <!-- Nuoroda į pateikiama dokumentą / Target resource which was created during this event -->
+                <target>
+                    <reference value="cid:2"/>
+                </target>
+                
+                <!-- 1..1 -->    
+                <!-- Data ir laikas, kada įvykis buvo registruotas / When the event was registered-->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+                
+                <!-- Priežastis event code -->
+				<!-- Classificator: event-type -->
+                <reason>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/EventType"/>
+                        <code value="4"/>
+                        <display value="Laboratorinio tyrimo rezultatų (duomenų) protokolo pateikimas"/>
+                    </coding>
+                </reason>
+                
+                <!-- 1..1 -->
+                <!-- Informacija apie įvykį registruojantį specialistą / Event registered practitioner -->
+                <agent>
+                    <!-- 1..1 -->
+                    <!-- Dalyvio rolė įvykio kontekste / The role that the participant played -->
+					<!-- Classificator: provenance-participant-role -->
+                    <role>
+                        <system value="http://hl7.org/fhir/provenance-participant-role"/>
+                        <code value="author"/>
+                    </role>
+                    
+                    <!-- 1..1 -->
+                    <!-- Įvykio dalyvio tipas / The type of the participant -->
+					<!-- Classificator: provenance-participant-type -->
+                    <type>
+                        <system value="http://hl7.org/fhir/provenance-participant-type"/>
+                        <code value="practitioner"/>
+                    </type>
+                    
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+                    <reference value="Practitioner/123/_history/1"/>
+                </agent>
+            </Provenance>
+        </content>
+    </entry>
+    
+    <entry>
+        <id>cid:2</id>
+        <content type="text/xml">
+            <Composition xmlns="http://hl7.org/fhir">
+
+                <!-- 0..1 -->
+                <!-- 1.2.4. Skyrius, kuriame dirba dokumento autorius (specialistas) / Department where specialist works -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorDepartment">
+                    <valueResource>
+                        <reference value="Organization/123546789"/>
+                    </valueResource>
+                </extension>
+                
+                <!-- 1..1 -->
+                <!-- 1.2.5. Gydytojo profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+                <!-- data-element-250 -->
+                
+				<!-- Classificator: qualification-code -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                            <code value="221227"/>
+                            <display value="Gydytojas neurologas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- Dokumento paruošimo data ir laikas / Composition editing time. The time this document was created -->
+                
+                <date value="2014-02-01T09:12:40.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- CodeableConcept Kind of composition. What type of document is this - eg Discharge Summary, referral, Consultation note -->
+                 <type>
+                    <coding>
+						<!-- 1..1 -->
+						<!-- Dokumento tipas E200-ats dokumentui / Document type by loinc for E200-ats document -->
+						<!-- Classificator: doc-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="11502-2"/>
+                    </coding>
+                    
+                    <!-- 1..1 -->
+					<!-- Dokumento pavadinimas E200-ats dokumentui / Document title for E200-ats document -->
+					<text value="Laboratorinio tyrimo rezultatų (duomenų) protokolas"/>
+                </type>
+
+                <!-- 1..1  -->
+                <!-- Dokumento būsena / Status of the document -->
+                <!-- Values: Dalinai pateiktam dokumentui: "preliminary" | paruoštam pasirašymui: "final" | appended |  pakeistam po pasirašymo: "amended" -->
+                
+				<!-- Classificator: composition-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento konfidencialumo lygis / Coding As defined by affinity domain -->
+                <!-- Classificator: confidentiality -->
+                <confidentiality>
+                    <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+                    <code value="N"/>
+                </confidentiality>
+
+                <!-- 1..1 -->
+                <!-- 1.3 Informacija apie pacientą / Information about the patient -->
+                <!-- data-element-1 -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- 1.2 Informacija apie sveikatos priežiūros specialistą / Information about Health Care Specialist -->
+                <!-- data-element-2 -->
+                
+                <author>
+                    <reference value="Practitioner/123/_history/1"/>
+                </author>
+
+                <!-- 0..1 --> 
+                <!-- Privalomas, jei dokumentas turi būti papildomai patvirtintas / Mandatory, if required to assert by specialist -->
+                <!-- Papildomai tvirtinti / Assert by specialist required -->
+                <attester>
+                    <!-- 1..1 -->
+					<!-- Privalomas laukas, logikoje nenaudojamas, todėl nurodome pagal nutylėjimą "professional" / Mandatory but not used field, so "professional" by default-->
+					<!-- Classificator: composition-attestation-mode -->
+                    <mode value="professional"/>
+                    
+                    <!-- 1..1 -->
+                    <!-- Dokumentą papildomai tvirtinančio specialisto duomenys / Asserting specialist -->
+                    <party>
+                        <reference value="Practitioner/123456987/_history/1"/>
+                    </party>
+                </attester>
+
+                <!-- 1..1 -->
+                <!-- 1.1 Informacija apie asmens sveikatos priežiūros įstaigą / Organization who is the author of the document -->
+                
+                <custodian>
+                    <reference value="Organization/123/_history/1"/>
+                </custodian>
+                
+                <!-- 1..1 -->
+                <!-- Įvykis, kurio pagrindu yra kuriamas dokumentas / The event being documented. -->
+                <!-- data-element-3 -->
+				<!-- Classificator: event-type -->
+                <event>
+                    <code>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/EventType"/>
+                            <code value="4"/>
+                            <display value="Laboratorinio tyrimo rezultatų (duomenų) protokolo pateikimas"/>
+                        </coding>
+                    </code>
+                    <detail>
+                        <reference value="cid:1"/>
+                    </detail>
+                </event>
+
+                <!-- 1..1 -->
+                <!-- Atvykimo duomenys / Patient Reception Data -->
+                <!-- data-element-19 -->
+                
+                <encounter>
+                    <reference value="Encounter/38765/_history/1"/>
+                </encounter>
+
+				<!-- 1..1 -->
+                <!-- 8.2 Informacija apie laboratorinį ėminį / Information about ordered test and specimen -->
+                <section>
+                    <code>
+                        <!-- 1..1 -->
+                        <!-- Classificator: doc-section-code -->
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="57139-8"/>
+                        </coding>
+                    </code>
+                    
+                    <content>
+                        <!-- 1..1 -->
+                        <!-- Nuoroda į laboratorinio tyrimo užsakymo (siuntimo) duomenis, kurie buvo sukurti E025 / The Order which has been created during E025 form submission -->
+                        <reference value="Order/123/_history/1"/>
+                    </content>
+                </section>
+                
+                <!-- 1..1 -->
+                <!-- 8.3 Laboratorinio tyrimo rezultatai / Laboratory test result section -->
+                <section>
+                    <code>
+                        <!-- 1..1 -->
+                        <!-- Classificator: doc-section-code -->
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="30954-2"/>
+                        </coding>
+                    </code>
+                    
+                    <!-- 1..1 -->
+                    <!-- Detalūs laboratorinio tyrimo rezultatų duomenys / Detailed info about laboratory test result -->
+                    <content>
+                        <reference value="cid:3"/>
+                    </content>
+                </section>
+                
+                <!-- 1..1 -->
+                <!-- Skyrimo (Order) būsenos pakeitimas / Order status changing OrderResponse -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="65842-7"/>
+                        </coding>
+                    </code>
+                    
+                    <content>
+                        <!-- 1..1 -->
+                        <!-- Skyrimo būseną keičiantis OrderResponse resursas / Order status changing OrderResponse -->
+                        <reference value="OrderResponse/19/_history/1"/>
+                    </content>
+                </section>
+            </Composition>
+        </content>
+    </entry>
+
+	<!-- 1..1 -->
+    <!-- 8.3 Laboratorinio tyrimo rezultatai / Laboratory test results -->
+    <!-- data-element-1410 -->
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <DiagnosticReport xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/diagnosticreport.xsd">
+                
+                <!-- 0..1 -->
+                <!-- 8.2.2 Laboratorijos pavadinimas (pildomas, jei įstaigoje yra daugiau nei viena laboratorija ir/ar įstaigos pavadinimas neatspindi laboratorijos pavadinimo) / Laboratory Name -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-diagnosticreport#laboratoryName">
+                    <valueString value="Laboratory name"/>
+                </extension>
+                
+                <!-- 8.2.10 Medžiagos/Ėminio gavimo data / The date and time when specimen was received -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-diagnosticreport#specimenReceivedTime">
+                    <valueDateTime value="2013-03-11T10:28:00+01:00"/>
+                </extension>
+
+                <name>
+					<!-- 1..1 -->
+                    <!-- Tyrimų pavadinimų klasifikatorius / Laboratory test name classificator-->
+                    <!-- Classificator: diagnostic-type -->
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/DiagnosticOrder/ItemCode"/>
+                        <code value="123546789"/>
+                    </coding>
+                    
+                    <!-- 1..1 -->
+                    <!-- Tyrimo pavadinimas / Laboratory test name -->
+                    <text value="Lipid Panel"/>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+				<!-- Classificator: diagnostic-report-status -->
+                <status value="final"/>
+                
+                <!-- 1..1 -->
+                <!-- Laboratorinio tyrimo rezultatų ataskaitos išrašymo data ir laikas / The date and time that this version of the report was released from the source diagnostic service -->
+                <issued value="2013-03-11T10:28:00+01:00"/>
+                
+				<!-- 1..1 -->
+                <!-- 1.3 Informacija apie pacientą, kuriam atliekamas tyrimas / Information about patient which is laboratory test -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+                
+                <!-- 1..1 -->
+                <!-- 1.2 Informacija apie sveikatos priežiūros specialistą, kuris atsakingas už tyrimą / Information about Health Care Specialist who is responsible for issuing the report. Need to know whom to contact if there are queries about the results -->
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+
+                <!-- 0..1 -->
+                <!-- Skyrimo duomenys / DiagnosticOrder data -->
+                <requestDetail>
+                    <reference value="DiagnosticOrder/123654/_history/1"/>
+                </requestDetail>
+                
+                <!-- 1..1 -->
+                <!-- Tyrimo atlikimo data ir laikas. / The date and time when the test was performed -->
+                <diagnosticDateTime value="2013-03-11T03:45:00+01:00"/>
+                
+                <!-- 0..1 -->
+                <!-- 7.2.2 Tiriamasis ėminys arba tiriamoji medžiaga / Specimen data -->
+                <specimen>
+                    <reference value="Specimen/123456789/_history/1"/>
+                </specimen>
+                
+                <!-- 0..1 -->
+                <!-- 8.3 Laboratorinio tyrimo rezultatai (tęsinys) / Laboratory Results (continued) -->
+                <result>
+                    <reference value="cid:4"/>
+                </result>
+            </DiagnosticReport>
+        </content>
+    </entry>
+	
+    <!-- 1..1 -->
+    <!-- 8.3 Laboratorinio tyrimo rezultatai (tęsinys) / Laboratory results (continued) -->
+    <!-- data-element-984 -->
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                
+				<!-- 0..1 -->
+                <!-- 8.3.1	Naudotas analizatorius (aparatūra) / Used analyzer -->
+                <!-- data-element-1411 -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-observation#analyserEquipmentUsed">
+                    <valueString value="Some analyzer"/>
+                </extension>
+                
+				<!-- 1..1 -->
+				<!-- Classificator: observation-code -->
+                <name>
+                    <coding>
+                        <system value="http://loinc.org"/>
+                        <code value="52482-7"/>
+                    </coding>
+                </name>
+                
+                <!-- 0..1 -->
+                <!-- 8.3.5 Pastabos / Remarks -->
+                <!-- data-element-984 -->
+                <comments value="Remarks as text."/>
+                
+                <!-- 1..1 -->
+                <!-- 8.3.3	Tyrimo atlikimo data ir laikas / Date and time when laboratory test performed -->
+                <!-- data-element-1430 -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+                
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+                
+				<!-- 1..1 -->
+				<!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- 8.3.2	Taikytas analizės metodas / Used analyze method -->
+                <!-- data-element-1420 -->
+                <method>
+                    <text value="Taikytas analizės metodas"/>
+                </method>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kurio duomenys yra aprašomi / Patient who observation is being made -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+                
+                <!-- 0..* -->
+                <!-- 8.3.4	Tirtos analitės / Analytes -->
+                <related>
+                    <!-- 1..1 -->
+                    <!-- 8.3.4 Nuoroda į tirtos analitės duomenų resursą / Reference to the analyte resource -->
+                    <target>
+                        <reference value="cid:5"/>
+                    </target>
+                </related>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 8.3.4 Tirtos analitės duomenys / Analyte -->
+    <!-- data-element-1435 -->
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                
+				<!-- 1..1 -->
+				<!-- 8.3.4.1 Analitės pavadinimas / Analyte name -->
+                <!-- data-element-1435 -->
+				<!-- Classificator: observation-code -->
+                <name>
+                    <coding>
+                        <system value="http://snomed.info/sct"/>
+                        <code value="272524002"/>
+                    </coding>
+                   <text value="Analyte name"/>
+                </name>
+                
+                <!-- 1..1 -->
+                <!-- 8.3.4.2 Tyrimo rezultatas su matavimo vienetais / Results, measurement units -->
+                <!-- data-element-1440 -->
+                <valueString value="rezultatas su matavimo vienetais"/>
+                
+				<!-- 1..1 -->
+                <!-- 8.3.3	Tyrimo atlikimo data ir laikas / Date and time when laboratory test performed  -->
+                <!-- data-element-1430 -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+                
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+                
+				<!-- 1..1 -->
+				<!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kurio duomenys yra aprašomi / Patient who observation is being made -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+                
+				<!-- 1..1 -->
+                <!-- 8.3.4.3 Referentinis dydis / Normal reference range-->
+                <!-- data-element-1450 -->
+                <referenceRange>
+                    <meaning>
+                        <text value="referentinio dydzio aprasymas"/>
+                    </meaning>
+                </referenceRange>
+            </Observation>
+        </content>
+    </entry>
+    
+    <!-- 0..1 -->
+    <!-- Skyrimo atsakas keičiantis skyrimo būseną į atliktas (complete)/ An OrderResponse for changing the status of the order to complete -->
+    <entry>
+        <id>OrderResponse/19</id>
+        <link href="OrderResponse/19/_history/1" rel="self"/>
+        <content type="text/xml">
+            <OrderResponse xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/orderresponse.xsd">
+                
+                <!-- 1..1 -->
+                <!-- Nuoroda į skyrimo duomenis (Order resursas), kurių būseną aprašo šis OrderResponse resursas / The order that this is a response to -->
+                <request>
+                    <reference value="Order/123/_history/1"/>
+                </request>
+                
+                <!-- 1..1 -->
+                <!-- Skyrimo būsenos pakeitimo data / When the response was made -->
+                <date value="2014-02-01T09:12:40.031+02:00"/>
+                
+                <!-- Skyrimo būseną pakeitęs specialistas/ Who change the response -->
+                <who>
+                    <reference value="Practitioner/123/_history/1"/>
+                </who>
+                
+                <!-- Naują skyrimo būseną atliktam skyrimui / A new order status -->
+                <code value="complete"/>
+            </OrderResponse>
+        </content>
+    </entry>
+</feed>

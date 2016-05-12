@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <entry>
+        <id>cid:2</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                Posible values:
+                1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <name value="Insuman Basal OptiSet"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="product"/>
+
+                <product>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#vaprisID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/VaprisID"/>
+                            <value value="12668"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#activeSubstances">
+                        <valueString value="Žmogaus insulinas"/>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#strength">
+                        <valueString value="100"/>
+                    </extension>
+
+                    <!-- Classificator: pharmaceutical-form -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#formEn">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                                <code value="1582"/>
+                                <display value="suspension for injection"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- Classificator: medication-group -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#group">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/MedicationGroup"/>
+                                <code value="1"/>
+                                <display value="Vaistinis preparatas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- Classificator: route -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#route">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Route"/>
+                                <code value="34"/>
+                                <display value="subcutaneous use"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#controlled">
+                        <valueBoolean value="true"/>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#observed">
+                        <valueBoolean value="false"/>
+                    </extension>
+
+                    <!-- Classificator: prescription-mark -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#prescriptionMark">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/PrescriptionMark"/>
+                                <code value="2"/>
+                                <display value="Receptinis"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#classificationSystems">
+                        <valueCodeableConcept>
+                            <coding>
+                                <code value="A10AC01"/>
+                                <display value="Insulin (human)"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#registrationDate">
+                        <valueDate value="2000-03-20"/>
+                    </extension>
+
+                    <!-- Classificator: pharmaceutical-form -->
+                    <form>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                            <code value="1582"/>
+                            <display value="injekcinė suspensija"/>
+                        </coding>
+                    </form>
+
+                    <ingredient>
+                        <extension url="http://esveikata.lt/Profile/ltnhr-medication#componentNumber">
+                            <valueInteger value="1"/>
+                        </extension>
+                        <item>
+                            <reference value="cid:9"/>
+                        </item>
+                    </ingredient>
+                </product>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                Posible values:
+                1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="Insuman Basal OptiSet"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1026528"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N5 x 3 ml"/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="125"/>
+                            <display value="užpildytas švirkštiklis"/>
+                        </coding>
+                        <text value="pre-filled pen"/>
+                    </container>
+
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                Posible values:
+                1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="Insuman Basal OptiSet"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1026531"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N9 x 3 ml"/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="125"/>
+                            <display value="užpildytas švirkštiklis"/>
+                        </coding>
+                        <text value="pre-filled pen"/>
+                    </container>
+
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                Posible values:
+                1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="Insuman Basal OptiSet"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1026529"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N10 x 3 ml"/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="125"/>
+                            <display value="užpildytas švirkštiklis"/>
+                        </coding>
+                        <text value="pre-filled pen"/>
+                    </container>
+
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:6</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                 Posible values:
+                 1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                 2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                 -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="Insuman Basal OptiSet"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1002716"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N3 x 3 ml   "/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="125"/>
+                            <display value="užpildytas švirkštiklis"/>
+                        </coding>
+
+                        <text value="pre-filled pen"/>
+                    </container>
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:7</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                 Posible values:
+                 1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                 2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                 -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="Insuman Basal OptiSet"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1026530"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N6 x 3 ml"/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="125"/>
+                            <display value="užpildytas švirkštiklis"/>
+                        </coding>
+                        <text value="pre-filled pen"/>
+                    </container>
+
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:8</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                Posible values:
+                1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="Insuman Basal OptiSet"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1002717"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N4 x 3 ml"/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="125"/>
+                            <display value="užpildytas švirkštiklis"/>
+                        </coding>
+                        <text value="pre-filled pen"/>
+                    </container>
+
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:9</id>
+        <content type="text/xml">
+            <Substance xmlns="http://hl7.org/fhir">
+
+                <!-- Classificator: pharmaceutical-form -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#formEn">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                            <code value="1582"/>
+                            <display value="suspension for injection"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- Classificator: substance-medication-ingredient-type -->
+                <type>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                        <code value="1582"/>
+                        <display value="injekcinė suspensija"/>
+                    </coding>
+                </type>
+
+                <description value="suspension for injection"/>
+                <ingredient>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#ingredient.quantityText">
+                        <valueString value="100"/>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#active">
+                        <valueBoolean value="true"/>
+                    </extension>
+                    <substance>
+                        <reference value="cid:10"/>
+                    </substance>
+                </ingredient>
+            </Substance>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:10</id>
+        <content type="text/xml">
+            <Substance xmlns="http://hl7.org/fhir">
+
+                <!-- Classificator: substance-medication-ingredient-type -->
+                <type>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Substance/MedicationIngredientType"/>
+                        <code value="90017"/>
+                        <display value="Žmogaus insulinas"/>
+                    </coding>
+                </type>
+            </Substance>
+        </content>
+    </entry>
+</feed>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/fhir-atom.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+    <entry>
+        <id>Composition/1</id>
+        <link href="Composition/1/_history/1" rel="self"/>
+        <!-- 1..1 -->
+        <!-- Pagal nutylėjima visi resursai perduodami xml formatu (text/xml) / By default all resources transmitted in XML format (text/xml) -->
+        <content type="text/xml">
+            <!-- 1..1 -->
+            <!-- Dokumento atraštės informacija "Composition" resurse / Document header information in "Composition" resource -->
+            <Composition xmlns="http://hl7.org/fhir">
+
+                <!-- 0..1 -->
+                <!-- 1.2.4. Skyrius, kuriame dirba dokumento autorius (specialistas) / Department where specialist works -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorDepartment">
+                    <valueResource>
+                        <reference value="Organization/123546789"/>
+                    </valueResource>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- 1.2.5. Gydytojo profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+                <!-- data-element-250 -->
+                
+				<!-- Classificator: qualification-code -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                            <code value="221227"/>
+                            <display value="Gydytojas neurologas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- Dokumento paruošimo data ir laikas / Composition editing time. The time this document was created -->
+                
+                <date value="2013-02-01T12:30:02"/>
+
+                <!-- 1..1 -->
+                <!-- CodeableConcept Kind of composition. What type of document is this - e.g. Discharge Summary, referral, Consultation note -->
+                <type>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Dokumento tipas E063 dokumentui / Document type by loinc for E063 document -->
+                        <!-- Classificator: doc-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="11369-6"/>
+                    </coding>
+
+                    <!-- 1..1 -->
+                    <!-- Dokumento pavadinimas E063 dokumentui / Document title for E063 document -->
+                    <text value="Vakcinacijos įrašas"/>
+                </type>
+
+                <!-- 1..1  -->
+                <!-- Dokumento būsena / Status of the document -->
+                <!-- Values: paruoštam pasirašymui : "final" | atšauktam: "entered in error" -->
+                
+				 <!-- Classificator: composition-status -->
+                <status value="entered in error"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento konfidencialumo lygis / Coding As defined by affinity domain -->
+                <!-- Classificator: confidentiality -->
+                <confidentiality>
+                    <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+                    <code value="N"/>
+                </confidentiality>
+
+                <!-- 1..1 -->
+                <!-- 1.3 Informacija apie pacientą / Information about the patient -->
+                <!-- data-element-1 -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- 1.2 Informacija apie sveikatos priežiūros specialistą / Information about Health Care Specialist -->
+                <!-- data-element-2 -->
+                
+                <author>
+                    <reference value="Practitioner/222/_history/1"/>
+                </author>
+
+                <!-- 1..1 -->
+                <!-- 1.1 Informacija apie asmens sveikatos priežiūros įstaigą / Organization who is the author of the document -->
+                
+                <custodian>
+                    <reference value="Organization/222/_history/1"/>
+                </custodian>
+                
+                <!-- 1..1 -->
+                <!-- Įvykis, kurio pagrindu yra kuriamas dokumentas / The event being documented. -->
+                <!-- data-element-3 -->
+				<!-- Classificator: event-type -->
+                <event>
+                    <code>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/EventType"/>
+                            <code value="14"/>
+                            <display value="Profilaktinių skiepijimų (imunoprofilaktikos) registravimas – skiepijimo fakto registravimo atveju"/>
+                        </coding>
+                    </code>
+                    <detail>
+                        <reference value="cid:1"/>
+                    </detail>
+                </event>
+
+                <!-- 1..1 -->
+                <!-- 6.2 Atvykimo duomenys / Patient Reception Data -->
+                <!-- data-element-19 -->
+                
+                <encounter>
+                    <reference value="Encounter/38765/_history/1"/>
+                </encounter>
+
+                <!-- 1..1 -->
+                <!-- 6.3 Informacija apie skiriamus skiepus / Information about vaccination order -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="57139-8"/>
+                        </coding>
+                    </code>
+
+                    <content>
+                        <!-- 1..1 -->
+                        <!-- Nuoroda į paskyrimo duomenis, kurie buvo sukurti E025/E027 / The Order which has been created during E025/E027 form submission -->
+                        <reference value="Order/38765/_history/1"/>
+                    </content>
+                </section>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie atliktą skiepą / Information about performed vaccination -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="60484-3"/>
+                        </coding>
+                    </code>
+
+                    <content>
+                        <!-- 1..1 -->
+                        <!-- Detali informacija apie atliktą skiepą / Information about performed vaccination -->
+                        <reference value="cid:3"/>
+                    </content>
+                </section>
+
+                <!-- 0..1 -->
+                <!-- Privalomas, jei dokumentas keičiamas/atšaukiamas / Mandatory, if the document is modified/canceled  -->
+                <!-- Dokumento pateikimo/keitimo/salinimo paaiskinimas / Document submission/update/delete description -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="58199-1"/>
+                        </coding>
+                    </code>
+
+                    <content>
+                        <!-- 1..1 -->
+                        <reference value="Provenance/387651/_history/1"/>
+                    </content>
+                </section>
+            </Composition>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- Informacija apie atliktą skiepą / Information about performed vaccination -->
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <Immunization xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Vakcinos duomenys / Vaccine info -->
+                <!-- data-element-1030 -->
+                
+                <extension url="http://esveikata.lt/Profile/ltnhr-immunization#vaccineMedicationPackage">
+                    <valueResource>
+                        <reference value="Medication/1/_history/1"/>
+                    </valueResource>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- 6.3.12 Skiepijimo data / Date of vaccination -->
+                <!-- data-element-1060 -->
+                
+                <date value="2013-01-10"/>
+
+                <!-- 1..1 -->
+                <!-- Nurodomas NPAKID-7 arba NPAKID identifikatorius (-iai) iš vakcinos pakuotes vaccineMedicationPackage.Medication.code lauko / code value from vaccineMedicationPackage.Medication.code field -->
+                <vaccineType>
+                    <!-- 0..1 -->
+                    <!-- NPAKID-7  / NPAKID  -->
+                    <!-- 0..* -->
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                        <code value="1020497"/>
+                    </coding>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Identifier/NPAKID"/>
+                        <code value="20497"/>
+                    </coding>
+                </vaccineType>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuris skiepijamas / Patient whom vaccination -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Požymis ar vakcinacija buvo atmesta / Indicates if the vaccination was refused -->
+                <!-- Values: "true" : atmesta | "false" : neatmesta -->
+                <refusedIndicator value="false"/>
+
+                <!-- 1..1 -->
+                <!-- True if this administration was reported rather than directly performed vaccination -->
+                <reported value="false"/>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko skiepą / Specialist who performed vaccination -->
+                
+                <performer>
+                    <reference value="Practitioner/321654/_history/1"/>
+                </performer>
+
+                <!-- 1..1 -->
+                <!-- 6.2.3 Nuoroda į specialisto, kuris siuntė, resursą / Reffereal practitioner -->
+                <requester>
+                    <reference value="Practitioner/123456/_history/1"/>
+                </requester>
+
+                <!-- 1..1 -->
+                <!-- 6.3.8	Vaisto tinkamumo vartoti laikas / Vaccine expiration date -->
+                <expirationDate value="2015-02-15"/>
+
+                <!-- 1..1 -->
+                <!-- 6.3.11 Įskiepijimo būdas / Vaccination method -->
+                <!-- data-element-1050 -->
+                <!-- Classificator: D.4.43. Įskiepijimo būdų klasifikatorius -->
+				<!-- Classificator: immunization-route -->
+                <route>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Immunization/Route"/>
+                        <!-- Values: "1" : į burną | "2" : į nosį | "3" : į odą | "4" : į paodį | "5" : į raumenis -->
+                        <code value="3"/>
+                        <display value="Į odą"/>
+                    </coding>
+                </route>
+
+                <!-- 0..1 -->
+                <!-- 6.3.15 Reakcija į skiepą / Reaction to vaccination -->
+                <!-- data-element-1090 -->
+                <reaction>
+                    <detail>
+                        <reference value="cid:4"/>
+                    </detail>
+                </reaction>
+
+                <vaccinationProtocol>
+                    <!-- 1..1 -->
+                    <!-- 6.3.10 Dozės eilės numeris / Dose serial number -->
+                    
+                    <doseSequence value="1"/>
+
+                    <!-- 1..1 -->
+                    <!-- 6.3.13 Įskiepyta vakcinos dozė / Dose of vaccine -->
+                    <!-- data-element-1070 -->
+                    <description value="[string]"/>
+
+                    <!-- 1..1 -->
+                    <!-- 6.3.14 Serija / Vaccine serie -->
+                    <!-- data-element-1080 -->
+                    <series value="Serie description as text."/>
+
+                    <doseTarget>
+                        <!-- 1..* -->
+                        <!-- 6.3.1 Užkrečiamųjų ligų, nuo kurių skiepijama, kodai ir pavadinimai pagal TLK-10-AM / Contagious disease code and description -->
+                        
+                        <!-- Classificator: infectious-disease -->
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/infectious-disease"/>
+                            <code value="A36"/>
+                            <display value="Difterija"/>
+                        </coding>
+
+                        <!-- 6.3.1.	Užkrečiamųjų ligų, nuo kurių skiepijama, pavadinimai laisvu tekstu -->
+                        <text value="Difterija"/>
+                    </doseTarget>
+
+                    <!-- 1..1 -->
+                    <!-- Požymis ar skiepijimo faktas aktualus / Is vaccination fact actual -->
+                    <!-- Classificator: vaccination-protocol-dose-status -->
+					<doseStatus>
+                        <coding>
+                            <system value="http://hl7.org/fhir/vaccination-protocol-dose-status"/>
+                            <!-- Values: "count" : taip | "nocount" : ne -->
+                            <code value="count"/>
+                        </coding>
+                    </doseStatus>
+                </vaccinationProtocol>
+            </Immunization>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 6.3.15 Reakcija į skiepą / Reaction to vaccination -->
+    <!-- data-element-1090 -->
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <AdverseReaction xmlns="http://hl7.org/fhir">
+                <!-- 0..1 -->
+                <!-- Bendros reakcijos į skiepijimą pastabos / Reaction remarks -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-adversereaction#notes">
+                    <valueString value="some reaction remarks as text."/>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliekamas skiepas / Patient whom vaccination -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Reakcija į vakciną / Reaction to vaccination. If true, indicates that no reaction occurred -->
+                <!-- Values: "true" : jokios reakcijos | "false" : yra reakcija -->
+                
+                <didNotOccurFlag value="false"/>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris skiepijo / Specialist who performed vaccination -->
+                
+                <recorder>
+                    <reference value="Practitioner/222/_history/1"/>
+                </recorder>
+
+                <symptom>
+                    <code>
+                        <!-- 1..1 -->
+                        <!-- 6.3.15 Reakcija į skiepą / Reaction to vaccination -->
+                        <!-- data-element-1090 -->
+						<!-- Classificator: response-to-vaccination -->
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/response-to-vaccination"/>
+                            <code value="20"/>
+                            <!-- Reakcijos pavadinimas / reaction name -->
+                            <display value="Sepsis"/>
+                        </coding>
+                    </code>
+                </symptom>
+            </AdverseReaction>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- Privalomas, jei dokumentas keičiamas/atšaukiamas / Mandatory, if the document is modified/canceled  -->
+    <!-- Dokumento pateikimo/keitimo/salinimo paaiskinimas / Document submission/update/delete description -->
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+
+                <!-- 1..* -->
+                <!-- Nuoroda į dokumentą, kuris keičiamas/atšaukiamas / Target resource which was created/updated/deleted -->
+                
+                <target>
+                    <reference value="Composition/1/_history/1"/>
+                </target>
+
+                <!-- 1..1 -->
+                <!-- Atliktų pakeitimų data / When the change was made -->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+
+                <!-- 1..1 -->
+                <!-- Nurodyta dokumento atšaukimo priežastis / Textual description why cancellation was made -->
+                <reason>
+                    <text value="Neteisingi duomenys."/>
+                </reason>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie specialistą, kuris atliko pakeitimus / Info who made a change -->
+                
+                <agent>
+                    <!-- 1..1 -->
+                    <!-- Specialisto rolė / The role that the participant played -->
+					<!-- Classificator: provenance-participant-role -->
+                    <role>
+                        <system value="http://hl7.org/fhir/provenance-participant-role"/>
+                        <code value="author"/>
+                    </role>
+
+                    <!-- 1..1 -->
+                    <!-- Specialisto tipas / The type of the participant -->
+					<!-- Classificator: provenance-participant-type -->
+                    <type>
+                        <system value="http://hl7.org/fhir/provenance-participant-type"/>
+                        <code value="practitioner"/>
+                    </type>
+
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+                    <reference value="Practitioner/123/_history/1"/>
+                </agent>
+            </Provenance>
+        </content>
+    </entry>
+</feed>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/composition.xsd">
+    
+    <!-- 0..1 -->
+    <!-- 1.2.4. Skyrius, kuriame dirba dokumento autorius (specialistas) / Department where specialist works -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorDepartment">
+        <valueResource>
+            <reference value="Organization/123546789"/>
+        </valueResource>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- 1.2.5. Gydytojo profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+    <!-- data-element-250 -->
+    <!-- Classificator: qualification-code -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                <code value="221227"/>
+                <display value="Gydytojas neurologas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Dokumento paruošimo data ir laikas / Composition editing time. The time this document was created -->
+    <date value="2014-02-01T09:12:40.031+02:00"/>
+
+    <!-- 1..1 -->
+    <!-- Dokumento tipas / Document type it references to. What type of document is this - e.g. Discharge Summary, referral, Consultation note -->
+    <type>
+        <coding>
+            <!-- 1..1 -->
+            <!-- Dokumento tipas E025 dokumentui / Document type by loinc for E025 dokument -->
+            <!-- Classificator: doc-code -->
+            <system value="http://loinc.org"/>
+            <code value="34108-1"/>
+        </coding>
+
+        <!-- 1..1 -->
+        <!-- Dokumento pavadinimas E025 dokumentui / Document title for E025 document -->
+        <text value="Ambulatorinio apsilankymo aprašymas"/>
+    </type>
+
+    <!-- 1..1  -->
+    <!-- Dokumento būsena / Status of the document -->
+    <!-- Values: Dalinai pateiktam dokumentui: "preliminary" | paruoštam pasirašymui: "final" | pakeistam po pasirašymo: "amended" | atšauktam dokumentui: "entered in error" -->
+    <status value="final"/>
+
+    <!-- 1..1 -->
+    <!-- Dokumento konfidencialumo lygis / Coding As defined by affinity domain -->
+    <!-- Classificator: Confidentiality -->
+    <confidentiality>
+        <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+        <code value="N"/>
+    </confidentiality>
+
+    <!-- 1..1 -->
+    <!-- 1.3 Informacija apie pacientą / Information about the patient -->
+    <!-- data-element-1 -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/2"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- 1.2 Informacija apie sveikatos priežiūros specialistą / Information about Health Care Specialist -->
+    <!-- data-element-2 -->
+    <author>
+        <reference value="Practitioner/123/_history/1"/>
+    </author>
+
+    <!-- 1..1 -->
+    <!-- 1.1 Informacija apie asmens sveikatos priežiūros įstaigą / Organization who is the author of the document -->
+    <custodian>
+        <reference value="Organization/123/_history/1"/>
+    </custodian>
+
+    <!-- 0..1 -->
+    <!-- 2. Atvykimo duomenys / Patient Reception Data -->
+    <!-- data-element-19 -->
+    <encounter>
+        <reference value="Encounter/38765/_history/1"/>
+    </encounter>
+</Composition>

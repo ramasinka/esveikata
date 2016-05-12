@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Observation xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/observation.xsd">
+
+    <!-- 1..* -->
+    <!-- Diagnozė(-s) dėl kurių yra konsultuojamasi (galimos tik diagnozės iš E003 dokumento diagnozių sąrašo) / Diagnosis for consultation (a subset of diagnosis list of E003 document) -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-observation#consultCondition">
+        <valueResource>
+            <reference value="Condition/123456789/_history/1"/>
+        </valueResource>
+    </extension>
+    
+    <name>
+        <!-- 1..1 -->
+        <!-- Kodas, nurodantis, kad tai yra specialisto konsultacija / Code defines that this is an specialist consultation -->
+        <!-- Classificator: -->
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="34104-0"/>
+        </coding>
+    </name>
+    
+    <!-- 1..1 -->
+    <!-- Specialisto konsultacijos tekstas / Specialist consultation text -->
+    <valueString value="Klinikiniai duomenys laisvu tekstu" />
+    
+    <!-- 1..1 -->
+    <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+    <!-- Classificator: observation-status -->
+    <status value="final"/>
+    
+    <!-- 1..1 -->
+    <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+    <reliability value="ok"/>
+    
+    <!-- 1..1 -->
+    <!-- Pacientas dėl kurio būklės yra konsultuojamasi / Patient regarding whom consultation is -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/2"/>
+    </subject>
+    
+    <!-- 1...1 -->
+    <!-- Konsultaciją teikęs specialistas  / Specialist who provided this consultation -->
+    <performer>
+        <reference value="Practitioner/123/_history/1"/>
+    </performer>
+</Observation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationOutcome xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/operationoutcome.xsd">
+    <issue>
+        <!-- 1..1 -->
+        <!-- Gražinamo pranešimo kodas. / message code -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-operationoutcome#code">
+            <valueCodeableConcept>
+                <!-- 1..1 -->
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/issue-code"/>
+                    <code value = "84"/>
+                    <display value="Neleistina dokumento būsena"></display>
+                </coding>
+                
+                <!-- 0..1 -->
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/issue-code-detailed"/>
+                    <code value = "84.027"/>
+                    <display value="Neleistina E027 dokumento būsena"></display>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+        
+        <!-- 1..1 -->
+        <!-- Grąžinamo pranešimo klaidos lygis. -->
+        <severity value="error"/>
+        
+        <!-- 1..1 -->
+        <!-- Grąžinamo pranešimo tekstas. -->
+        <details value="Composition.status nurodyta būsena negalima pagal būsenų seką (žiūrėti Composition resurso būsenų sekų diagramą)"/>
+        
+        <!-- 0..1 -->
+        <!-- Kelias iki klaidingo elemento XML dokumente/resurse XPath formatu. / XPath to the wrong element in XML resource/document -->
+        <location value="/feed/entry[2]/content[1]/Composition[1]/status[1]/@value"/>
+    </issue>    
+</OperationOutcome>

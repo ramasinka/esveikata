@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order xmlns="http://hl7.org/fhir">
+    
+    <!-- 1..1 -->
+    <!-- Skyrimo tipas / Order type -->
+    <!-- Classificator: order-type -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-order#type">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/OrderType"/>
+                <code value="3"/>
+                <display value="Patologijos tyrimo užsakymo (siuntimo) skyrimas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Patologijos tyrimų užsakymo preparato paėmimo būdas. / Specimen collection method for Pathology test order -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-order#specimenCollectionMethod">
+        <valueCodeableConcept>
+            <!-- Classificator: specimen-collection-method -->
+            <coding>
+                <system value="http://esveikata.lt/classifiers/Specimen/CollectionMethod"/>
+                <!-- Values: "1" : Biopsija | "2" : Intraoperacinis tyrimas | "3" : Operacinė medžiaga | "4" : Autopsija -->
+                <code value="2"/>
+                <display value="Intraoperacinis tyrimas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- 9.3.1.	Užsakymo data / Order issue date -->
+    <!-- data-element-1210 -->
+    <date value="2013-01-21T09:03:04+11:00"/>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į paciento, kuriam sukurtas siuntimas, resursą / Patient who has been ordered -->
+    <!-- data-element-1 -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/2"/>
+    </subject>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į sveikatos priežiūros specialisto, kuris sukūrė siuntimą, resursą / Health care specialist who made this order -->
+    <!-- data-element-20 -->
+    <source>
+        <reference value="Practitioner/987654321/_history/1"/>
+    </source>
+    
+    <!-- 1..1 -->
+    <!-- 9.2.1 Susijusios diagnozės / Related diagnosis -->
+    <reasonResource>
+        <reference value="List/423/_history/1"/>
+    </reasonResource>
+    
+    <!-- 1..1 -->
+    <!-- Atvykimo duomenys, kurių pagrindu buvo sukurtas šis skyrimo resursas / Encounter where this Order was created at -->
+    <detail>
+        <reference value="Encounter/12345689/_history/1"/>
+    </detail>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į detalius skyrimo duomenis / Detailed info about what is ordered and its status -->
+    <detail>
+        <reference value="DiagnosticOrder/123546789/_history/1"/>
+    </detail>
+</Order>

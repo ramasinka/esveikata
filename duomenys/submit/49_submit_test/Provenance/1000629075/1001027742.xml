@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <Provenance xmlns="http://hl7.org/fhir">
+        <target>
+          <reference value="Encounter/1000629076/_history/1001027743"/>
+        </target>
+        <recorded value="2016-01-12T14:17:40.034+02:00"/>
+        <reason>
+          <coding>
+            <system value="http://esveikata.lt/classifiers/EventType"/>
+            <code value="1"/>
+            <display value="Atvykimas į SPĮ gauti ambulatorinių paslaugų"/>
+          </coding>
+        </reason>
+        <agent>
+          <role>
+            <system value="http://hl7.org/fhir/provenance-participant-role"/>
+            <code value="author"/>
+          </role>
+          <type>
+            <system value="http://hl7.org/fhir/provenance-participant-type"/>
+            <code value="practitioner"/>
+          </type>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </agent>
+    </Provenance>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patient xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/patient.xsd">
+
+    <!-- 0..1 -->
+    <!-- Piliečio veido atvaizdas / Patient photo -  -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-patient#binaryPhoto">
+        <valueResource>
+            <reference value="Media/123546789"/>
+        </valueResource>
+    </extension>
+
+    <!-- 0..* -->
+    <!-- Asmens tapatybę patvirtinančio dokumento informacija / The identity document information -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-patient#identityDocument">
+        <valueResource>
+            <reference value="DocumentReference/1000017310/_history/1000018373"/>
+        </valueResource>
+    </extension>
+
+    <!-- 0..* -->
+    <!-- Lietuvoje gyvenančio paciento deklaruotos gyvenamosios vietos adresas / Declared residence address of patient who lives in Lithuania -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier">
+
+        <!-- 1..1 -->
+        <!-- Paciento adreso tipas / Type of address -->
+        <!-- Classificator: address-identifier-type -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.type">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/Type"/>
+                    <!-- Values: "declared" : deklaruotos gyvenamosios vietos adresas | "residence" : gyvenamosios vietos adresas -->
+                    <code value="declared"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Paciento deklaruotos vietos tekstinis adresas / Text representation of the address -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.text">
+            <valueString value="Kauno m. sav. Kauno m. Krėvės pr. 1B"/>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Adreso identifikatorius / Address ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.addressID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/AddressID"/>
+                    <code value="1827801"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Savivaldybės identifikatorius iš adresų registro / Municipality ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.municipalityID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/MunicipalityID"/>
+                    <code value="400"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Vietovės identifikatorius iš adresų registro / City ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.cityID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/CityID"/>
+                    <code value="1"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Gatvės identifikatorius iš adresų registro / Street ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.streetID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/StreetID"/>
+                    <code value="22101"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Namo (sklypo) numeris / House number -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.house">
+            <valueString value="1"/>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Korpuso numeris / Hull number -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.hull">
+            <valueString value="B"/>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Buto numeris / Flat number -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.flat">
+            <valueString value="25"/>
+        </extension>
+    </extension>
+
+    <!-- 0..1 -->
+    <!-- Lietuvoje gyvenančio paciento gyvenamosios vietos adresas / Residence address of patient who lives in Lithuania -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier">
+
+        <!-- 1..1 -->
+        <!-- Paciento adreso tipas / Type of address -->
+        <!-- Classificator: address-identifier-type -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.type">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/Type"/>
+                    <!-- Values: "declared" : deklaruotos gyvenamosios vietos adresas | "residence" : gyvenamosios vietos adresas -->
+                    <code value="residence"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Paciento gyvenamosios vietos tekstinis adresas / Text representation of the address -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.text">
+            <valueString value="Kauno m. sav. Kauno m. Krėvės pr. 1B"/>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Adreso identifikatorius / Address ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.addressID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/AddressID"/>
+                    <code value="1827801"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Savivaldybės identifikatorius / Municipality ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.municipalityID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/MunicipalityID"/>
+                    <code value="400"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Vietovės identifikatorius / City ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.cityID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/CityID"/>
+                    <code value="1"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Gatvės identifikatorius / Street ID -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.streetID">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/AddressIdentifier/StreetID"/>
+                    <code value="22101"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Namo numeris / House number -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.house">
+            <valueString value="1"/>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Korpuso numeris / Hull number -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.hull">
+            <valueString value="B"/>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- Buto numeris / Flat number -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.flat">
+            <valueString value="25"/>
+        </extension>
+    </extension>
+
+    <!-- 0..1 -->
+    <!-- Lietuvos arba užsienio piliečio asmens kodas / Personal Code; Pastaba: jei asmuo turi asmens kodą -->
+    <!-- data-element-101 -->
+    
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+        <value value="97812092003"/>
+    </identifier>
+
+    <!-- 1..1 -->
+    <!-- Unikalus paciento ESI numeris / Patient EHI No. -->
+    <!-- data-element-107 -->
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/Patient/ESI"/>
+        <value value="RS000003"/>
+    </identifier>
+
+    <!-- 0..1 -->
+    <!-- Asmens draudžiamojo identifikacinis kodas iš draudžiamųjų privalomuoju sveikatos draudimo registro / Insurance No. -->
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/Patient/DIK"/>
+        <value value="000003"/>
+    </identifier>
+
+    <!-- 0..* -->
+    <!-- data-element-110 -->
+    <!-- Paciento vardo/pavardės duomenys / Patient name data -->
+    <name>
+        <!-- data-element-111 -->
+        <!-- Paciento pavardė(-ės) / Patient surname(-s) -->
+        <family value="Majauskas"/>
+
+        <!-- data-element-112 -->
+        <!-- Paciento vardas(-ai) / Patient name(-s) -->
+        <given value="Majus"/>
+        <given value="Skirmantas"/>
+        <given value="Tautvydas"/>
+    </name>
+
+    <!-- 0..1 -->
+    <!-- Paciento telefono numeris / Telephone number -->
+    <telecom>
+        <system value="phone"/>
+        <value value="+37067800000"/>
+    </telecom>
+
+    <!-- 0..1 -->
+    <!-- Paciento elektroninio pašto adresas / E-mail address -->
+    <telecom>
+        <system value="email"/>
+        <value value="majauskas@nortal.com"/>
+    </telecom>
+
+    <!-- 0..1 -->
+    <!-- Paciento lytis / Patient gender-->
+    <!-- Classificator: administrative-gender -->
+    <gender>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/AdministrativeGender"/>
+            <code value="1"/>
+            <display value="Vyras"/>
+        </coding>
+    </gender>
+
+    <!-- 0..1 -->
+    <!-- Paciento gimimo diena / Patient birthday -->
+    <birthDate value="1978-12-09"/>
+
+    <!-- 0..1 -->
+    <!-- Paciento mirties data / Date of death -->
+    <deceasedDateTime value="2014-07-08"/>
+
+    <!-- 0..1 -->
+    <!-- Paciento šeimyninė padėtis / Patient marital status -->
+    <!-- Classificator: marital-status -->
+    <maritalStatus>
+        <coding>
+            <system value="http://hl7.org/fhir/marital-status"/>
+            <code value="M"/>
+            <display value="Married"/>
+        </coding>
+    </maritalStatus>
+
+    <!-- 0..1 -->
+    <!-- Daugiavaisio nėštumo indikatorius / Multiple pregnancy indicator -->
+    <!-- Nurodoma ar pacientas yra iš daugiavaisio nėštumo bei jo gimimo eiliškumas -->
+    <multipleBirthInteger value="1"/>
+
+    <!-- 0..* -->
+    <!-- Susiję asmenys / Related persons -->
+    <contact>
+        <!-- 1..1 -->
+        <!-- Nuoroda į susijusio asmens duomenis / Reference to related person -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#relatedPerson.reference">
+            <valueResource>
+                <reference value="Patient/1000004218/_history/1000004738"/>
+            </valueResource>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Paciento giminystės arba kito ryšio tipas (pvz., sutuoktinis, tėvas, mama). / Type of related person -->
+        <!-- Classificator: related-person-type -->
+        <relationship>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/RelatedPerson/Type"/>
+                <code value="1"/>
+                <display value="mama"/>
+            </coding>
+        </relationship>
+
+        <!-- 0..1 -->
+        <!-- Susijusio asmens telefono numeris / Related person telephone number -->
+        <telecom>
+            <system value="phone"/>
+            <value value="+37067800000"/>
+        </telecom>
+
+        <!-- 0..1 -->
+        <!-- Susijusio asmens elektroninio pašto adresas / Related person e-mail address -->
+        <telecom>
+            <system value="email"/>
+            <value value="vardenis.pavardenis@nortal.com"/>
+        </telecom>
+    </contact>
+
+    <!-- 0..* -->
+    <!-- Nuoroda į paciento pasirinkto sveikatos priežiūros specialisto resursą / Reference to family doctor resource -->
+    <careProvider>
+        <reference value="Practitioner/1000015885/_history/1000016940"/>
+    </careProvider>
+
+    <!-- 0..* -->
+    <!-- Sveikatos priežiūros įstaiga, prie kurios pacientas prisirašęs / Patient's nominated care provider (organization) -->
+    <careProvider>
+
+        <!-- 1..1 -->
+        <!-- Laikotarpis (nuo iki datos) kiek asmuo prisirašęs prie nurodytos sveikatos priežiūros įstaigos / Period (start end) when Patient's nominated care provider  -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#registeredPeriod">
+            <valuePeriod>
+                <start value="2004-02-04"/>
+                <end value="2020-01-01"/>
+            </valuePeriod>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Nuoroda į ASPĮ, prie kurios pacientas yra prisirašęs, resursą / Reference to Patient's nominated care provider (organization) -->
+        <reference value="Organization/1000015882/_history/1000016937"/>
+    </careProvider>
+</Patient>

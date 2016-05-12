@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Draudimo dokumentas / European Health Insurance Card -->
+<DocumentReference xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/documentreference.xsd">
+
+    <!-- 0..1 -->
+    <!-- Kompetetingos institucijos kodas / ES autority code -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-patient#documentCountry">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/ESAutority"/>
+                <code value="SVAGW"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 0..1 -->
+    <!-- Asmens tapatybės numeris nurodytas Europos sveikatos draudimo kortelėje -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-patient#personIdentityNumber">
+        <valueIdentifier>
+            <system value="http://esveikata.lt/classifiers/IdentityDocument/SerieNumber" />
+            <value value="37512092729" />
+        </valueIdentifier>
+    </extension>
+
+    <!-- 1..1 -->
+    <!-- Dokumento numeris / Document number -->
+    <masterIdentifier>
+        <system value="http://esveikata.lt/classifiers/IdentityDocument/ehicNumber"/>
+        <value value="ABC123456"/>
+    </masterIdentifier>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į paciento, kuriam priklauso draudimo dokumentas, resursą / The owner of insurance document -->
+    <subject>
+        <reference value="Patient/123456/_history/1"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- Draudimo dokumento tipas / Insurance document type it references to -->
+    <!-- Classificator: insurance-doc-type -->
+    <type>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/InsuranceDocument/Type"/>
+            <code value="1"/>
+            <display value="Europos sveikatos draudimo kortelė"/>
+        </coding>
+    </type>
+
+    <!-- 1..1 -->
+    <!-- Dokumentą užregistravęs specialistas /The practitioner registered insurance document /  -->
+    <author>
+        <reference value="Practitioner/12346/_history/1"/>
+    </author>
+
+    <!-- 1..1 -->
+    <!-- Data, kada buvo sukurta ši nuoroda / When this reference was created -->
+    <indexed value="2005-12-24T09:43:41+11:00"/>
+
+    <!-- 1..1 --> <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory --> 
+    <!-- Nuorodos būsena / The status of this document reference -->
+    <!-- Values: "current" (by default) -->
+    <status value="current"/>
+
+    <!-- 1..1 -->
+    <!-- The mime type of the source document -->
+    <!-- Values: "text/plain" (by default) -->
+    <mimeType value="text/plain"/>
+
+    <context>
+        <period>
+            <!-- 1..1 -->
+            <!-- Draudimo dokumentas galioja iki / Insurance document expiration Date-->
+            <end value="2004-12-23T08:01:00"/>
+        </period>
+    </context>
+</DocumentReference>

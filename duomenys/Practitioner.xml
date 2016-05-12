@@ -1,0 +1,270 @@
+<Practitioner xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/practitioner.xsd">
+
+	<!-- 0..* -->
+	<!-- Skyrius(iai), kur dirba specialistas / Department(s) where specialists works -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#department">
+		<valueResource>
+			<reference value="Organization/123546"/>
+		</valueResource>
+	</extension>
+
+	<!-- 0..1 -->
+	<!-- Specialisto nuotrauka / Specialist photo -  -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#binaryPhoto">
+		<valueResource>
+			<reference value="Media/123546789"/>
+		</valueResource>
+	</extension>
+	
+	<!-- 0..* -->
+	<!-- Specialisto pareigos / Specialist position  -->
+	<!-- Classificator: practitioner-position	-->
+	<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#practitionerPosition">
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://esveikata.lt/classifiers/PractitionerPosition"/>
+				<code value="1"/>
+				<display value="Vyr. specialistas"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+		
+	<!-- 0..1 -->
+	<!-- Lietuvoje gyvenančio specialisto gyvenamosios vietos adresas / Residence address of practitioner who lives in Lithuania -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier">
+		
+		<!-- 1..1 -->
+		<!-- Adreso tipas / Type of address -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.type">
+			<valueCodeableConcept>
+				<coding>
+					<system value="http://esveikata.lt/classifiers/Address/Type"/>
+					<!-- Values: "residence" : gyvenamosios vietos adresas -->
+					<code value="residence"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+		
+		<!-- 1..1 -->
+		<!-- Gyvenamosios vietos tekstinis adresas / Text representation of the address -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.text">
+			<valueString value="Vilniaus m. sav. Vilniaus m. Laisvės pr. 79"/>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Adreso identifikatorius / Address ID -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.addressID">
+			<valueIdentifier>
+				<system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+				<value value="1827821"/>
+			</valueIdentifier>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Savivaldybės identifikatorius / Municipality ID -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.municipalityID">
+			<valueString value="461"/>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Vietovės identifikatorius / City ID -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.cityID">
+			<valueString value="1"/>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Gatvės identifikatorius / Street ID -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.streetID">
+			<valueString value="22154"/>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Namo numeris / House number -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.house">
+			<valueString value="12A"/>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Korpuso numeris / Hull number -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.hull">
+			<valueString value="B"/>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Buto numeris / Flat number -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.flat">
+			<valueString value="25"/>
+		</extension>
+		
+		<!-- 0..1 -->
+		<!-- Pašto kodas / Post code -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#addressIdentifier.postCode">
+			<valueString value="12345"/>
+		</extension>
+	</extension>
+	
+	<!-- 0..1 -->
+	<!-- Specialisto virtualios dežutės adresas / Virtual P.O. box address of Practitioner -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier">        
+		<!-- 1..1 -->
+		<!-- Adreso tipas / Type of address -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.type">
+			<valueCodeableConcept>
+				<coding>
+					<system value="http://esveikata.lt/classifiers/Address/Type"/>
+					<code value="virtual_box"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+		
+		<!-- 1..1 -->
+		<!-- Dežutės tekstinis adresas / Text representation of the address -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.text">
+			<valueString value="Vilniaus m. sav. Vilniaus m. Laisvės pr. 79"/>
+		</extension>
+		
+		<!-- 1..1 -->
+		<!-- Adreso identifikatorius / Address ID -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.addressID">
+			<valueIdentifier>
+				<system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+				<value value="1827829"/>
+			</valueIdentifier>
+		</extension>       
+	</extension>
+
+	<extension url="http://esveikata.lt/Profile/ltnhr-patient#countryCode">
+		<valueString value="RU"/>
+	</extension>      
+	
+	<!-- 0..1 -->
+	<!-- Privalomas jei asmuo turi asmens kodą / Mandatory if personal code exist -->
+	<!-- Specialisto asmens kodas / Health Care Specialist personal Code -->
+	<!-- data-element-101 -->
+	<identifier>
+		<system value="http://esveikata.lt/Identifier/PersonalCode"/>
+		<value value="37512092729"/>
+	</identifier>
+
+	<!-- 0..1 -->	
+	<!-- Sveikatos priežiūros specialisto spaudo informacija / Health Care Specialist‘s stamp information -->
+	<identifier>
+		<system value="http://esveikata.lt/Identifier/StampCode"/>
+		<value value="3669"/>
+		<period>
+			<start value="2006-09-01"/>
+			<end value="2013-02-06"/>
+		</period>
+	</identifier>
+	
+	<!-- 0..1 -->
+	<!-- Asmens E. pristatymo dėžutės duomenys / Person eDelivery address. -->
+	<identifier>
+		<system value="http://esveikata.lt/Identifier/eDelivery"/>
+		<value value="vardpav123456"/>
+	</identifier>
+
+	<!-- 1..1 -->
+	<!-- Specialisto vardas, pavardė / Health Care Specialist name -->
+	<!-- data-element-220 -->
+	<name>
+		<!-- 1..* -->
+		<!-- Last Name / Pavardė -->
+		<!--data-element-222 -->
+		<family value="Pavardenis"/>
+
+		<!-- 1..* -->
+		<!-- First Name / Vardas -->
+		<!-- data-element-221 -->
+		<given value="Vardenis"/>
+	</name>
+
+	<!-- 0..* -->
+	<!-- Specialisto el. pašto adresas / Specialist e-mail -->
+	<telecom>
+		<system value="email"/>
+		<value value="vardenis.pavardenis@nortal.com"/>
+	</telecom>
+
+	<!-- 1..* -->
+	<!-- Specialisto telefono nr. / Specialist phone number -->
+	<telecom>
+		<system value="phone"/>
+		<value value="+37067800000"/>
+	</telecom>
+
+	<!-- 1..1 -->
+	<!-- Sveikatos priežiūros įstaiga, kurioje specialistas dirba / Hospital in which the specialist works -->
+	<!-- data-element-251 -->
+	<organization>
+		<reference value="Organization/37512092729"/>
+	</organization>
+
+	<!-- 0..* -->
+	<!-- Vaidmuo, kurią specialistas yra atlieka sveikatos priežiūros įstaigoje / Roles which this practitioner is authorized to perform -->
+	<!-- Classificator: role-type -->
+	<role>
+		<coding>
+			<system value="http://esveikata.lt/classifiers/RoleType"/>
+			<code value="1"/>
+			<display value="Sveikatos priežiūros specialistas"/>
+		</coding>
+	</role>
+
+	<!-- 0..1 -->
+	<!-- Sveikatos priežiūros specialisto profesija / Health Care Specialist‘s profession -->
+	<!-- Classificator: qualification-code -->
+	<specialty>
+		<coding>
+			<system value="http://esveikata.lt/classifiers/QualificationCode"/>
+			<code value="221104"/>
+		</coding>
+		<text value="Medicinos gydytojas"/>
+	</specialty>
+
+	<!-- 1..1 -->
+	<!-- Laikotarpis, kurį specialistas dirba gydymo įstaigoje / The period during which the person is working in organization -->
+	<period>
+		<start value="2010-01-19"/>
+		<end value="2015-01-19"/>
+	</period>
+
+	<!-- 0..* -->
+	<!-- Sveikatos priežiūros specialisto profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+	<!-- data-element-250 -->	
+	<qualification>
+		<!-- 1..1 Licencijos būsena / License status -->
+		<!-- Classificator: license-status -->
+		<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+			<valueCoding>
+				<system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+				<code value="VALID"/>
+				<display value="Galioja"></display>
+			</valueCoding>
+		</extension>
+		
+		<!-- 1..1 Licencijos numeris / License number -->	
+		<code>
+			<coding>
+				<system value="http://esveikata.lt/classifiers/LicenseCode"/>
+				<code value="MPL-06364"/>
+			</coding>
+
+			<!-- 1..1 Profesinės kvalifikacijos kodas / Qualification code -->
+			<!-- Classificator: qualification-code -->
+			<coding>
+				<system value="http://esveikata.lt/classifiers/QualificationCode"/>
+				<code value="221227"/>
+				<!-- 1..1 Profesinės kvalifikacijos pavadinimas / Qualification name -->
+				<display value="Gydytojas neurologas"/>
+			</coding>
+		</code>
+
+		<!-- 0..1 -->
+		<!-- Licencijos galiojimo laikotarpis / The period during which license is valid -->
+		<period>
+			<start value="2009-02-27"/>
+			<end value="2015-01-19"/>
+		</period>
+	</qualification>
+</Practitioner>

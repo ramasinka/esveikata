@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Observation xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/observation.xsd">
+
+    <!-- 1..1 -->
+    <!-- Specialisto, atlikusio apžiūrą, profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+    <!-- Classificator: qualification-code -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-observation#performerQualification">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                <code value="221227"/>
+                <display value="Gydytojas neurologas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+
+    <name>
+        <!-- 1..1 -->
+        <!-- Classificator: observation-code -->
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="39223-3"/>
+        </coding>
+    </name>
+    
+    <!-- 1..1 -->
+    <!-- 3.3.8.2 Gydymo, slaugos, darbo, ambulatorinės priežiūros rekomendacijos (aprašymas) / Recommendations -->
+    <valueString value="Gydymo, slaugos, darbo, ambulatorinės priežiūros rekomendacijos (aprašymas) as text."/>
+
+    <!-- 1..1 -->
+    <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+    <!-- Classificator: observation-status -->
+    <status value="final"/>
+
+    <!-- 1..1 -->
+    <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+    <!-- Classificator: observation-reliability -->
+    <reliability value="ok"/>
+
+    <!-- 1..1 -->
+    <!-- Pacientas, kuriam nurodomos rekomendacijos / Patient whom recommendations -->
+    <subject>
+        <reference value="Patient/1000017309/_history/1000018374"/>
+    </subject>
+
+    <!-- 1...1 -->
+    <!-- Rekomendacijas surašęs specialistas / Specialist who write recommendations -->
+    <performer>
+        <reference value="Practitioner/1000015885/_history/1000016940"/>
+    </performer>
+</Observation>

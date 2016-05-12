@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/provenance.xsd">
+
+    <!-- 1..* -->
+    <!-- Nuoroda į sutikimo dokumentą, kuris atšaukiamas -->
+    <target>
+        <reference value="DocumentReference/123456/_history/1"/>
+    </target>
+
+    <!-- 1..1 -->
+    <!-- Data ir laikas, kada atlikti pakeitimai / When the change was made -->
+    <recorded value="2012-11-08T23:16:03+11:00"/>
+
+    <!-- 1..1 -->
+    <!-- Nurodyta atšaukimo priežastis / Textual description why cancellation was made -->
+    <reason>
+        <text value="Klaida suvedant duomenis."/>
+    </reason>
+
+    <!-- 1..1 -->
+    <!-- Informacija apie specialistą/pacientą, kuris atliko atšaukimą / Info who made a change -->
+    <agent>
+        <!-- 1..1 -->
+        <!-- rolė / The role that the participant played -->
+        <role>
+            <system value="http://hl7.org/fhir/provenance-participant-role"/>
+            <code value="author"/>
+        </role>
+
+        <!-- 1..1 -->
+        <!-- Atšaukėjo tipas / The type of the participant -->
+        <type>
+            <system value="http://hl7.org/fhir/provenance-participant-type"/>
+            <code value="person"/>
+        </type>
+
+        <!-- 1..1 -->
+        <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+        <reference value="Patient/123/_history/1"/>
+    </agent>
+</Provenance>

@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/fhir-atom.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+    <category term="http://hl7.org/fhir/tag/document" scheme="http://hl7.org/fhir/tag"/>
+    <entry>
+        <id>cid:1</id>
+        <!-- 1..1 -->
+        <!-- Pagal nutylėjimą visi resursai perduodami xml formatu (text/xml) / By default all resources transmitted in XML format (text/xml) -->
+        <content type="text/xml">
+            <!-- 1..1 -->
+            <!-- Dokumento antraštės informacija "Composition" resurse / Document header information in "Composition" resource -->
+            <Composition xmlns="http://hl7.org/fhir">
+
+                <!-- 0..1 -->
+                <!-- 1.2.4. Skyrius, kuriame dirba dokumento autorius (specialistas) / Department where specialist works -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorDepartment">
+                    <valueResource>
+                        <reference value="Organization/123546789"/>
+                    </valueResource>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- 1.2.5. Gydytojo profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+                <!-- data-element-250 -->
+                
+				<!-- Classificator: qualification-code -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                            <code value="221227"/>
+                            <display value="Gydytojas neurologas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- Dokumento paruošimo data ir laikas / Composition editing time. The time this document was created -->
+                
+                <date value="2014-02-01T09:12:40.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento tipas / Document type it references to. What type of document is this - eg Discharge Summary, referral, Consultation note -->
+                <type>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Dokumento tipas E025 dokumentui / Document type by loinc for E025 document -->
+                        <!-- Classificator: doc-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="34108-1"/>
+                    </coding>
+
+                    <!-- 1..1 -->
+                    <!-- Dokumento pavadinimas E025 dokumentui / Document title for E025 document -->
+                    <text value="Ambulatorinio apsilankymo aprašymas"/>
+                </type>
+
+                <!-- 1..1  -->
+                <!-- Dokumento būsena / Status of the document -->
+                <!-- Values: Dalinai pateiktam dokumentui : "preliminary" | paruoštam pasirašymui: "final" | pakeistam po pasirašymo: "amended" | atšauktam dokumentui: "entered in error" -->
+                
+				<!-- Classificator: composition-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento konfidencialumo lygis / Coding As defined by affinity domain -->
+                <!-- Classificator: confidentiality -->
+                <confidentiality>
+                    <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+                    <code value="N"/>
+                </confidentiality>
+
+                <!-- 1..1 -->
+                <!-- 1.3 Informacija apie pacientą / Information about the patient -->
+                <!-- data-element-1 -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- 1.2 Informacija apie sveikatos priežiūros specialistą / Information about Health Care Specialist -->
+                <!-- data-element-2 -->
+                
+                <author>
+                    <reference value="Practitioner/123/_history/1"/>
+                </author>
+
+                <!-- 1..1 -->
+                <!-- 1.1 Informacija apie asmens sveikatos priežiūros įstaigą / Organization who is the author of the document -->
+                
+                <custodian>
+                    <reference value="Organization/123/_history/1"/>
+                </custodian>
+
+                <!-- 1..1 -->
+                <!-- 3.2 Atvykimo duomenys / Patient Reception Data -->
+                <!-- data-element-19 -->
+                
+                <encounter>
+                    <reference value="Encounter/38765/_history/1"/>
+                </encounter>
+
+                <!-- 1..1 -->
+                <!-- 3.3 Medicininiai duomenys / Clinical Data  -->
+                <!-- data-element-6 -->
+                <!-- Classificator: doc-section-code -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="55752-0"/>
+                        </coding>
+                    </code>
+
+                    <!-- 1..1 -->
+                    <!-- 3.3.1 Anamnezė / Anamnesis -->
+                    <!-- Classificator: doc-section-code -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="11348-0"/>
+                            </coding>
+                        </code>
+
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- 3.3.1 Detali anemnezės informacija / Detailed anamnesis info -->
+                            <reference value="cid:2"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.3.2 Būklės įvertinimas (objektyviai) / Objective condition -->
+                    <section>
+                        <code>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <coding>
+                                <system value="http://loinc.org"/>
+                                <code value="8716-3"/>
+                            </coding>
+                        </code>
+
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- 3.3.2 Detali būklės įvertinimo informacija / Detailed objective condition info -->
+                            <reference value="cid:3"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.3.3 Tyrimų / konsultacijų planas (paskirti tyrimų ir konsultacijų siuntimai, diagnozių sąrašas) / Tests and Consultations Plan -->
+                    <!-- Classificator: doc-section-code -->
+                    <section>
+                        <code>
+                            <coding>
+                                <system value="http://loinc.org"/>
+                                <code value="56851-9"/>
+                            </coding>
+                        </code>
+
+                        <!-- 1..1 -->
+                        <!-- Tyrimų / konsultacijų planas / Tests and Consultations Plan -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="18776-5"/>
+                                </coding>
+                            </code>
+
+                            <content>
+                                <!-- 1..1 -->
+                                <reference value="cid:11"/>
+                            </content>
+                        </section>
+
+                        <!-- 0..1 -->
+                        <!-- 3.3.3.6 Informacija apie išrašytus siuntimo, laboratorinio arba patologinio tyrimo užsakymo medicininius dokumentus (dokumento pavadinimas, data) / Info about prepared order (E027, E200, E014) documents -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="57139-8"/>
+                                </coding>
+                            </code>
+
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- 3.3.3.6 Išrašytų siuntimo, laboratorinio arba patologinio tyrimo užsakymo medicininių dokumentų sąrašas / List of prepared order (E027, E200, E014) documents -->
+                                <reference value="cid:19"/>
+                            </content>
+                        </section>
+
+                        <!-- 1..1 -->
+                        <!-- 3.3.3.7 Tyrimų / konsultacijų plano aprašymas / Tests and Consultations Plan description -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="56447-6"/>
+                                </coding>
+                            </code>
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- 3.3.3.7 Detalus tyrimų / konsultacijų plano aprašymas / Detailed Tests and Consultations Plan description info -->
+                                <reference value="cid:21"/>
+                            </content>
+                        </section>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.3.4 Atliktų laboratorinių ir instrumentinių tyrimų informacija / Info about diagnostic/lab results-->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="34075-2"/>
+                            </coding>
+                        </code>
+
+                        <!-- 0..1 -->
+                        <!-- 3.3.4.1 Informacija apie atliktų laboratorinių ir instrumentinių tyrimų rezultatų medicininius dokumentus (dokumento pavadinimas, data) / Info about diagnostic/lab results documents -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="11488-4"/>
+                                </coding>
+                            </code>
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- 3.3.4.1 Atliktų laboratorinių ir instrumentinių tyrimų rezultatų dokumentų sąrašas / Diagnostic/lab results docs list -->
+                                <reference value="cid:22"/>
+                            </content>
+                        </section>
+
+                        <!-- 0..1 -->
+                        <!-- 3.3.4.2 Atliktų laboratorinių ir instrumentinių tyrimų aprašymas / Performed lab tests description -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="30954-2"/>
+                                </coding>
+                            </code>
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- 3.3.4.2 Atliktų laboratorinių ir instrumentinių tyrimų aprašymas / Performed lab tests data -->
+                                <reference value="cid:23"/>
+                            </content>
+                        </section>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.3.5 Diagnozės / Diagnosis -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="11535-2"/>
+                            </coding>
+                        </code>
+
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- Diagnozių sąrašas / Diagnosis list -->
+                            <reference value="cid:24"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.3.6 Alergijos / Allergies -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="48765-2"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- Naujai nustatytų alergijų sąrašas / Detected allergies list-->
+                            <reference value="cid:26"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.3.7 Taikytas gydymas / Performed treatment-->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="55753-8"/>
+                            </coding>
+                        </code>
+
+                        <!-- 0..1 -->
+                        <!-- Taikytas medikamentinis gydymas / Performed medication treatment -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="10183-2"/>
+                                </coding>
+                            </code>
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- Medikamentinio gydymo duomenys / Medication treatment data -->
+                                <reference value="cid:29"/>
+                            </content>
+                        </section>
+
+                        <!-- 0..1 -->
+                        <!-- Atliktos chirurginės procedūros / Performed surgery procedures -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="47519-4"/>
+                                </coding>
+                            </code>
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- Atliktų chirurginių procedūrų sąrašas / Surgical performed procedures list -->
+                                <reference value="cid:30"/>
+                            </content>
+                        </section>
+
+                        <!-- 1..1 -->
+                        <!-- Taikyto gydymo aprašymas / Performed treatment description -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="62387-6"/>
+                                </coding>
+                            </code>
+
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- Taikyto gydymo duomenys / Performed treatment data -->
+                                <reference value="cid:32"/>
+                            </content>
+                        </section>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.3.8  Gydymo, slaugos, darbo, ambulatorinės priežiūros rekomendacijos / Recommendations for treatment-->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="39221-7"/>
+                            </coding>
+                        </code>
+
+                        <!-- 0..1 -->
+                        <!-- 3.3.8.1 Informacija apie susietą E025 (jeigu gydymas tęsiamas) / Info about previous E025 if treatment is continued -->
+                        
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Dokumento tipas E025 susijusiam dokumentui / Document type by loinc form previous E025 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="34108-1"/>
+                                </coding>
+                            </code>
+
+                            <!-- 1..1 -->
+                            <!-- 3.3.8.1 Detali informacija apie susietą E025 med dokumentą / Reference to previous E025 document if treatment is continued -->
+                            <content>
+                                <reference value="DocumentReference/3381/_history/1"/>
+                            </content>
+                        </section>
+
+                        <!-- 0..1 -->
+                        <!-- 3.3.8.2 Gydymo, slaugos, darbo, ambulatorinės priežiūros rekomendacijos (aprašymas) / Treatment recommendations-->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="39223-3"/>
+                                </coding>
+                            </code>
+                            <content>
+                                <!-- 1..1 -->
+                                <reference value="cid:33"/>
+                            </content>
+                        </section>
+
+                        <!-- 0..1 -->
+                        <!-- 3.3.8.3 Skiepų skyrimai / Immunization orders -->
+                        <section>
+                            <code>
+                                <coding>
+                                    <!-- 1..1 -->
+                                    <!-- Classificator: doc-section-code -->
+                                    <system value="http://loinc.org"/>
+                                    <code value="11369-6"/>
+                                </coding>
+                            </code>
+
+                            <content>
+                                <!-- 1..1 -->
+                                <!-- Nuoroda į skiepų skyrimo sąrašą / Reference to immunization orders list -->
+                                <reference value="cid:34"/>
+                            </content>
+                        </section>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.3.9 Skiriami vaistai ir MPP / Prescribed medications -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="57828-6"/>
+                            </coding>
+                        </code>
+
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- Nuoroda į skiriamų vaistų sąrašą / Reference to prescribed medications list -->
+                            <reference value="cid:37"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.3.10 Pastabos / Remarks -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="48767-8"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- Nuoroda į pastabas / Reference to remarks -->
+                            <reference value="cid:39"/>
+                        </content>
+                    </section>
+                </section>
+
+                <!-- 0..1 -->
+                <!-- 3.4 Papildomi duomenys / Additional Data -->
+                <section>
+                    <!-- 1..1 -->
+                    <!-- Classificator: doc-section-code -->
+                    <code>
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="52535-2"/>
+                        </coding>
+                    </code>
+
+                    <!-- 0..1 -->
+                    <!-- 3.4.1 Pirmoji naujagimio apžiūra namuose / Information in Case of Newborn Baby Examination (at home) -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="57075-4"/>
+                            </coding>
+                        </code>
+
+                        <!-- 1..1 -->
+                        <!-- 3.4.1 Pirmosios naujagimio apžiūros namuose duomenys / Additional Information in Case of Newborn Baby Examination (at home) -->
+                        <content>
+                            <reference value="cid:40"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.4.2 Medicininės pažymos / Medical certificate data -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="103695000"/>
+                            </coding>
+                        </code>
+
+                        <!-- 1..1 -->
+                        <!-- 3.4.2 Medicininių pažymų duomenys / Medical certificate data -->
+                        <content>
+                            <reference value="cid:41"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.4.3 Pranešimai policijos elektroninių paslaugų sistemai / The list of alerts to police -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="44944-7"/>
+                            </coding>
+                        </code>
+
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- 3.4.3 Sąrašas pranešimų policijos elektroninių paslaugų sistemai / The list of alerts sent to police system -->
+                            <reference value="cid:42"/>
+                        </content>
+                    </section>
+
+                    <!-- 3.4.3.2 Informacija apie siunčiamą medicininį dokumentą (medicininio dokumento pavadinimas, data) / Info about medical docs sent to police -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="57133-1"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <!-- 1..1 -->
+                            <!-- 3.4.3.2 Sąrašas siunčiamų dokumentų policijai / The list of docs sent to police -->
+                            <reference value="cid:45"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.4.4 Išduotas nedarbingumo pažymėjimas / pažyma / Certificate of Incapacity for Work -->
+                    <!-- data-element-18 -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="440337002"/>
+                            </coding>
+                        </code>
+
+                        <!-- 1..1 -->
+                        <!-- 3.4.4 Sąrašas nedarbingumo pažymėjimų / pažymų / The list of Certificate of Incapacity for Work -->
+                        <content>
+                            <reference value="cid:46"/>
+                        </content>
+                    </section>
+                </section>
+
+                <!-- 0..1 -->
+                <!-- Privalomas, jei dokumentas keičiamas/atšaukiamas / Mandatory, if the document is modified/canceled  -->
+                <!-- Dokumento keitimo/šalinimo paaiškinimas / Document submission/update/delete description -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="58199-1"/>
+                        </coding>
+                    </code>
+
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į detalius duomenis / Reference to detailed info -->
+                    <content>
+                        <reference value="cid:47"/>
+                    </content>
+                </section>
+            </Composition>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.4.2 Medicininių pažymų duomenys / Medical certificate data -->
+    <entry>
+        <id>cid:41</id>
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- 3.4.2.2 Informacija apie pažymą / Reference to medical certificate -->
+                <target>
+                    <reference value="DocumentReference/1/_history/1"/>
+                </target>
+
+                <!-- 1..1 -->
+                <!-- Data, kada atlikti pakeitimai/ When the change was made -->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+
+                <!-- 1..1 -->
+                <!-- 3.4.2.1 Pažymos išdavimo būsena / Medical certificate state -->
+                <!-- Classificator: medical-certificate-reason -->
+                <reason>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Provenance/MedicalCertificateReason"/>
+                        <!-- Values: "1" : pirmas apsilankymas dėl pažymos išdavimo | "2" : specialisto konsultacija | "3" : pažymos išdavimas -->
+                        <code value="1"/>
+                        <display value="pirmas apsilankymas dėl pažymos išdavimo"/>
+                    </coding>
+
+                    <!-- 1..1 -->
+                    <!-- Pažymos išdavimo priežasties aprašymas / Medical certificate state -->
+                    <text value="pirmas apsilankymas dėl pažymos išdavimo"/>
+                </reason>
+            </Provenance>
+        </content>
+    </entry>
+</feed>

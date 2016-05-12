@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1..1 -->
+<!-- Privalomas jei yra nors vienas skiepo skyrimas / Mandatory if exist at least one Immunization order -->
+<!-- Skiepo skyrimas / Immunization order -->
+<Order xmlns="http://hl7.org/fhir">
+    <!-- 1..1 -->
+    <!-- Paskyrimo tipas / Order type -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-order#type">
+        <valueCodeableConcept>
+            <coding>
+                <!-- Values: "4" : Skiepų skyrimas -->
+				<!-- Classificator: order-type -->
+                <system value="http://esveikata.lt/classifiers/OrderType"/>
+                <code value="4"/>
+                <!-- 0..1 -->
+                <display value="Skiepų skyrimas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Sveikatos priežiūros specialisto, sukūrusio siuntimą, profesinė kvalifikacija / Health Care Specialist‘s who made this order Qualification -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-order#sourceQualification">
+        <valueCodeableConcept>
+            <!-- 1..1 -->
+            <!-- Specialisto prof. kvalifikacijos kodas / Target specialist prof qualification code -->
+            <coding>
+                <system value="http://esveikata.lt/classifiers/QualificationCode" />
+                <code value="221227" />
+                <display value="Gydytojas neurologas" />
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+
+    <!-- 0..1 -->
+    <!-- Privalomas, jei nurodytas bent vienas skiepo skyrimas / Mandatory if exist at least one Immunization Order -->
+    <!-- Skiepo skyrimo data / Immunization Order date -->
+    <!-- data-element-1910 -->
+    <date value="2014-02-21T09:03:04+11:00"/>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į paciento, kuriam sukurtas skiepo siuntimas, resursą / Patient who has been ordered -->
+    <!-- data-element-1 -->
+    <subject>
+        <reference value="Patient/123456789/_history/1"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į sveikatos priežiūros specialisto, kuris sukūrė siuntimą, resursą / Health care specialist who made this order -->
+    <!-- data-element-20 -->
+    <source>
+        <reference value="Practitioner/987654321/_history/1"/>
+    </source>
+    
+    <!-- 1..1 -->
+    <!-- Atvykimo duomenys, kurių pagrindu buvo sukurtas šis skyrimo resursas / Encounter where this Order was created at -->
+    <detail>
+        <reference value="Encounter/1000017570/_history/1000018634"/>
+    </detail>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į skiepo aprašymo resursą / Detailed info about what is ordered and its status -->
+    <detail>
+        <reference value="ImmunizationRecommendation/13383/_history/1"/>
+    </detail>
+</Order>

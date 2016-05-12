@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/fhir-atom.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+    <entry>
+        <id>cid:1</id>
+        <!-- 1..1 -->
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+
+                <!-- 1..* -->
+                <!-- Nuoroda į pateikiama dokumentą / Target resource which was created during this event -->
+                <target>
+                    <reference value="cid:2"/>
+                </target>
+
+                <!-- 1..1 -->
+                <!-- Data ir laikas, kada įvykis buvo registruotas / When the event was registered-->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+
+                <!-- Priežastis event code -->
+                <!-- Classificator: event-type -->
+                <reason>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/EventType"/>
+                        <code value="20"/>
+                        <display value="Medicininių pažymų suformavimas"/>
+                    </coding>
+                </reason>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie įvykį registruojantį specialistą / Event registered practitioner -->
+                <agent>
+                    <!-- 1..1 -->
+                    <!-- Dalyvio rolė įvykio kontekste / The role that the participant played -->
+                    <!-- Classificator: provenance-participant-role -->
+                    <role>
+                        <system value="http://hl7.org/fhir/provenance-participant-role"/>
+                        <code value="author"/>
+                    </role>
+
+                    <!-- 1..1 -->
+                    <!-- Įvykio dalyvio tipas / The type of the participant -->
+                    <!-- Classificator: provenance-participant-type -->
+                    <type>
+                        <system value="http://hl7.org/fhir/provenance-participant-type"/>
+                        <code value="practitioner"/>
+                    </type>
+
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+                    <reference value="Practitioner/123/_history/1"/>
+                </agent>
+            </Provenance>
+        </content>
+    </entry>
+
+    <entry>
+        <id>cid:2</id>
+        <!-- 1..1 -->
+        <!-- Pagal nutylėjimą visi resursai perduodami xml formatu (text/xml) / By default all resources transmitted in XML format (text/xml) -->
+        <content type="text/xml">
+            <Composition xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- 5.1. Gydytojo, išrašiusio medicininį perinatalinį mirties liudijimą, pareigos (laisvu tekstu) / Certificate author qualification (plain text) -->
+                
+                <!-- Classificator: qualification-code -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                            <code value="221227"/>
+                            <display value="Gydytojas neurologas"/>
+                        </coding>
+
+                        <!-- 0..1 -->
+                        <!-- Jeigu nurodytos specialisto pareigos (o ne kvalifikacija) / In case position is specified instead of qualification -->
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/PractitionerPosition"/>
+                            <code value="1"/>
+                            <display value="Vyr. specialistas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- 4.1. Dokumento išdavimo data / The time this document was created -->
+                
+                <date value="2013-02-01T12:30:02"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento tipas / CodeableConcept Kind of composition. What type of document is this - eg Discharge Summary, referral, Consultation note -->
+                <!-- Classificator: doc-code -->
+                <type>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Dokumento tipas / Document type -->
+                        <!-- Classificator: doc-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="307930005"/>
+                    </coding>
+
+                    <!-- 1..1 -->
+                    <!-- Dokumento pavadinimas / Document title -->
+                    <text value="Medicininis mirties liudijimas"/>
+                </type>
+
+                <!-- 1..1  -->
+                <!-- Dokumento būsena / Status of the document -->
+                <!-- Values: paruoštam pasirašymui : "final" | atšauktam dokumentui : "entered in error" -->
+                <!-- Classificator: composition-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento konfidencialumo lygis / Coding As defined by affinity domain -->
+                <!-- Classificator: confidentiality -->
+                <confidentiality>
+                    <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+                    <code value="N"/>
+                </confidentiality>
+
+                <!-- 1..1 -->
+                <!-- 2.	Paciento duomenys (gali būti nuoroda į neatpažinto paciento duomenis) / Dead patient (might be a reference to unrecognized Patient data created in this document -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- 5.	Gydytojo pildomą dalį ruošiančio naudotojo duomenys / Information about Health Care Specialist -->
+                
+                <author>
+                    <reference value="Practitioner/123/_history/1"/>
+                </author>
+
+                <!-- 1..1 -->
+                <!-- 1.	Įstaigos duomenys / Organization who is the author of the document -->
+                
+                <custodian>
+                    <reference value="Organization/123/_history/1"/>
+                </custodian>
+
+                <!-- 1..1 -->
+                <!-- Įvykis, kurio pagrindu yra kuriamas dokumentas / The event being documented. -->
+                <!-- data-element-3 -->
+                <!-- Classificator: event-type -->
+                <event>
+                    <code>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/EventType"/>
+                            <code value="20"/>
+                            <display value="Medicininių pažymų suformavimas"/>
+                        </coding>
+                    </code>
+                    <detail>
+                        <reference value="cid:1"/>
+                    </detail>
+                </event>
+
+                <!-- 1..1 -->
+                <!-- Atvykimo duomenys / Patient Reception Data -->
+                
+                <encounter>
+                    <reference value="Encounter/38765/_history/1"/>
+                </encounter>
+
+                <!-- 1..1 -->
+                <!--  3. Dokumento duomenys / Document data  -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://snomed.info/sct"/>
+                            <code value="406194006"/>
+                        </coding>
+                    </code>
+
+                    <!-- 1..1 -->
+                    <!-- 3.3. Galutinis / laikinas dokumentas / Final or Temporary  certificate -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="307929000"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:4"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.4. Keičiamas liudijimas / Replaced temporary certificate -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="307930005"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <!-- Tuo atveju, kai keičiamas elektroninis į ESPBI pateiktas liudijimas, čia turi būti nuorodą į jo DocumentReference resursą, kuris jau yra ESPBI sistemoje. 
+                                Keičiant popierinį (ne pateiktą į ESPBI) liudijimą sukuriamas jo DocumentReference resursas, šio liudijimo pateikimo metu. / 
+                            It shouldbe reference to existing DocumentReference (in case when replaced document exists in ESPBI) -->
+                            <reference value="cid:5"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.6. Spėjamas amžius (m., mėn., d.), kai mirusiojo tapatybė nenustatyta / hypothetical age (years, months, days)  -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="39016-1"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:6"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.7. Mirties data / Date of death  -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="399753006"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:7"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.9. Naujagimio, mirusio nuo 7 iki 28 parų, išnešiojimas / Pregnancy completion -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="302080006"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:18"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.10. Naujagimio, mirusio nuo 7 iki 28 parų, masė / Baby weight-->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="47340003"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:16"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.11. Mirties vieta / Death place  -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="366044004"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:9"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.14. Gydytojo nuomone mirties rūšis / Death type (by Practitioner conclusion)  -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="69449-7"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:11"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.15. Moteris mirė / Timing of recent pregnancy in relation to death -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="69442-2"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:12"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.16. Nelaimingo atsitikimo, savižudybės, žmogžudystės data / Incident date (cause to death)-->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="31211-6"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:13"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.18.	Nelaimingo atsitikimo, savižudybės, žmogžudystės vieta -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="58332-8"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:14"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.20. Nelaimingo atsitikimo, savižudybės, žmogžudystės aplinkybės / Incident(cause to death) circumstances -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="11374-6"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:15"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.21. Mirties priežastys / Death circumstances -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="21984-0"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:160"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.24.	Mirties priežastys: pagrindinės ligos (traumos), sukėlusios mirtį, kodas / Death cause (Main disease code)-->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="184305005"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:19"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.26. Kitos svarbios patologinės būklės, sąlygojusios mirtį, bet nesusijusios su pagrindine mirties priežastimi / Other conditions (not related to Main death reason) -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="68346-6"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:193"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.27. Ar buvo atlikta operacija (-os) per paskutines 28 dienas iki mirties? / Any operations before death have been performed? -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="52799-4"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:190"/>
+                        </content>
+                    </section>
+
+                    <!-- 1..1 -->
+                    <!-- 3.30. Medicininį mirties liudijimą išrašė /  Death Certificate author type -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="69437-2"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:25"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.31. Kitų aplinkybių paaiškinimas /  Other explanation of the death circumstances -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://loinc.org"/>
+                                <code value="69441-4"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:26"/>
+                        </content>
+                    </section>
+
+                    <!-- 0..1 -->
+                    <!-- 3.32.	Asmuo, kuris kreipėsi dėl pažymos išrašymo / Person requested this certificate -->
+                    <section>
+                        <code>
+                            <coding>
+                                <!-- 1..1 -->
+                                <!-- Classificator: doc-section-code -->
+                                <system value="http://snomed.info/sct"/>
+                                <code value="443942000"/>
+                            </coding>
+                        </code>
+                        <content>
+                            <reference value="cid:27"/>
+                        </content>
+                    </section>
+                </section>
+            </Composition>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 2.	Neatpažinto paciento duomenys  / Unrecognized Patient data -->
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <Patient xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/patient.xsd">
+
+                <!-- 0..1 -->
+                <!-- Lietuvos arba užsienio piliečio asmens kodas / Personal Code; Pastaba: jei asmuo turi asmens kodą -->
+                
+                <identifier>
+                    <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+                    <value value="37512092729"/>
+                </identifier>
+
+                <!-- 0..1 -->
+                <!-- Paciento vardo/pavardės duomenys / Patient name data -->
+                <name>
+                    <!-- data-element-111 -->
+                    <!-- Paciento pavardė / Patient surname -->
+                    <family value="Pavardenis"/>
+
+                    <!-- data-element-112 -->
+                    <!-- Paciento vardas / Patient name -->
+                    <given value="Vardenis"/>
+                </name>
+
+                <!-- 0..1 -->
+                <!-- 2.4. Lytis / Patient gender-->
+                <!-- Classificator: administrative-gender -->
+                <gender>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/AdministrativeGender"/>
+                        <code value="1"/>
+                        <display value="Vyras"/>
+                    </coding>
+                </gender>
+
+                <!-- 0..1 -->
+                <!-- 4.8. Gimimo data / Patient birthday -->
+                <birthDate value="1984-04-02"/>
+
+                <!-- 1..1 -->
+                <!-- Vaiko mama / Relation to mother -->
+                <contact>
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į susijusio asmens duomenis / Reference to related person -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-patient#relatedPerson.reference">
+                        <valueResource>
+                            <reference value="Patient/32856257683256/_history/2"/>
+                        </valueResource>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Paciento giminystės arba kito ryšio tipas (pvz., sutuoktinis, tėvas, mama). / Type of related person -->
+                    <!-- Classificator: related-person-type -->
+                    <relationship>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/RelatedPerson/Type"/>
+                            <code value="1"/>
+                            <display value="mama"/>
+                        </coding>
+                    </relationship>
+                </contact>
+            </Patient>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.3. Galutinis / laikinas dokumentas / Final or Temporary  document -->
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="307929000"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueCodeableConcept>
+                    <coding>
+                        <!-- Galutinis / laikinas dokumentas / Final or Temporary  document -->
+                        <!-- Classificator: death-certificate-status -->
+                        <system value="http://esveikata.lt/classifiers/DeathCertificateStatus"/>
+                        <code value="1"/>
+                        <display value="Galutinis"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 3.4. Keičiamas liudijimas / Replaced temporary certificate -->
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <DocumentReference xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/documentreference.xsd">
+
+                <!-- 1..1 -->
+                <!-- 3.4. Keičiamo liudijimo Nr. / Replaced certificate number -->
+                <masterIdentifier>
+                    <system value="http://esveikata.lt/Identifier/CertificateNumber"/>
+                    <value value="123456789"/>
+                </masterIdentifier>
+
+                <!-- 1..1 -->
+                <!-- Nuoroda į paciento, kuriam pateikiamas dokumentas, resursą / Patient of document -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- data-element-1840 -->
+                <!-- Dokumento tipas / Document type it references to -->
+                <type>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Dokumento tipas / Document type -->
+                        <!-- Classificator: doc-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="307930005"/>
+                    </coding>
+
+                    <!-- 1..1 -->
+                    <!-- Dokumento pavadinimas / Document title -->
+                    <text value="Medicininis mirties liudijimas"/>
+                </type>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie dokumentą pateikusį specialistą / Info about specialist who has created this document -->
+                <author>
+                    <reference value="Practitioner/12346/_history/1"/>
+                </author>
+
+                <!-- 1..1 -->
+                <!-- 3.5. Keičiamo liudijimo išdavimo data / Replaced certificate creation date -->
+                <created value="2005-12-24T09:43:41+11:00"/>
+
+                <!-- 1..1 -->
+                <!-- Data, kada buvo sukurta ši nuoroda / When this reference was created -->
+                <indexed value="2005-12-24T09:43:41+11:00"/>
+
+                <!-- 1..1 -->
+                <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory -->
+                <!-- Nuorodos būsena / The status of this document reference -->
+                <!-- Values: "current" (by default) -->
+                <!-- Classificator: document-reference-status -->
+                <status value="current"/>
+
+                <!-- 1..1 -->
+                <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory -->
+                <!-- The mime type of the source document -->
+                <!-- Values: "text/plain" (by default) -->
+                <mimeType value="text/xml"/>
+            </DocumentReference>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.6 Spėjamas amžius (m., mėn., d.), kai mirusiojo tapatybė nenustatyta / hypothetical age  -->
+    <entry>
+        <id>cid:6</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="39016-1"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="amzius laisvu tekstu"/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.7. Mirties data / Death date -->
+    <entry>
+        <id>cid:7</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="399753006"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valuePeriod>
+                    <start value="2012-09-17T16:13:54.031+02:00"/>
+                </valuePeriod>
+
+                <!-- 3.8. Remiantis palaikų radimo data / The death date was specified by body found date -->
+                <!-- Classificator: death-date-interpretation -->
+                <interpretation>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/Interpretation/DeathDate"/>
+                        <code value="1"/>
+                        <display value="Remiantis palaikų radimo data"/>
+                    </coding>
+                </interpretation>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.9. Naujagimio, mirusio nuo 7 iki 28 parų, išnešiojimas / Pregnancy completion -->
+    <entry>
+        <id>cid:18</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="302080006"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Classificator: pregnancy-completion -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/PregnancyCompletion"/>
+                        <code value="1"/>
+                        <display value="Išnešiotas"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.10. Naujagimio, mirusio nuo 7 iki 28 parų, masė / Newborn baby weight-->
+    <entry>
+        <id>cid:16</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="47340003"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueQuantity>
+                    <value value="3932"/>
+                    <units value="g"/>
+                    <system value="http://unitsofmeasure.org"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.11 Mirties vieta / Death place  -->
+    <entry>
+        <id>cid:9</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="366044004"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueCodeableConcept>
+                    <coding>
+                        <!-- Mirties vieta / death place -->
+                        <!-- Classificator: death-place -->
+                        <system value="http://esveikata.lt/classifiers/DeathPlace"/>
+                        <code value="1"/>
+                        <display value="Ligoninė"/>
+                    </coding>
+
+                    <!-- 3.12.	Mirties vietos patikslinimas -->
+                    <text value="Some place description name."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- 3.13. Mirties vietos adresas (jei nežinoma - palaikų radimo vieta) / Death place address (if body location unknown)-->
+                <related>
+                    <target>
+                        <reference value="cid:101"/>
+                    </target>
+                </related>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.13. Mirties vietos adresas (jei nežinoma - palaikų radimo vieta) / Death place address (if body location unknown) -->
+    <entry>
+        <id>cid:101</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="69435-6"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="Adresas laisvu tekstu."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.14. Gydytojo nuomone mirties rūšis / Death type (by Practitioner conclusion)-->
+    <entry>
+        <id>cid:11</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="69449-7"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Classificator: death-type -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/DeathType"/>
+                        <code value="1"/>
+                        <display value="Liga"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.15. Moteris mirė / Timing of recent pregnancy in relation to death -->
+    <entry>
+        <id>cid:12</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="69442-2"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Classificator: maternal-death-type -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/MaternalDeathType"/>
+                        <code value="1"/>
+                        <display value="Būdama nėščia"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.16. Nelaimingo atsitikimo, savižudybės, žmogžudystės data / Incident date (cause to death)-->
+    <entry>
+        <id>cid:13</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="31211-6"/>
+                    </coding>
+                </name>
+
+                <!-- 0..1 -->
+                <valuePeriod>
+                    <start value="2012-09-17T16:13:54.031+02:00"/>
+                </valuePeriod>
+
+                <!-- 0..1 -->
+                <!-- 3.17. Nelaimingo atsitikimo, savižudybės, žmogžudystės data nežinoma / Date is unknown -->
+                <!-- Classificator: death-date-interpretation -->
+                <interpretation>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/Interpretation/DeathDate"/>
+                        <code value="2"/>
+                        <display value="Nelaimingo atsitikimo, savižudybės, žmogžudystės data nežinoma"/>
+                    </coding>
+                </interpretation>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.18. Nelaimingo atsitikimo, savižudybės, žmogžudystės vieta / Incident (cause to death) place-->
+    <entry>
+        <id>cid:14</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="58332-8"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Classificator: accident-site -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/AccidentSite"/>
+                        <code value="9"/>
+                        <display value="Kita patikslinta"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- 3.19.	Nelaimingo atsitikimo, savižudybės, žmogžudystės vietos patikslinimas -->
+                    <text value="Vietos patikslinimas"/>
+                </valueCodeableConcept>
+
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.20. Nelaimingo atsitikimo, savižudybės, žmogžudystės aplinkybės / Incident(cause to death) circumstances -->
+    <entry>
+        <id>cid:15</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="11374-6"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="Aplinkybes laisvu tekstu."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.21. Mirties priežastys / Death circumstances -->
+    <entry>
+        <id>cid:160</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="21984-0"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- 3.21.	Mirties priežastys: tiesioginė mirties priežastis -->
+                <valueString value="Aplinkybes laisvu tekstu."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 0..1 -->
+                <!-- 3.22.	Mirties priežastys: tarpinė mirties priežastis (1) /  -->
+                <related>
+                    <target>
+                        <reference value="cid:161"/>
+                    </target>
+                </related>
+
+                <!-- 0..1 -->
+                <!-- 3.23.	Mirties priežastys: tarpinė mirties priežastis (2) /  -->
+                <related>
+                    <target>
+                        <reference value="cid:162"/>
+                    </target>
+                </related>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.22.	Mirties priežastys: tarpinė mirties priežastis (1) / Death circumstances (1) -->
+    <entry>
+        <id>cid:161</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="68343-3"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Mirties priežastys: tarpinė mirties priežastis (1) / Death circumstances (1) -->
+                <valueString value="Priezastis laisvu tekstu."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.23.	Mirties priežastys: tarpinė mirties priežastis (2) / Death circumstances (1) -->
+    <entry>
+        <id>cid:162</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="68345-8"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Mirties priežastys: tarpinė mirties priežastis (1) / Death circumstances (1) -->
+                <valueString value="Priezastis laisvu tekstu."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.24.	Mirties priežastys: pagrindinės ligos (traumos), sukėlusios mirtį, kodas / Death cause (Main disease code)-->
+    <entry>
+        <id>cid:19</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="184305005"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Classificator: tlk-10-am -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/TLK-10-AM"/>
+                        <code value="1234"/>
+                    </coding>
+
+                    <!-- 3.25.	Mirties priežastys: pagrindinė liga (trauma), sukėlusi mirtį -->
+                    <text value="Death cause additional description."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.26. Kitos svarbios patologinės būklės, sąlygojusios mirtį, bet nesusijusios su pagrindine mirties priežastimi / Other conditions (not related to Main death reason) -->
+    <entry>
+        <id>cid:193</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="68346-6"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="other conditions description."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.27. Ar buvo atlikta operacija (-os) per paskutines 28 dienas iki mirties? / Any operations before death have been performed? -->
+    <entry>
+        <id>cid:190</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="52799-4"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Classificator: operation-before-death-performed -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/OperationBeforeDeathPerformed"/>
+                        <code value="1"/>
+                        <display value="Taip"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 0..1 -->
+                <!-- 3.28.	Operacijos data /  Operation date -->
+                <related>
+                    <target>
+                        <reference value="cid:191"/>
+                    </target>
+                </related>
+
+                <!-- 0..1 -->
+                <!-- 3.29.	Operacijos priežastis /  Operation cause -->
+                <related>
+                    <target>
+                        <reference value="cid:192"/>
+                    </target>
+                </related>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.28. Operacijos data /  Operation date -->
+    <entry>
+        <id>cid:191</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="67782-3"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valuePeriod>
+                    <start value="2012-09-17T16:13:54.031+02:00"/>
+                </valuePeriod>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.29.	Operacijos priežastis /  Operation cause -->
+    <entry>
+        <id>cid:192</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="8724-7"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="Operation cause description as text."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.30. Medicininį mirties liudijimą išrašė   /  Death Certificate author type -->
+    <entry>
+        <id>cid:25</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="69437-2"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Classificator: death-cert-specialist-type -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/DeathCertificateSpecialistType"/>
+                        <code value="1"/>
+                        <display value="Gydęs gydytojas, apžiūrėjęs mirusįjį ir konstatavęs mirtį"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.31. Kitų aplinkybių paaiškinimas /  Other explanation of the death circumstances -->
+    <entry>
+        <id>cid:26</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="69441-4"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="Description as text."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.32. Asmuo, kuris kreipėsi dėl pažymos išrašymo / Person requested this certificate -->
+    <entry>
+        <id>cid:27</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="443942000"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="Person as text."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+                <!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>                
+            </Observation>
+        </content>
+    </entry>
+</feed>

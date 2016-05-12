@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+        <code value="226101"/>
+        <display value="Gydytojas odontologas"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://esveikata.lt/Profile/ltnhr-documentreference#documentCalcStatus">
+    <valueCode value="final signed"/>
+  </extension>
+  <masterIdentifier>
+    <system value="Composition"/>
+    <value value="1000629080"/>
+  </masterIdentifier>
+  <identifier>
+    <system value="Composition/_history"/>
+    <value value="1000629080/_history/1001027775"/>
+  </identifier>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/DocumentNumber"/>
+    <value value="16-000168"/>
+  </identifier>
+  <subject>
+    <reference value="Patient/1000556911/_history/1001027740"/>
+  </subject>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="184822001"/>
+    </coding>
+    <text value="Asmens privalomojo sveikatos tikrinimo kortelė"/>
+  </type>
+  <author>
+    <reference value="Practitioner/1000524923/_history/1001001527"/>
+  </author>
+  <author>
+    <reference value="Practitioner/1000524923/_history/1001001527"/>
+  </author>
+  <author>
+    <reference value="Practitioner/1000524923/_history/1001001527"/>
+  </author>
+  <custodian>
+    <reference value="Organization/1000261087/_history/1000988755"/>
+  </custodian>
+  <created value="2016-01-12T14:17:50.338+02:00"/>
+  <indexed value="2016-01-12T14:19:04.439+02:00"/>
+  <status value="current"/>
+  <docStatus>
+    <coding>
+      <system value="http://esveikata.lt/classifiers/Document/Status"/>
+      <code value="Signed"/>
+    </coding>
+  </docStatus>
+  <mimeType value="application/atom+xml"/>
+  <size value="2317"/>
+  <hash value="7d75cce79acd266ee5893f8de5120c763d9cb3da"/>
+  <location value="Binary/1000629103"/>
+</DocumentReference>

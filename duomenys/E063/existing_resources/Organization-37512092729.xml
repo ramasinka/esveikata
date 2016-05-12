@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1..1 -->
+<!-- 6.2.1 Siuntusi įstaiga / Reffering Organization -->
+<!-- data-element-326 -->
+<Organization xmlns="http://hl7.org/fhir">
+
+    <!-- 0..1 -->
+    <!-- 6.2.2 Siuntusios įstaigos (filialo) SVEIDRA ID / SVEIDRA ID issued by National health insurance fund -->
+    <!-- data-element-297 -->
+    
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/SVEIDRAID"/>
+        <value value="4699"/>
+    </identifier>
+
+    <!-- 0..1 -->
+    <!-- Pavadinimas  / HCP name -->
+    <!-- data-element-327 -->
+    
+    <name value="Hospital of Lithuanian University of Health Sciences Kaunas Clinics"/>
+</Organization>

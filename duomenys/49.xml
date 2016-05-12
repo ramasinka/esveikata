@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <category scheme="http://hl7.org/fhir/tag" term="http://hl7.org/fhir/tag/document"/>
+  <entry>
+    <id>Composition/1000629080</id>
+    <link href="Composition/1000629080/_history/1001027775" rel="self"/>
+    <updated>2016-01-12T14:19:04.340+02:00</updated>
+    <content type="text/xml">
+      <Composition xmlns="http://hl7.org/fhir">
+        <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="226101"/>
+              <display value="Gydytojas odontologas"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <date value="2016-01-12T14:17:50.338+02:00"/>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="184822001"/>
+          </coding>
+          <text value="Asmens privalomojo sveikatos tikrinimo kortelė"/>
+        </type>
+        <status value="final"/>
+        <confidentiality>
+          <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+          <code value="N"/>
+        </confidentiality>
+        <subject>
+          <reference value="Patient/1000556911/_history/1001027740"/>
+        </subject>
+        <author>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </author>
+        <custodian>
+          <reference value="Organization/1000261087/_history/1000988755"/>
+        </custodian>
+        <event>
+          <code>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/EventType"/>
+              <code value="20"/>
+              <display value="Medicininių pažymų suformavimas"/>
+            </coding>
+          </code>
+          <detail>
+            <reference value="Provenance/1000629102/_history/1001027776"/>
+          </detail>
+        </event>
+        <encounter>
+          <reference value="Encounter/1000629076/_history/1001027743"/>
+        </encounter>
+        <section>
+          <code>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="160922003"/>
+              <display value="Clinical information"/>
+            </coding>
+          </code>
+          <section>
+            <code>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="301707001"/>
+              </coding>
+            </code>
+            <content>
+              <reference value="DiagnosticReport/1000629079/_history/1001027770"/>
+            </content>
+          </section>
+          <section>
+            <code>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="58322009"/>
+              </coding>
+            </code>
+            <content>
+              <reference value="Observation/1000629078/_history/1001027744"/>
+            </content>
+          </section>
+        </section>
+      </Composition>
+    </content>
+  </entry>
+  <entry>
+    <id>Observation/1000629078</id>
+    <link href="Observation/1000629078/_history/1001027744" rel="self"/>
+    <updated>2016-01-12T14:17:55.661+02:00</updated>
+    <content type="text/xml">
+      <Observation xmlns="http://hl7.org/fhir">
+        <name>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="58322009"/>
+          </coding>
+        </name>
+        <valuePeriod>
+          <end value="2021-01-12T14:17:50.459+02:00"/>
+        </valuePeriod>
+        <appliesDateTime value="2016-01-12T14:17:55.340+02:00"/>
+        <status value="final"/>
+        <reliability value="ok"/>
+        <subject>
+          <reference value="Patient/1000556911/_history/1001027740"/>
+        </subject>
+      </Observation>
+    </content>
+  </entry>
+  <entry>
+    <id>Provenance/1000629102</id>
+    <link href="Provenance/1000629102/_history/1001027776" rel="self"/>
+    <updated>2016-01-12T14:19:04.335+02:00</updated>
+    <content type="text/xml">
+      <Provenance xmlns="http://hl7.org/fhir">
+        <target>
+          <reference value="Composition/1000629080/_history/1001027775"/>
+        </target>
+        <recorded value="2016-01-12T14:19:04.138+02:00"/>
+        <reason>
+          <coding>
+            <system value="http://esveikata.lt/classifiers/EventType"/>
+            <code value="20"/>
+            <display value="Medicininių pažymų suformavimas"/>
+          </coding>
+        </reason>
+        <agent>
+          <role>
+            <system value="http://hl7.org/fhir/provenance-participant-role"/>
+            <code value="author"/>
+          </role>
+          <type>
+            <system value="http://hl7.org/fhir/provenance-participant-type"/>
+            <code value="practitioner"/>
+          </type>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </agent>
+      </Provenance>
+    </content>
+  </entry>
+  <entry>
+    <id>DiagnosticReport/1000629079</id>
+    <link href="DiagnosticReport/1000629079/_history/1001027770" rel="self"/>
+    <updated>2016-01-12T14:18:51.844+02:00</updated>
+    <content type="text/xml">
+      <DiagnosticReport xmlns="http://hl7.org/fhir">
+        <name>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="184822001"/>
+          </coding>
+        </name>
+        <status value="final"/>
+        <issued value="2016-01-12T14:17:50.338+02:00"/>
+        <subject>
+          <reference value="Patient/1000556911/_history/1001027740"/>
+        </subject>
+        <performer>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </performer>
+        <diagnosticDateTime value="2016-01-12T14:17:50.338+02:00"/>
+        <result>
+          <reference value="Observation/1000629089/_history/1001027764"/>
+        </result>
+        <conclusion value="Galutinė išvada"/>
+      </DiagnosticReport>
+    </content>
+  </entry>
+  <entry>
+    <id>Organization/1000261087</id>
+    <link href="Organization/1000261087/_history/1000988755" rel="self"/>
+    <updated>2016-01-07T08:33:14.024+02:00</updated>
+    <content type="text/xml">
+      <Organization xmlns="http://hl7.org/fhir">
+        <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier">
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://esveikata.lt/classifiers/Address/Type"/>
+                <code value="registration"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.AddressID">
+            <valueIdentifier>
+              <system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+              <value value="2630899"/>
+            </valueIdentifier>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.MunicipalityID">
+            <valueString value="112"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.CityID">
+            <valueString value="7"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.StreetID">
+            <valueString value="21671"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.house">
+            <valueString value="3"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.text">
+            <valueString value="Klaipėdos m. sav. Klaipėdos m. S. Nėries g. 3"/>
+          </extension>
+        </extension>
+        <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses">
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.number">
+            <valueIdentifier>
+              <system value="http://esveikata.lt/Identifier/OrganizationLicenseNumber"/>
+              <value value="1674"/>
+            </valueIdentifier>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://esveikata.lt/classifiers/OrganizationLicenseType"/>
+                <code value="ASPI"/>
+                <display value="Asmens sveikatos priežiūros įstaiga"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.status">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+                <code value="VALID"/>
+                <display value="Galioja"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.grantingDate">
+            <valueDate value="2000-09-04T00:00:00+02:00"/>
+          </extension>
+        </extension>
+        <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier">
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://esveikata.lt/classifiers/Address/Type"/>
+                <code value="activity"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.AddressID">
+            <valueIdentifier>
+              <system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+              <value value="10392682"/>
+            </valueIdentifier>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.MunicipalityID">
+            <valueString value="112"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.CityID">
+            <valueString value="7"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.StreetID">
+            <valueString value="21671"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.house">
+            <valueString value="3"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.hull">
+            <valueString value="3"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.text">
+            <valueString value="S. Nėries g. 3, Klaipėda"/>
+          </extension>
+        </extension>
+        <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses">
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.number">
+            <valueIdentifier>
+              <system value="http://esveikata.lt/Identifier/OrganizationLicenseNumber"/>
+              <value value="0782"/>
+            </valueIdentifier>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://esveikata.lt/classifiers/OrganizationLicenseType"/>
+                <code value="PHARMACY"/>
+                <display value="Vaistinės veiklos licencija"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.status">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+                <code value="VALID"/>
+                <display value="Galioja"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.grantingDate">
+            <valueDate value="2009-02-11T00:00:00+02:00"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.statusChangedDate">
+            <valueDate value="2012-12-30T00:00:00+02:00"/>
+          </extension>
+        </extension>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/JAR"/>
+          <value value="191340088"/>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/SVEIDRAID"/>
+          <value value="451"/>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/SPILISActivityPlaceNumber"/>
+          <value value="373d5283-fd6b-e511-beb0-7054d27be9b5"/>
+        </identifier>
+        <name value="Viešoji įstaiga Respublikinė Klaipėdos ligoninė"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/organization-type"/>
+            <code value="prov"/>
+          </coding>
+        </type>
+        <telecom>
+          <system value="phone"/>
+          <value value="8~46 410711"/>
+        </telecom>
+        <active value="true"/>
+      </Organization>
+    </content>
+  </entry>
+  <entry>
+    <id>Practitioner/1000524923</id>
+    <link href="Practitioner/1000524923/_history/1001001527" rel="self"/>
+    <updated>2016-01-12T10:37:47.551+02:00</updated>
+    <content type="text/xml">
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#practitionerPosition">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/PractitionerPosition"/>
+              <code value="1"/>
+              <display value="Vyr. specialistas"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+          <value value="45411270281"/>
+          <assigner>
+            <display value="Registrų centras"/>
+          </assigner>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/StampCode"/>
+          <value value="SPAUDAS_0001"/>
+          <period>
+            <start value="2015-11-16T00:00:00+02:00"/>
+          </period>
+        </identifier>
+        <name>
+          <family value="SINIUC"/>
+          <given value="ADA"/>
+        </name>
+        <organization>
+          <reference value="Organization/1000261087"/>
+        </organization>
+        <role>
+          <coding>
+            <system value="http://esveikata.lt/classifiers/RoleType"/>
+            <code value="1"/>
+            <display value="Sveikatos priežiūros specialistas"/>
+          </coding>
+        </role>
+        <specialty>
+          <coding>
+            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+            <code value="221104"/>
+            <display value="Medicinos gydytojas"/>
+          </coding>
+        </specialty>
+        <period>
+          <start value="2015-11-16T00:00:00+02:00"/>
+        </period>
+        <qualification>
+          <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+            <valueCoding>
+              <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+              <code value="VALID"/>
+              <display value="Galioja"/>
+            </valueCoding>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+              <code value="MPL-06348"/>
+            </coding>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="221245"/>
+              <display value="Vidaus ligų gydytojas"/>
+            </coding>
+          </code>
+          <period>
+            <start value="2005-02-09T00:00:00+02:00"/>
+          </period>
+        </qualification>
+        <qualification>
+          <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+            <valueCoding>
+              <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+              <code value="VALID"/>
+              <display value="Galioja"/>
+            </valueCoding>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+              <code value="LIC_0003"/>
+            </coding>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="221231"/>
+              <display value="Gydytojas patologas"/>
+            </coding>
+          </code>
+          <period>
+            <start value="2015-12-02T00:00:00+02:00"/>
+          </period>
+        </qualification>
+        <qualification>
+          <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+            <valueCoding>
+              <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+              <code value="VALID"/>
+              <display value="Galioja"/>
+            </valueCoding>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+              <code value="LIC_0001"/>
+            </coding>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="226101"/>
+              <display value="Gydytojas odontologas"/>
+            </coding>
+          </code>
+          <period>
+            <start value="2015-12-02T00:00:00+02:00"/>
+          </period>
+        </qualification>
+        <qualification>
+          <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+            <valueCoding>
+              <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+              <code value="VALID"/>
+              <display value="Galioja"/>
+            </valueCoding>
+          </extension>
+          <code>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+              <code value="LIC_0002"/>
+            </coding>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="221101"/>
+              <display value="Šeimos gydytojas"/>
+            </coding>
+          </code>
+          <period>
+            <start value="2015-12-02T00:00:00+02:00"/>
+          </period>
+        </qualification>
+      </Practitioner>
+    </content>
+  </entry>
+  <entry>
+    <id>Patient/1000556911</id>
+    <link href="Patient/1000556911/_history/1001027740" rel="self"/>
+    <updated>2016-01-12T14:17:34.524+02:00</updated>
+    <content type="text/xml">
+      <Patient xmlns="http://hl7.org/fhir">
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier">
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.type">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://esveikata.lt/classifiers/Address/Type"/>
+                <code value="declared"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.addressID">
+            <valueIdentifier>
+              <system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+              <value value="11308646"/>
+            </valueIdentifier>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.municipalityID">
+            <valueString value="259"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.cityID">
+            <valueString value="11"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.streetID">
+            <valueString value="16796"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.house">
+            <valueString value="41"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.flat">
+            <valueString value="20"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.text">
+            <valueString value="Šiauliai, K. Korsako g. 41-20"/>
+          </extension>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#addressIdentifier.postCode">
+            <valueString value="LT-78372"/>
+          </extension>
+        </extension>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+          <value value="45910030806"/>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/Patient/DIK"/>
+          <value value="90013739500"/>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/Patient/SveidraID"/>
+          <value value="630417"/>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/Patient/ESI"/>
+          <value value="151203-00002"/>
+        </identifier>
+        <name>
+          <text value="ADELĖ DVEILIENĖ"/>
+          <family value="DVEILIENĖ"/>
+          <given value="ADELĖ"/>
+        </name>
+        <gender>
+          <coding>
+            <system value="http://esveikata.lt/classifiers/AdministrativeGender"/>
+            <code value="2"/>
+            <display value="Moteris"/>
+          </coding>
+        </gender>
+        <birthDate value="1959-10-03T00:00:00+03:00"/>
+        <maritalStatus>
+          <coding>
+            <system value="http://hl7.org/fhir/marital-status"/>
+            <code value="M"/>
+            <display value="Vedęs / Ištekėjusi"/>
+          </coding>
+        </maritalStatus>
+        <contact>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#relatedPerson.reference">
+            <valueResource>
+              <reference value="Patient/1000556910"/>
+            </valueResource>
+          </extension>
+          <relationship>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/RelatedPerson/Type"/>
+              <code value="4"/>
+              <display value="dukra"/>
+            </coding>
+          </relationship>
+        </contact>
+        <contact>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#relatedPerson.reference">
+            <valueResource>
+              <reference value="Patient/1000556910"/>
+            </valueResource>
+          </extension>
+          <relationship>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/RelatedPerson/Type"/>
+              <code value="1"/>
+              <display value="mama"/>
+            </coding>
+          </relationship>
+        </contact>
+        <careProvider>
+          <extension url="http://esveikata.lt/Profile/ltnhr-patient#registeredPeriod">
+            <valuePeriod>
+              <start value="2001-04-03T00:00:00+02:00"/>
+            </valuePeriod>
+          </extension>
+          <reference value="Organization/1000257780/_history/1000989104"/>
+        </careProvider>
+      </Patient>
+    </content>
+  </entry>
+  <entry>
+    <id>Observation/1000629089</id>
+    <link href="Observation/1000629089/_history/1001027764" rel="self"/>
+    <updated>2016-01-12T14:18:10.399+02:00</updated>
+    <content type="text/xml">
+      <Observation xmlns="http://hl7.org/fhir">
+        <extension url="http://esveikata.lt/Profile/ltnhr-observation#performerQualification">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="226101"/>
+              <display value="Gydytojas odontologas"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <name>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="39223-3"/>
+          </coding>
+        </name>
+        <valueString value="Galutinė išvada"/>
+        <appliesDateTime value="2016-01-12T14:18:09.655+02:00"/>
+        <status value="final"/>
+        <reliability value="ok"/>
+        <subject>
+          <reference value="Patient/1000556911/_history/1001027740"/>
+        </subject>
+        <performer>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </performer>
+      </Observation>
+    </content>
+  </entry>
+  <entry>
+    <id>DocumentReference/1000629081</id>
+    <link href="DocumentReference/1000629081/_history/1001027778" rel="self"/>
+    <updated>2016-01-12T14:19:04.464+02:00</updated>
+    <content type="text/xml">
+      <DocumentReference xmlns="http://hl7.org/fhir">
+        <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="226101"/>
+              <display value="Gydytojas odontologas"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <masterIdentifier>
+          <system value="Composition"/>
+          <value value="1000629080"/>
+        </masterIdentifier>
+        <identifier>
+          <system value="Composition/_history"/>
+          <value value="1000629080/_history/1001027775"/>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/DocumentNumber"/>
+          <value value="16-000168"/>
+        </identifier>
+        <subject>
+          <reference value="Patient/1000556911/_history/1001027740"/>
+        </subject>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="184822001"/>
+          </coding>
+          <text value="Asmens privalomojo sveikatos tikrinimo kortelė"/>
+        </type>
+        <author>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </author>
+        <author>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </author>
+        <author>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </author>
+        <custodian>
+          <reference value="Organization/1000261087/_history/1000988755"/>
+        </custodian>
+        <created value="2016-01-12T14:17:50.338+02:00"/>
+        <indexed value="2016-01-12T14:19:04.439+02:00"/>
+        <status value="current"/>
+        <docStatus>
+          <coding>
+            <system value="http://esveikata.lt/classifiers/Document/Status"/>
+            <code value="final"/>
+          </coding>
+        </docStatus>
+        <mimeType value="application/atom+xml"/>
+        <size value="2317"/>
+        <hash value="7d75cce79acd266ee5893f8de5120c763d9cb3da"/>
+      </DocumentReference>
+    </content>
+  </entry>
+</feed>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1..1 -->
+<!-- 2.2.9 Siuntęs gydytojas / Referring doctor -->
+<!-- data-element-320 -->
+<Practitioner xmlns="http://hl7.org/fhir">
+
+    <!-- 1..1 -->
+    <!-- Name / Vardas, pavardė -->
+    <!--data-element-220 -->
+    <name>
+        <!-- 1..* -->
+        <!-- Last Name / Pavardė -->
+        <!--data-element-222 -->
+        <family value="Vardenis"/>
+
+        <!-- 1..* -->
+        <!-- First Name / Vardas -->
+        <!-- data-element-221 -->
+        <given value="Pavardenis"/>
+    </name>
+
+    <!-- 1..1 -->
+    <!-- 2.2.7 Siuntusi įstaiga / Referring Organization -->
+    <organization>
+        <reference value="Organization/37512092729/_history/1"/>
+    </organization>
+</Practitioner>

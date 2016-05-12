@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1..1 -->
+<!-- 3.2.6 Siuntusi įstaiga / Referring Organization -->
+<!-- data-element-326 -->
+<Organization xmlns="http://hl7.org/fhir">
+    <!-- 1..1 -->
+    <!-- Įstaigos kodas (JAR) / Registration Code -->
+    <!-- data-element-280 -->
+    
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/JAR"/>
+        <value value="135163499"/>
+    </identifier>
+    
+    <!-- 0..1 -->
+    <!-- 3.2.7 Siuntusios įstaigos (filialo) SVEIDRA ID / Referral Organization SVEIDRA ID -->
+    <!-- data-element-297 -->
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/SVEIDRAID"/>
+        <value value="4699"/>
+    </identifier>
+    
+    <!-- 1..1 -->
+    <!-- Pavadinimas / HCP name -->
+    <!-- data-element-327 -->
+    
+    <name value="Hospital of Lithuanian University of Health Sciences Kaunas Clinics"/>
+</Organization>

@@ -1,0 +1,687 @@
+<MedicationPrescription xmlns="http://hl7.org/fhir">
+  <!-- 1..1 Skyrimo tipas -->
+  <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionType">
+    <!-- 1..1 Kodas va | mpp | vv | ev | kp -->
+    <valueCode value="va"/>
+  </extension>
+  <!-- 1..1 Skyrimo būsena -->
+  <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionStatus">
+    <!-- 1..1 Kodas valid | entered in error | active -->
+    <valueCode value="valid"/>
+  </extension>
+  <!-- 0..1 -->
+  <contained>
+    <!-- 1..1 Skiriamas bendrinis vaistas, ekstemporalus vaistas, MPP, vardinis vaistas (kurio nėra registre) -->
+    <Medication id="1" xmlns="http://hl7.org/fhir">
+      <!-- 0..1 -->
+      <contained>
+        <!-- 1..1 Bendrinis vaistas -->
+        <Medication id="2" xmlns="http://hl7.org/fhir">
+        </Medication>
+      </contained>
+      <!-- 0..1 Prekinis pavadinimas -->
+      <name value="Super Ultra Problem Solver HD"/> 
+      <!-- 0..1 -->
+      <product>
+        <!-- 0..1 Ekstemporalaus vaisto duomenys -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#extemporaneous">
+          <!-- 0..1 Sudedamųjų dalių aprašymas -->
+          <extension url="http://esveikata.lt/Profile/ltnhr-medication#extemporaneousDescription">
+            <!-- 1..1 Tekstinis aprašymas -->
+            <valueString value="Geri vaistai."/>
+          </extension>
+          <!-- 0..1 Gaminimo metodas -->
+          <extension url="http://esveikata.lt/Profile/ltnhr-medication#extemporaneousMethod">
+            <!-- 1..1 Tekstinis aprašymas -->
+            <valueString value="Viską sumaišyti ir suplakti."/>
+          </extension>
+          <!-- 0..1 Gaminama iki tūrio/svorio -->
+          <extension url="http://esveikata.lt/Profile/ltnhr-medication#extemporaneousVolumeWeight">
+            <valueQuantity>
+              <!-- 1..1 Reikšmė -->
+              <value value="80"/>
+              <!-- 1..1 Matavimo vienetai -->
+              <units value="gramai"/>
+              <!-- 1..1 Matavimo vienetų sistema -->
+              <system value="Quantity"/>
+              <!-- 1..1 Matavimo vienetų kodas -->
+              <code value="g"/>
+            </valueQuantity>
+          </extension>
+        </extension>
+        <!-- 1..1 Kontroliuojamas -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#controlledType">
+          <!-- 1..1 -->
+          <valueCodeableConcept>
+            <!-- 1..1 -->
+            <coding>
+              <!-- 1..1 Sistema -->
+              <system value="http://esveikata.lt/classifiers/ControlledType"/>
+              <!-- 1..1 Kodas -->
+              <code value="N"/>
+              <!-- 1..1 Reikšmė -->
+              <display value="Narkotinė"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <!-- 1..1 Bendrinis pavadinimas (veikliosios medžiagos) -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#activeSubstances">
+          <!-- 1..1 Tekstinis aprašymas -->
+          <valueString value="test + test"/>
+        </extension>
+        <!-- 1..1 Stiprumas -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#strength">
+          <!-- 1..1 Tekstinis aprašymas -->
+          <valueString value="55mg+1,205-1,631g+72mg/patch"/>
+        </extension>
+        <!-- 1..1 Farmacinė forma -->
+        <form>
+          <!-- 1..1 -->
+          <coding>
+            <!-- 1..1 Sistema -->
+            <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+            <!-- 1..1 Kodas -->
+            <code value="1"/>
+            <!-- 1..1 Reikšmė -->
+            <display value="hemofiltracijos tirpalas"/>
+          </coding>
+        </form>
+        <!-- 1..* -->
+        <ingredient>
+          <item>
+            <!-- 1..1 Nuoroda į vaisto arba veikliosios medžiagos resursą (jeigu bendrinis į contained resursą) -->
+            <reference value="#2"/>
+          </item>
+          <!-- 0..1 Struktūrizuotas komponento kiekis, kuriame aprašomas medžiagų stiprumas -->
+          <amount>
+            <!-- 1..1 -->
+            <numerator>
+              <!-- 1..1 Reikšmė -->
+              <value value="15.2"/>
+              <!-- 1..1 Matavimo vienetai -->
+              <units value="g"/>
+              <!-- 1..1 Matavimo vienetų sistema -->
+              <system value="http://esveikata.lt/classifiers/StrengthUnit"/>
+              <!-- 1..1 Matavimo vienetų kodas -->
+              <code value="1"/>
+            </numerator>
+          </amount>
+        </ingredient>
+      </product>
+    </Medication>
+  </contained>
+  <!-- 1..1 Skyrimo bei recepto išrašymo data ir laikas -->
+  <dateWritten value="2014-04-28T10:00:00Z"/>
+  <!-- 0..1 Recepto būsena active | stopped | completed | on hold | entered in error -->
+  <status value="active"/>
+  <!-- 1..1 Pacientas, kuriam yra skiriami vaistai, MPP ar kiti produktai -->
+  <patient>
+    <!-- 1..1 Nuoroda į paciento resursą -->
+    <reference value="Patient/1000004889/_history/1000005822"/>
+  </patient>
+  <!-- 1..1 Sveikatos priežiūros specialistas, kuris skiria vaistą, MPP ar kitą produktą -->
+  <prescriber>
+    <!-- 1..1 Nuoroda į sveikatos priežiūros specialisto resursą -->
+    <reference value="Practitioner/1000004440/_history/1000011940"/>
+  </prescriber>
+  <!-- 1..1 Apsilankymas, kurio metu yra skiriamas vaistas, MPP ar kitas produktas -->
+  <encounter>
+    <!-- 1..1 Nuoroda į apsilankymo resursą -->
+    <reference value="Encounter/1000004890/_history/1000005823"/>
+  </encounter>
+  <!-- 0..1 Diagnozė dėl kurios skririamas vaistas (TLK10) (neprivalomas tik tada, jeigu skiriamas kitas produktas) -->
+  <reasonCodeableConcept>
+    <!-- 1..1 -->
+    <coding>
+      <!-- 1..1 Sistema (TLK-10-AM) -->
+      <system value="http://esveikata.lt/classifiers/TLK-10-AM"/>
+      <!-- 1..1 Kodas -->
+      <code value="J11.1"/>
+      <!-- 1..1 Reikšmė --> 
+      <display value="Gripas su kitais kvėpavimo takų pažeidimais, virusas nenustatytas"/>
+    </coding>
+  </reasonCodeableConcept>
+  <!-- 0..1 Skiriamas vaistas ar MPP -->
+  <medication>
+    <!-- 1..1 Nuoroda į skiriamo vaisto ar MPP resursą (jeigu bendrinis, nekompensuojamas MPP, ekstemporalus ar vardinis (kuris nėra registre), tai nuoroda į contained resursą) -->
+    <reference value="#1"/>
+  </medication>
+  <!-- 1..1 Vaisto vartojimo instrukcijos -->
+  <dosageInstruction>
+    <!-- 0..1 Vartojimo metodas -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#administrationMethod">
+      <!-- 1..1 Tekstinis aprašymas -->
+      <valueString value="Greitai"/>
+    </extension>
+    <!-- 0..1 Dozė per dieną -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#dosePerDay">
+      <!-- 0..1 Struktūrizuotas aprašymas (privalomas, jeigu neužpildytas nestruktūrizuotas aprašymas) -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#dosePerDayQuantity">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="7.00"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="mg"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="Quantity"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="mg"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 Nestruktūrizuotas aprašymas (privalomas, jeigu neužpildytas struktūrizuotas aprašymas) -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#dosePerDayText">
+        <!-- 1..1 Tekstinis aprašymas -->
+        <valueString value="2 šaukštai"/>
+      </extension>
+    </extension>
+    <!-- 0..1 Kas kiek valandų vartoti vaistą -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#timeQuantity">
+      <!-- 1..1 -->
+      <valueDecimal value="2"/>
+    </extension>
+    <!-- 0..1 Vaisto vartojimo žymos -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTags">
+      <!-- 1..1 Vartoti ryte -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsMorning">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti per pietus -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsNoon">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti vakare -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsEvening">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti prieš valgį -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsBeforeMeal">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti valgio metu -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsDuringMeal">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti po valgio -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsAfterMeal">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti nepriklausomai nuo valgymo -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsIndependMeal">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti pagal poreikį -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsAsNeeded">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 1..1 Vartoti prieš miegą -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#usageTagsBeforeSleep">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+    </extension>
+    <!-- 0..1 Papildoma informacija pacientui -->
+    <additionalInstructions>
+      <!-- 1..1 Tekstinis aprašymas -->
+      <text value="Gausiai užgerti vandeniu."/>
+    </additionalInstructions>
+    <!-- 0..1 Vartojimo dažnumas -->
+    <timingSchedule>
+      <!-- 1..1 -->
+      <repeat>
+        <!-- 1..1 Vartojimo dažnumas (per 1 dieną/savaitę/mėnesį) -->
+        <frequency value="3"/>
+        <!-- 1..1 Laiko kiekis, kuriam matuojamas dažnumas (privaloma nurodyti 1) -->
+        <duration value="1"/>
+        <!-- 1..1 Vartojimo laiko matavimo vienetas d | wk | mo -->
+        <units value="d"/>
+      </repeat>
+    </timingSchedule>
+    <!-- 0..1 Vaisto vartojimo būdas -->
+    <route>
+      <!-- 1..1 -->
+      <coding>
+        <!-- 1..1 Sistema -->
+        <system value="http://esveikata.lt/classifiers/Route"/>
+        <!-- 1..1 Kodas -->
+        <code value="1"/>
+        <!-- 1..1 Reikšmė -->
+        <display value="Vartoti per burną"/>
+      </coding>
+    </route>
+    <!-- 0..1 Vienkartinė dozė -->
+    <doseQuantity>
+      <!-- 1..1 Reikšmė -->
+      <value value="5"/>
+      <!-- 1..1 Matavimo vienetai -->
+      <units value="mg"/>
+      <!-- 1..1 Matavimo vienetų sistema -->
+      <system value="Quantity"/>
+      <!-- 1..1 Matavimo vienetų kodas -->
+      <code value="mg"/>
+    </doseQuantity>
+  </dosageInstruction>
+  <!-- 1..1 Išdavimo ir recepto duomenys -->
+  <dispense>
+    <!-- 0..1 Akiniai/lęšiai -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#lenses">
+      <!-- 0..1 OS sfera-->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesLeftSphere">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OS cilindras -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesLeftCylinder">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OS prizmė -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesLeftPrism">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OS cilindro ašis -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesLeftCylinderAxis">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="80"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Laipsniai"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="deg"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OS prizmės ašis -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesLeftPrismAxis">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="80"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Laipsniai"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="deg"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OS ADD -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesLeftAdd">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OD sfera-->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesRightSphere">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OD cilindras -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesRightCylinder">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OD prizmė -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesRightPrism">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OD cilindro ašis -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesRightCylinderAxis">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="80"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Laipsniai"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="deg"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OD prizmės ašis -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesRightPrismAxis">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="80"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Laipsniai"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="deg"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 OD ADD -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesRightAdd">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="2"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="Dioptrijos"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="D"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 Atstumas tarp vyzdžių -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensessDistanceBetweenPupils">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="10"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="milimetrai"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="sistema"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="mm"/>
+        </valueQuantity>
+      </extension>
+      <!-- 0..1 Akinių/lešių paskirtis -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesPurpose">
+        <!-- 1..1 Kodas nu | ar | nd -->
+        <valueCode value="ar"/>
+      </extension>
+      <!-- 0..1 Pastabos -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#lensesNote">
+        <!-- 1..1 Tekstinis aprašymas -->
+        <valueString value="Gražiai išpjauti stiklus."/>
+      </extension>        
+    </extension>
+    <!-- 0..1 Kitas produktas -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#other">
+      <!-- 1..1 Pavadinimas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#otherName">
+        <!-- 1..1 Tekstinis aprašymas -->
+        <valueString value="Arbata"/>
+      </extension>
+      <!-- 1..1 Skiriamas kiekis -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#otherQuantity">
+        <!-- Tekstinis aprašymas -->
+        <valueString value="5 pakeliai po 8mg."/>
+      </extension>
+    </extension>
+    <!-- 0..1 MPP, kito produkto aprašymas -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#description">
+      <!-- 1..1 Tekstinis aprašymas -->
+      <valueString value="Mėtų arbata."/>
+    </extension>
+    <!-- 0..1 ATC -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#atc">
+      <!-- 1..1 -->
+      <valueCoding>
+        <!-- 1..1 Sistema -->
+        <system value="http://esveikata.lt/classifiers/Medication/AtcCode"/>
+        <!-- 1..1 Kodas -->
+        <code value="A07FA51"/>
+        <!-- 1..1 Reikšmė -->
+        <display value="Lactic acid producing organisms, combinations"/>
+      </valueCoding>
+    </extension>
+    <!-- 0..1 Recepto išrašymo žyma -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTag">
+      <!-- 1..1 Kodas ier | rni | ipru | iprs -->
+      <valueCode value="ier"/>
+    </extension>
+    <!-- 0..1 Papildomos recepto žymos -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTags">
+      <!-- 1..1 Ilgalaikio/tęstinio gydymo žyma -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsLongTag">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 0..1 GKK sprendimas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsGkk">
+        <!-- 1..1 GKK sprendimo žyma -->
+        <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsGkkTag">
+          <!-- 1..1 true | false -->
+          <valueBoolean value="true"/>
+        </extension>
+        <!-- 0..1 GKK skyrimo pagrindimas (privalomas, jeigu žyma yra true) -->
+        <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsGkkExp">
+          <!-- 1..1 Tekstinis aprašymas -->
+          <valueString value="Pastebėta, kad šio gamintojo vaistai tinka labiausiai."/>
+        </extension>
+      </extension>
+      <!-- 0..1 Ypatingas skyrimas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsSpecial">
+        <!-- 1..1 Ypatingo skyrimo žyma -->
+        <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsSpecialTag">
+          <!-- 1..1 true | false -->
+          <valueBoolean value="true"/>
+        </extension>
+        <!-- 0..1 Ypatingo skyrimo pagrindimas (privalomas, jeigu žyma yra true) -->
+        <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsSpecialExp">
+          <!-- 1..1 Tekstinis aprašymas -->
+          <valueString value="Ypatingo paskyrimo pagrindimas"/>
+        </extension>
+      </extension>
+      <!-- 0..1 Vardinis vaistas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsNominal">
+        <!-- 1..1 Vardinio vaisto žyma -->
+        <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsNominalTag">
+          <!-- 1..1 true | false -->
+          <valueBoolean value="true"/>
+        </extension>
+        <!-- 0..1 Patvirtinimas, jog yra paciento sutikimas vartoti vardinius vaistus ir yra užpildytas vardinio vaisto skyrimo pareiškimas (privalomas, jeigu žyma yra true) -->
+        <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsNominalConfirm">
+          <!-- 1..1 Patvirtinimo žyma -->
+          <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsNominalConfirmTag">
+            <!-- 1..1 true | false -->
+            <valueBoolean value="true"/>
+          </extension>
+          <!-- 1..1 Pareiškimo galiojimas -->
+          <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionTagsNominalDeclarationValid">
+            <!-- 1..1 Pareiškimo galiojimo pabaigos data -->
+            <valueDate value="2010-05-01"/>
+          </extension>
+        </extension>
+      </extension>
+    </extension>
+    <!-- 0..1 Kompensacija -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#compensation">
+      <!-- 1..1 Požymis, ar kompensuojamas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#compensationTag">
+        <!-- 1..1 true | false -->
+        <valueBoolean value="true"/>
+      </extension>
+      <!-- 0..1 Kompensacijos kodas (privalomas, jeigu kompensuojamas) -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#compensationCode">
+        <!-- 1..1 -->
+        <valueCoding>
+          <!-- 1..1 Sistema -->
+          <system value="http://esveikata.lt/classifiers/Medication/CompensationCode"/>
+          <!-- 1..1 Kodas -->
+          <code value="1"/>
+          <!-- 1..1 Reikšmė -->
+          <display value="Vaikui (100%)"/>
+        </valueCoding>
+      </extension>
+    </extension>
+    <!-- 0..1 Popierinio recepto duomenys -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#paperPrescription">
+      <!-- 0..1 Popierinio 2 formos recepto numeris -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#paperPrescriptionNPNumber">
+        <!-- 1..1 -->
+        <valueString value="123456a"/>
+      </extension>
+      <!-- 0..1 Popierinio 2 formos recepto serija -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#paperPrescriptionNPLotNumber">
+        <!-- 1..1 -->
+        <valueString value="123456a"/>
+      </extension>
+      <!-- 0..1 Popierinio recepto kompensuojamam vaistui / MPP numeris -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#paperPrescriptionCompNumber">
+        <!-- 1..1 -->
+        <valueString value="123456a"/>
+      </extension>
+      <!-- 0..1 Popierinio recepto kompensuojamam vaistui / MPP serija-->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#paperPrescriptionCompLotNumber">
+        <!-- 1..1 -->
+        <valueString value="123456a"/>
+      </extension>
+    </extension>
+    <!-- 0..1 Skubumo žyma -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#urgencyTag">
+      <!-- 1..1 Kodas cito | statim -->
+      <valueCode value="cito"/>
+    </extension>
+    <!-- 0..1 Pastaba farmacijos specialistui -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#dispenserNote">
+      <!-- 1..1 Tekstinis aprašymas -->
+      <valueString value="Pastaba farmacijos specialistui"/>
+    </extension>
+    <!-- 0..1 AAGA/SGAS numeris -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#aagaSgasNumber">
+      <!-- 1..1 -->
+      <valueString value="2014/123456/123"/>
+    </extension>
+    <!-- 0..1 Pakuotė -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#dispensePackage">
+      <!-- 0..1 Pavadinimas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#dispensePackageName">
+        <!-- 1..1 Tekstinis aprašymas -->
+        <valueString value="N10"/>
+      </extension>
+      <!-- 0..1 Pakuotės dydis -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#dispensePackageSize">
+        <!-- 1..1 -->
+        <valueQuantity>
+          <!-- 1..1 Reikšmė -->
+          <value value="5"/>
+          <!-- 1..1 Matavimo vienetai -->
+          <units value="N"/>
+          <!-- 1..1 Matavimo vienetų sistema -->
+          <system value="Quantity"/>
+          <!-- 1..1 Matavimo vienetų kodas -->
+          <code value="N"/>
+        </valueQuantity>
+      </extension>
+    </extension>
+    <!-- 0..1 Recepto rezervacija -->
+    <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionReservation">
+      <!-- 1..1 Receptą rezervavęs farmacijos specialistas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionReservationOrganization">
+        <!-- 1..1 Nuoroda į resursą -->
+        <valueResource>
+          <!-- 1..1 Nuoroda į farmacijos specialisto resursą -->
+          <reference value="Practitioner/1000004440/_history/1000011940"/>
+        </valueResource>
+      </extension>
+      <!-- 1..1 Recepto rezervavimo data ir laikas -->
+      <extension url="http://esveikata.lt/Profile/lt-med-prescription#prescriptionReservationDate">
+        <!-- 1..1 -->
+        <valueDateTime value="2010-05-01T10:10:10"/>
+      </extension>
+    </extension>
+    <!-- 0..1 Recepto galiojimo laikotarpis -->
+    <validityPeriod>
+      <!-- 1..1 Recepto galiojimo pradžios data -->
+      <start value="2014-05-01"/>
+      <!-- 1..1 Recepto galiojimo pabaigos data -->
+      <end value="2014-05-28"/>
+    </validityPeriod>
+    <!-- 0..1 Išdavimų skaičius -->
+    <numberOfRepeatsAllowed value="3"/>
+    <!-- 0..1 Dozuočių arba MPP vienetų skaičius -->
+    <quantity>
+      <!-- 1..1 Reikšmė -->
+      <value value="5"/>
+      <!-- 1..1 Matavimo vienetai -->
+      <units value="mg"/>
+      <!-- 1..1 Matavimo vienetų sistema -->
+      <system value="Quantity"/>
+      <!-- 1..1 Matavimo vienetų kodas -->
+      <code value="mg"/>
+    </quantity>
+    <!-- 1..1 Trukmė dienomis -->
+    <expectedSupplyDuration>
+      <!-- 1..1 Reikšmė -->
+      <value value="7"/>
+      <!-- 1..1 Matavimo vienetai -->
+      <units value="dienos"/>
+      <!-- 1..1 Matavimo vienetų sistema -->
+      <system value="UnitsOfTime"/>
+      <!-- 1..1 Matavimo vienetų kodas (privaloma nurodyti d) -->
+      <code value="d"/>
+    </expectedSupplyDuration>
+  </dispense>
+</MedicationPrescription>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patient xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/patient.xsd">
+
+    <!-- 0..1 -->
+    <!-- Lietuvos arba užsienio piliečio asmens kodas / Personal Code; Pastaba: jei asmuo turi asmens kodą -->
+    
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+        <value value="37512092729"/>
+    </identifier>
+
+    <!-- 0..1 -->
+    <!-- Paciento vardo/pavardės duomenys / Patient name data -->
+    <name>
+        <!-- data-element-111 -->
+        <!-- Paciento pavardė / Patient surname -->
+        <family value="Pavardenis"/>
+
+        <!-- data-element-112 -->
+        <!-- Paciento vardas / Patient name -->
+        <given value="Vardenis"/>
+    </name>
+
+    <!-- 0..1 -->
+    <!-- 2.4. Lytis / Patient gender-->
+    <!-- Classificator: administrative-gender -->
+    <gender>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/AdministrativeGender"/>
+            <code value="1"/>
+            <display value="Vyras"/>
+        </coding>
+    </gender>
+
+    <!-- 1..1 -->
+    <!-- Vaiko mama / Relation to mother -->
+    <contact>
+        <!-- 1..1 -->
+        <!-- Nuoroda į susijusio asmens duomenis / Reference to related person -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#relatedPerson.reference">
+            <valueResource>
+                <reference value="Patient/32856257683256/_history/2"/>
+            </valueResource>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Paciento giminystės arba kito ryšio tipas (pvz., sutuoktinis, tėvas, mama). / Type of related person -->
+        <!-- Classificator: related-person-type -->
+        <relationship>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/RelatedPerson/Type"/>
+                <code value="1"/>
+                <display value="mama"/>
+            </coding>
+        </relationship>
+    </contact>
+</Patient>

@@ -1,0 +1,72 @@
+<Composition xmlns="http://hl7.org/fhir">
+  <!-- 1..1 Farmacijos specialisto profesinė kvalifikacija -->
+  <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+    <!-- 1..1 -->
+    <valueCodeableConcept>
+      <!-- 1..1 -->
+      <coding>
+        <!-- 1..1 Sistema -->
+        <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+        <!-- 1..1 Kodas -->
+        <code value="123456"/>
+        <!-- 1..1 Reikšmė -->
+        <display value="Vaistininkas"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <!-- 1..1 Dokumento paruošimo data ir laikas -->
+  <date value="2014-12-10T14:42:58.917+02:00"/>
+  <!-- 1..1 Dokumento tipas -->
+  <type>
+    <!-- 1..1 -->
+    <coding>
+      <!-- 1..1 Sistema -->
+      <system value="http://loinc.org"/>
+      <!-- 1..1 Kodas -->
+      <code value="60593-1"/>
+    </coding>
+    <!-- Dokumento pavadinimas -->
+    <text value="EVAI01 Vaisto ar MPP išdavimas"/>
+  </type>
+  <!-- 1..1 Dokumento būsena -->
+  <status value="final"/>
+  <!-- 1..1 Dokumento konfidencialumo lygis -->
+  <confidentiality>
+    <!-- 1..1 Sistema -->
+    <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+    <!-- 1..1 Kodas -->
+    <code value="N"/>
+  </confidentiality>
+  <!-- 1..1 Pacientas, kuriam yra išduodamas vaistas -->
+  <subject>
+    <!-- 1..1 Nuoroda į paciento resursą -->
+    <reference value="Patient/1000004454/_history/1000005175"/>
+  </subject>
+  <!-- 1..1 Farmacijos specialistas, kuris išduoda vaistą -->
+  <author>
+    <!-- 1..1 Nuoroda į farmacijos specialisto resursą -->
+    <reference value="Practitioner/1000004440/_history/1000011940"/>
+  </author>
+  <!-- 1..1 Įstaiga, kurioje išduoda vaistą (vaistinė) -->
+  <custodian>
+    <!-- 1..1 Nuoroda į įstaigos resursą -->
+    <reference value="Organization/1000004148"/>
+  </custodian>
+  <!-- 1..1 -->
+  <section>
+    <!-- 1..1 -->
+    <code>
+      <!-- 1..1 -->
+      <coding>
+        <!-- 1..1 Sistema -->
+        <system value="http://loinc.org"/>
+        <!-- 1..1 Kodas -->
+        <code value="60593-1"/>
+      </coding>
+    </code>
+    <content>
+      <!-- Nuoroda į vaisto ar MPP išdavimo resursą -->
+      <reference value="MedicationDispense/1/_history/1"/>
+    </content>
+  </section>
+</Composition>

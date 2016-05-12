@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#practitionerPosition">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/PractitionerPosition"/>
+        <code value="1"/>
+        <display value="Vyr. specialistas"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+    <value value="45411270281"/>
+    <assigner>
+      <display value="Registrų centras"/>
+    </assigner>
+  </identifier>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/StampCode"/>
+    <value value="SPAUDAS_0001"/>
+    <period>
+      <start value="2015-11-16T00:00:00+02:00"/>
+    </period>
+  </identifier>
+  <name>
+    <family value="SINIUC"/>
+    <given value="ADA"/>
+  </name>
+  <organization>
+    <reference value="Organization/1000261087"/>
+  </organization>
+  <role>
+    <coding>
+      <system value="http://esveikata.lt/classifiers/RoleType"/>
+      <code value="1"/>
+      <display value="Sveikatos priežiūros specialistas"/>
+    </coding>
+  </role>
+  <specialty>
+    <coding>
+      <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+      <code value="221104"/>
+      <display value="Medicinos gydytojas"/>
+    </coding>
+  </specialty>
+  <period>
+    <start value="2015-11-16T00:00:00+02:00"/>
+  </period>
+  <qualification>
+    <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+      <valueCoding>
+        <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+        <code value="VALID"/>
+        <display value="Galioja"/>
+      </valueCoding>
+    </extension>
+    <code>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+        <code value="MPL-06348"/>
+      </coding>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+        <code value="221245"/>
+        <display value="Vidaus ligų gydytojas"/>
+      </coding>
+    </code>
+    <period>
+      <start value="2005-02-09T00:00:00+02:00"/>
+    </period>
+  </qualification>
+  <qualification>
+    <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+      <valueCoding>
+        <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+        <code value="VALID"/>
+        <display value="Galioja"/>
+      </valueCoding>
+    </extension>
+    <code>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+        <code value="LIC_0003"/>
+      </coding>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+        <code value="221231"/>
+        <display value="Gydytojas patologas"/>
+      </coding>
+    </code>
+    <period>
+      <start value="2015-12-02T00:00:00+02:00"/>
+    </period>
+  </qualification>
+  <qualification>
+    <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+      <valueCoding>
+        <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+        <code value="VALID"/>
+        <display value="Galioja"/>
+      </valueCoding>
+    </extension>
+    <code>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+        <code value="LIC_0001"/>
+      </coding>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+        <code value="226101"/>
+        <display value="Gydytojas odontologas"/>
+      </coding>
+    </code>
+    <period>
+      <start value="2015-12-02T00:00:00+02:00"/>
+    </period>
+  </qualification>
+  <qualification>
+    <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+      <valueCoding>
+        <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+        <code value="VALID"/>
+        <display value="Galioja"/>
+      </valueCoding>
+    </extension>
+    <code>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/LicenceCode"/>
+        <code value="LIC_0002"/>
+      </coding>
+      <coding>
+        <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+        <code value="221101"/>
+        <display value="Šeimos gydytojas"/>
+      </coding>
+    </code>
+    <period>
+      <start value="2015-12-02T00:00:00+02:00"/>
+    </period>
+  </qualification>
+</Practitioner>

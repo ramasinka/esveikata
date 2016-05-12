@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1..1 -->
+<!-- 5.2. Atvykimo duomenys / Patient Reception Data -->
+<Encounter xmlns="http://hl7.org/fhir">
+
+    <!-- 1..1 -->
+    <!-- Atvykimo būsena / Current state of the encounter -->
+    <!-- Values: planned | in progress | finished | cancelled -->
+    <!-- Values: "in progress" : apsilankymas aktyvus  | "finished" :  registruojamas apsilankymo pabaigos faktas arba praeina 30 dienų nuo apsilankymo registravimo | "cancelled" : atšauktas apsilankymas -->
+	<!-- Classificator: encounter-status -->
+    <status value="in progress"/>
+
+    <!-- 1..1 -->
+    <!-- Atvykimo įvykis / Classification of the encounter  -->
+    <!-- Values: "inpatient" : Atvykimas į stacionarą; "ambulatory" : Atvykimas į SPĮ gauti paslaugų -->
+    <!-- Classificator: encounter-class -->
+    <class value="inpatient"/>
+
+    <period>
+        <!-- 1..1 date+time -->
+        <!-- 5.2.1 Atvykimo į SPĮ data ir laikas / Visit Date and Time -->
+        <!-- data-element-301 -->
+        
+        <start value="2014-02-03"/>
+    </period>
+
+    <!-- 0..1 -->
+    <!-- Privalomas, jei atvyko pagal siuntimą / Mandatory, if type code by_order -->
+    <!-- Nuoroda į siuntimą / Reference to Order -->
+    <indication>
+        <reference value="Order/38765/_history/1"/>
+    </indication>
+</Encounter>

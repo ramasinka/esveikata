@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <target>
+    <reference value="DocumentReference/1000629081/_history/1001027749"/>
+  </target>
+  <recorded value="2016-01-12T14:18:09.731+02:00"/>
+  <reason>
+    <coding>
+      <system value="http://esveikata.lt/classifiers/Provenance/MedicalCertificateReason"/>
+      <code value="2"/>
+      <display value="Specialisto konsultacija"/>
+    </coding>
+    <text value="Specialisto konsultacija"/>
+  </reason>
+  <entity>
+    <role value="source"/>
+    <type>
+      <system value="http://esveikata.lt/classifiers/OrderType"/>
+      <code value="14"/>
+      <display value="E049 pažymos užduotis"/>
+    </type>
+    <reference value="Order/1000629085/_history/1001027753"/>
+  </entity>
+</Provenance>

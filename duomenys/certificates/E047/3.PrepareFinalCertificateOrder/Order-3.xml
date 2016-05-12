@@ -1,0 +1,68 @@
+<!-- Užduoties duomenys / Task data -->
+<Order xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/order.xsd">
+	
+	<!-- 1..1 -->
+	<!-- Skyrimo tipas / Order type -->
+	<!-- Classificator: order-type -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-order#type">
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://esveikata.lt/classifiers/OrderType" />
+				<code value="12" />
+				<display value="E047 pažymos užduotis" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	
+	<!-- 0..1 -->
+	<!-- Specialisto, kuriam yra priskirta užduotis, prof. kvalifikacija / Target specialist Qualification -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-order#targetQualification">
+		<valueCodeableConcept>
+			<!-- 1..1 -->
+			<!-- Specialisto prof. kvalifikacijos kodas / Target specialist prof qualification code -->
+			<!-- Classificator: order-type -->
+			<coding>
+				<system value="http://esveikata.lt/classifiers/QualificationCode" />
+				<code value="221227" />
+				<display value="Gydytojas neurologas" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	
+	<!-- 0..1 -->
+	<!-- Nuorodą į pacientą, kuris sukūrė šią užduotį / Patient who has created this task -->
+	<!-- Classificator: qualification-code -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-order#sourcePatient">
+		<valueResource>
+			<reference value="Patient/321/_history/1"/>
+		</valueResource>
+	</extension>
+	
+	<!-- 1..1 -->
+	<!-- Užduoties sukūrimo data / Order issue date -->
+	<date value="2014-02-21T09:03:04+11:00"/>
+	
+	<!-- 1..1 -->
+	<!-- Nuoroda į pacientą, dėl kurio yra sukurta užduotis/ Patient who this task about -->
+	<!-- data-element-1 -->
+	<subject>
+		<reference value="Patient/32856257683256/_history/1"/>
+	</subject>
+	
+	<!-- 1..1 -->
+	<!-- Nuoroda į sveikatos priežiūros specialisto, kuriam yra priskirta užduotis/ Health care specialist who has been assigned to this task -->
+	<target>
+		<reference value="Practitioner/123/_history/1"/>
+	</target>
+	
+	<!-- Dalinai užpildyta pažyma / Preliminary certificate -->
+	<reasonResource>
+		<reference value="DocumentReference/1/_history/1"/>
+	</reasonResource>
+	
+	<!-- 1..1 -->
+	<!-- Detalūs paskyrimo duomenys / Detailed info about what is ordered and its status -->
+	<detail>
+		<reference value="DiagnosticOrder/3/_history/1"/>
+	</detail>
+</Order> 

@@ -1,0 +1,58 @@
+<Practitioner xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/practitioner.xsd">
+	
+	<!-- 1..1 -->
+	<!-- Specialaus naudotojo požymis / Special user attribute -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#specialUser">
+		<valueBoolean value="true"/>
+	</extension>
+	
+	<!-- 1..1 -->
+	<!-- Specialaus naudotojo blokavimo požymis / Special user blocking attribute -->
+	<extension url="http://esveikata.lt/Profile/ltnhr-practitioner#blocked">
+		<valueBoolean value="false"/>
+	</extension>
+	
+	<!-- 1..1 -->
+	<!-- Specialaus naudotojo asmens kodas / Special user personal Code -->
+	<identifier>
+		<system value="http://esveikata.lt/Identifier/PersonalCode"/>
+		<value value="37512092729"/>
+	</identifier>
+
+	<!-- 1..1 -->
+	<!-- Specialaus naudotojo vardas, pavardė / Special user name -->
+	<name>
+		<!-- 1..* -->
+		<!-- Last Name / Pavardė -->
+		<family value="Pavardenis"/>
+
+		<!-- 1..* -->
+		<!-- First Name / Vardas -->
+		<given value="Vardenis"/>
+	</name>
+
+	<!-- 1..1 -->
+	<!-- Įstaiga, kurioje specialaus naudotojas dirba / Organization in which the specialist works -->
+	<organization>
+		<reference value="Organization/37512092729"/>
+	</organization>
+
+	<!-- 1..1 -->
+	<!-- Specialaus naudotojo tipas / Special user role -->
+	<!-- Classificator: special-user-type -->
+	<role>
+		<coding>
+			<system value="http://esveikata.lt/classifiers/SpecialUserType"/>
+			<code value="auditor"/>
+			<display value="Medicinos auditorius"/>
+		</coding>
+	</role>
+
+	<!-- 1..1 -->
+	<!-- Laikotarpis, kurį specialus naudotojas dirba įstaigoje / The period during which the person is working in organization -->
+	<period>
+		<start value="2010-01-19"/>
+		<end value="2015-01-19"/>
+	</period>
+
+</Practitioner>

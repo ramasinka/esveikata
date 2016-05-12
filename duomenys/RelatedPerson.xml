@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelatedPerson xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/relatedperson.xsd">
+
+    <!-- 0..1 -->
+    <!-- Asmens kodas / Personal Code; Pastaba: jei asmuo turi asmens kodą -->
+    <!-- data-element-101 -->
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+        <value value="37512092729"/>
+    </identifier>
+    
+    <!-- 0..1 -->
+    <!-- Asmens E. pristatymo dėžutės duomenys / Person eDelivery address. -->
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/eDelivery"/>
+        <value value="vardpav123456"/>
+    </identifier>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į pacientą, su kuriuo yra susijęs šis asmuo -->
+    <patient>
+        <reference value="Patient/12354698798"/>
+    </patient>
+
+    <!-- 0..1 -->
+    <!-- Ryšio su pacientu tipas-->
+    <relationship>
+        <coding>
+            <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+            <code value="partner"/>
+        </coding>
+        <coding>
+            <system value="http://hl7.org/fhir/v3/RoleCode"/>
+            <code value="WIFE"/>
+        </coding>
+    </relationship>
+
+    <!-- 0..1 -->
+    <!-- Vardas / Pavardė -->
+    <name>
+        <family value="Vardenis"/>
+        <given value="Pavardenis"/>
+    </name>
+</RelatedPerson>

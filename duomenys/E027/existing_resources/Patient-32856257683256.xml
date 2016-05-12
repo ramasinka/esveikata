@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1..1 -->
+<!-- 1.3 Informacija apie pacientą / Patient details -->
+<!-- data-element-1 -->
+
+<Patient xmlns="http://hl7.org/fhir">
+
+    <!-- 0..1 -->
+    <!-- Privalomas, jei asmuo turi asmens kodą / Mandatory, if personal code exist -->
+    <!-- 1.3.1 Asmens kodas / Personal Code -->
+    <!-- data-element-101 -->
+    
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+        <value value="37512092729"/>
+    </identifier>
+
+    <!-- 1..1 -->
+    <!-- 1.3.8 Paciento ESI numeris / Patient EHI No. -->
+    <!-- data-element-107 -->
+    
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/Patient/ESI"/>
+        <value value="232233"/>
+    </identifier>
+
+    <!-- 0..1 -->
+    <!-- data-element-110 -->
+    <name>
+        <!-- 0..1 -->
+        <!-- 1.3.3 Pavardė(-ės) / Surname(-s) -->
+        <!-- data-element-111 -->
+        
+        <family value="Pavardenis"/>
+
+        <!-- 0..1 -->
+        <!-- 1.3.2 Vardas(-ai) / Name(-s) -->
+        <!-- data-element-112 -->
+        
+        <given value="Vardenis"/>
+    </name>
+</Patient>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pranešimas pacientui nuo specialisto / Alert message to Patient from Practitioner -->
+<Alert xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/alert.xsd">
+    <!-- 0..1 -->
+    <!-- Pranešimo pavadinimas / Alert title -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-alert#title">
+        <valueString value="Alert title if needed."/>
+    </extension>
+
+    <category>
+        <!-- 1..1 -->
+        <!-- Pranešimo kategorija / Alert category -->
+        <!-- Classificator:  -->
+        <coding>
+            <system value="http://esveikata.lt/classifiers/Alert/Category"/>
+            <!-- Values:  "1" : draudžiamas pranešimas  | "2" : paciento pageidavimas | "3" : pranešimas specialistui | "4" : komentaras | "5" : pranešimas pacientui -->
+            <code value="5"/>
+            <!-- 1..1 -->
+            <!-- Pranešimo tipo aprašymas / Alert type description -->
+            <display value="pranešimas pacientui"/>
+        </coding>
+    </category>
+
+    <!-- 1..1 -->
+    <!-- Pranešimo būsena / Alert status -->
+    <!-- active | inactive | entered in error -->
+    <status value="active"/>
+
+    <!-- 1..1 -->
+    <!-- Informacija apie pacientą, kuriam pateikiamas dokumentas / Information about patient -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/2"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- Specialistas sukūręs pranešimą / Health care specialist who has created Alert -->
+    <author>
+        <reference value="Practitioner/123/_history/1"/>
+    </author>
+
+    <!-- 1..1 -->
+    <!-- Papildomas aprašymas / Additional description -->
+    <note value="Alert textual information."/>
+</Alert>

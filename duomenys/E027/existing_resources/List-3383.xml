@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 0..* -->
+<!-- Skiepu skyrimai / Immunization orders -->
+<!-- data-element-10 -->
+<List xmlns="http://hl7.org/fhir">
+    <code>
+
+        <!-- 1..1 -->
+        <!-- Classificator: list-code -->
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="11369-6"/>
+        </coding>
+    </code>
+
+    <!-- 1..1 -->
+    <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory -->
+    <!-- The processing mode that applies to this list  -->
+    <!-- Values: working (by default) -->
+	<!-- Classificator: list-mode -->
+    <mode value="working"/>
+
+    <entry>
+        <item>
+            <!-- 1..1 -->
+            <!-- Nuoroda į skiepo skyrimo resursą / Order referencing ImmunizationRecommendation in its details -->
+            <reference value="Order/13383/_history/1"/>
+        </item>
+    </entry>
+</List>

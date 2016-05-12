@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Prikabinto PDF dokumento pvz. / -->
+<DocumentReference xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/documentreference.xsd">
+
+    <!-- Priedo identifikatorius / Attachment identifier -->
+    <masterIdentifier>
+        <use value="temp"/>
+        <system value="http://esveikata.lt/Identifier/AttachedFile"/>
+        <value value="12345689"/>
+    </masterIdentifier>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į pacientą, kuris yra šio dokumento kontekstas -->
+    <subject>
+        <reference value="Patient/123456/_history/1"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- Priedo tipas -->
+    <!-- Classificator: attached-file-description -->
+    <type>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/attached-file-description"/>
+            <code value="3"/>
+            <display value="Kita"/>
+        </coding>
+    </type>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į priedą teikiantį gydytoją  -->
+    <author>
+        <reference value="Practitioner/12346/_history/1"/>
+    </author>
+
+    <!-- 1..1 -->
+    <!-- Data, kada buvo sukurtas šis sutikims / When this reference was created -->
+    <indexed value="2005-12-24T09:43:41+11:00"/>
+
+    <!-- 1..1 -->
+    <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory -->
+    <!-- Nuorodos būsena / The status of this document reference -->
+    <!-- Values: "current" (by default) -->
+    <status value="current"/>
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į medicininį dokumentą prie kurio šis priedas yra prikabintas / Refernce to med. documents this attachment is attached to. -->
+    <relatesTo>
+        <!-- 1..1 -->
+        <!-- Nurodo, kad priedas yra prikabinamas prie dokumento / specifies the fact of attachment -->
+        <code value="appends"/>
+        
+        <!-- Nuoroda į medicininį dokumentą prie kurio šis priedas yra prikabintas / Reference to med. document this attachment is attached to. -->
+        <!-- 1..1 -->
+        <target>
+            <reference value="DocumentReference/1/_history/1"/>
+        </target>
+    </relatesTo>
+
+    <!-- 1..1 -->
+    <!-- Priedo skaitmeninis mime tipas /The mime type of the source document -->
+    <!-- Values: "text/plain" (by default) -->
+    <mimeType value="application/pdf"/>
+    
+    <!-- 0..1 -->
+    <!-- Priedo failo pavadinimas ir plėtinys URI formatu (be pilno 'kelio' (path) iki failo) / The file name and extension of attached file as URI without full path (root path used by default) -->
+    <format value="file:///my_atached_file_name.pdf"/>
+
+    <!-- 0..1 -->
+    <!-- Nuoroda į binarinį priedą -->
+    <location value="Binary/123456879/_history/1"/>
+</DocumentReference>

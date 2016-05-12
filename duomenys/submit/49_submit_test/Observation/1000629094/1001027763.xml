@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <name>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="56447-6"/>
+    </coding>
+  </name>
+  <valueString value="Tyrimų / konsultacijų plano aprašymas"/>
+  <appliesDateTime value="2016-01-12T14:18:09.655+02:00"/>
+  <status value="final"/>
+  <reliability value="ok"/>
+  <subject>
+    <reference value="Patient/1000556911/_history/1001027740"/>
+  </subject>
+  <performer>
+    <reference value="Practitioner/1000524923/_history/1001001527"/>
+  </performer>
+</Observation>

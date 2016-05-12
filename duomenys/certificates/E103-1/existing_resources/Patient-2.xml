@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Gimusio vaiko resursas -->
+<Patient xmlns="http://hl7.org/fhir">
+
+    <!-- 0..1 -->
+    <!-- 2.1. Lytis / baby gender-->
+    <!-- Classificator: administrative-gender -->
+    <gender>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/AdministrativeGender"/>
+            <code value="1"/>
+            <display value="Vyras"/>
+        </coding>
+    </gender>
+
+    <!-- 1..1 -->
+    <!-- 4.5. Gimdymo data  / Birth date (baby birthday) -->
+    <birthDate value="2012-09-17"/>
+
+    <!-- 1..1 -->
+    <!-- Naujagimio motina / Baby mother -->
+    <contact>
+        <!-- 1..1 -->
+        <!-- Nuoroda į susijusio asmens duomenis / Reference to related person -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-patient#relatedPerson.reference">
+            <valueResource>
+                <reference value="Patient/1/_history/1"/>
+            </valueResource>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Paciento giminystės arba kito ryšio tipas (pvz., sutuoktinis, tėvas, mama). / Type of related person -->
+        <!-- Classificator: related-person-type -->
+        <relationship>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/RelatedPerson/Type"/>
+                <code value="1"/>
+                <display value="mama"/>
+            </coding>
+        </relationship>
+    </contact>
+</Patient>

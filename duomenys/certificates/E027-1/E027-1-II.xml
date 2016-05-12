@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/fhir-atom.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+    
+    <entry>
+        <id>cid:0</id>
+        <!-- 1..1 -->
+        <!-- Įvykio, dėl kurio buvo pateikiamas dokumentas, aprašymas / The information of the event which cause this document submission -->
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+                
+                <!-- 1..* -->
+                <!-- Nuoroda į pateikiama dokumentą / Target resource which was created during this event -->
+                <target>
+                    <reference value="cid:1"/>
+                </target>
+                
+                <!-- 1..1 -->
+                <!-- Data ir laikas, kada įvykis buvo registruotas / When the event was registered-->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+                
+                <!-- Priežastis event code -->
+				<!-- Classificator: event-type -->
+                <reason>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/EventType"/>
+                        <code value="20"/>
+                        <display value="Medicininių pažymų suformavimas"/>
+                    </coding>
+                </reason>
+                
+                <!-- 1..1 -->
+                <!-- Informacija apie įvykį registruojantį specialistą / Event registered practitioner -->
+                <agent>
+                    <!-- 1..1 -->
+                    <!-- Dalyvio rolė įvykio kontekste / The role that the participant played -->
+					<!-- Classificator: provenance-participant-role -->
+                    <role>
+                        <system value="http://hl7.org/fhir/provenance-participant-role"/>
+                        <code value="author"/>
+                    </role>
+                    
+                    <!-- 1..1 -->
+                    <!-- Įvykio dalyvio tipas / The type of the participant -->
+					<!-- Classificator: provenance-participant-type -->
+                    <type>
+                        <system value="http://hl7.org/fhir/provenance-participant-type"/>
+                        <code value="practitioner"/>
+                    </type>
+                    
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+                    <reference value="Practitioner/123/_history/1"/>
+                </agent>
+            </Provenance>
+        </content>
+    </entry>
+    
+    <entry>
+        <id>cid:1</id>
+        <!-- 1..1 -->
+        <!-- Pagal nutylėjimą visi resursai perduodami xml formatu (text/xml) / By default all resources transmitted in XML format (text/xml) -->
+        <content type="text/xml">
+            <Composition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/composition.xsd">
+
+                <!-- 1..1 -->
+                <!-- 4.1. Gydytojo profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+                
+				<!-- Classificator: qualification-code -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                            <code value="222201"/>
+                            <display value="Gydytojas odontologas"/>
+                        </coding>
+                        
+                        <!-- 0..1 -->
+                        <!-- Jeigu nurodytos specialisto pareigos (o ne kvalifikacija) / In case position is specified instead of qualification -->
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/PractitionerPosition"/>
+                            <code value="1"/>
+                            <display value="Vyr. specialistas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- 3.1. Dokumento išdavimo data/ The time this document was created -->
+                
+                <date value="2013-02-01T12:30:02"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento tipas / CodeableConcept Kind of composition. What type of document is this - eg Discharge Summary, referral, Consultation note -->
+                <!-- Classificator: doc-code -->
+                <type>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Dokumento tipas / Document type -->
+                        <!-- Classificator: doc-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="274410002"/>
+                    </coding>
+
+                    <!-- 1..1 -->
+                    <!-- Dokumento pavadinimas / Document title -->
+                    <text value="E027-1 Vaiko sveikatos pažymėjimas: II. Dantų ir žandikaulių būklės įvertinimas"/>
+                </type>
+
+                <!-- 1..1  -->
+                <!-- Dokumento būsena / Status of the document -->
+                <!-- Values: paruoštam pasirašymui : "final" | atšauktam dokumentui : "entered in error" -->
+				<!-- Classificator: composition-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento konfidencialumo lygis / Coding As defined by affinity domain -->
+                <!-- Classificator: confidentiality -->
+                <confidentiality>
+                    <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+                    <code value="N"/>
+                </confidentiality>
+
+                <!-- 1..1 -->
+                <!-- 2.	Paciento duomenys  / Information about the patient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- 4.	Dokumentą ruošiančio naudotojo duomenys / Information about Health Care Specialist -->
+                
+                <author>
+                    <reference value="Practitioner/123/_history/1"/>
+                </author>
+
+                <!-- 1..1 -->
+                <!-- 1.	Įstaigos duomenys / Organization who is the author of the document -->
+                
+                <custodian>
+                    <reference value="Organization/123/_history/1"/>
+                </custodian>
+                
+                <!-- 1..1 -->
+                <!-- Įvykis, kurio pagrindu yra kuriamas dokumentas / The event being documented. -->
+                <!-- data-element-3 -->
+				<!-- Classificator: event-type -->
+                <event>
+                    <code>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/EventType"/>
+                            <code value="20"/>
+                            <display value="Medicininių pažymų suformavimas"/>
+                        </coding>
+                    </code>
+                    <detail>
+                        <reference value="cid:0"/>
+                    </detail>
+                </event>
+
+                <!-- 1..1 -->
+                <!-- Atvykimo duomenys / Patient Reception Data -->
+                
+                <encounter>
+                    <reference value="Encounter/38765/_history/1"/>
+                </encounter>
+
+                <!-- 1..1 -->
+                <!-- 3. Medicininiai duomenys / Clinical Data  -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="55752-0"/>
+                        </coding>
+                    </code>
+                    <content>
+                        <reference value="cid:25"/>
+                    </content>
+                </section>
+
+                <!-- 0..1 -->
+                <!-- Privalomas, jei dokumentas keičiamas/atšaukiamas / Mandatory, if the document is modified/canceled  -->
+                <!-- Dokumento pateikimo/keitimo/šalinimo paaiškinimas / Document submission/update/delete description -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="58199-1"/>
+                        </coding>
+                    </code>
+
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į detalius duomenis / Reference to detailed info -->
+                    <content>
+                        <reference value="cid:11"/>
+                    </content>
+                </section>
+            </Composition>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3. Medicininiai duomenys / Clinical Data  -->
+    <entry>
+        <id>cid:25</id>
+        <content type="text/xml">
+            <DiagnosticReport xmlns="http://hl7.org/fhir">
+
+                <name>
+                    <!-- 1..1 -->
+					<!-- Classificator: doc-code -->
+                    <coding>
+                        <system value="http://snomed.info/sct"/>
+                        <code value="274410002"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+				<!-- Classificator: diagnostic-report-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Tyrimo atsakymo data / Test result date -->
+                <!-- data-element-1611 -->
+                
+                <issued value="2013-03-11T10:28:00+01:00"/>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie pacientą, kuriam atliktas tyrimas / Patient details -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie sveikatos priežiūros specialistą, kuris atsakingas už tyrimą / Information about Health Care Specialist who is responsible for issuing the report. Need to know whom to contact if there are queries about the results -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+
+                <!-- 0..1 -->
+                <!-- Pažymos užduoties duomenys / Diagnostic Order data -->
+                <requestDetail>
+                    <reference value="DiagnosticOrder/2/_history/1"/>
+                </requestDetail>
+
+                <!-- 1..1 -->
+                <!-- Tyrimo atlikimo data ir laikas. / The date and time when the test was performed -->
+                <diagnosticDateTime value="2013-03-11T03:45:00+01:00"/>
+
+                <!-- 1..1 -->
+                <!-- Pieniniai dantys / Primary teeth -->
+                <result>
+                    <reference value="cid:2"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- Nuolatiniai dantys / Permanent teeth -->
+                <result>
+                    <reference value="cid:6"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.9. Sąkandžio patologija / Malocclusion (Bite pathology) -->
+                <result>
+                    <reference value="cid:10"/>
+                </result>
+            </DiagnosticReport>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- Pieniniai dantys / Primary teeth -->
+    <entry>
+        <id>cid:2</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="39151000"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+
+                <!-- 1..1 -->
+                <!-- 3.3. Pieniniai dantys K / Decayed primary tooth count -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <reference value="cid:3"/>
+                    </target>
+                </related>
+
+                <!-- 1..1 -->
+                <!-- 3.4. Pieniniai dantys P / Filled primary tooth count -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <reference value="cid:4"/>
+                    </target>
+                </related>
+
+                <!-- 1..1 -->
+                <!-- 3.5. Pieniniai dantys I / Missing primary tooth count -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <reference value="cid:5"/>
+                    </target>
+                </related>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.3. Pieniniai dantys K / Decayed primary tooth count -->
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="251319000"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Kariozinių pieninių dantų skaičius / Decayed primary tooth count -->
+                <valueQuantity>
+                    <value value="2"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūra / Specialist who made an observation -->
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.4. Pieniniai dantys P / Filled primary tooth count -->
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="251318008"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Plombuotų pieninių dantų skaičius / Filled primary tooth count -->
+                <valueQuantity>
+                    <value value="1"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūra / Specialist who made an observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.5. Pieniniai dantys I / Missing primary tooth count -->
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="251317003"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Dėl karieso išrautų pieninių dantų skaičius / Missing primary tooth count -->
+                <valueQuantity>
+                    <value value="1"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūra / Specialist who made an observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- Nuolatiniai dantys / Permanent teeth -->
+    <entry>
+        <id>cid:6</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="9379006"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+
+                <!-- 1..1 -->
+                <!-- 3.6. Nuolatiniai dantys K / Decayed permanent tooth count -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <reference value="cid:7"/>
+                    </target>
+                </related>
+
+                <!-- 1..1 -->
+                <!-- 3.7. Nuolatiniai dantys P / Filled permanent tooth count -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <reference value="cid:8"/>
+                    </target>
+                </related>
+
+                <!-- 1..1 -->
+                <!-- 3.8. Nuolatiniai dantys I / Missing permanent tooth count -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <reference value="cid:9"/>
+                    </target>
+                </related>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.6. Nuolatiniai dantys K / Decayed permanent tooth count -->
+    <entry>
+        <id>cid:7</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="251319000"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Kariozinių nuolatinių dantų skaičius / Decayed permanent tooth count -->
+                <valueQuantity>
+                    <value value="1"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūra / Specialist who made an observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.7. Nuolatiniai dantys P / Filled permanent tooth count -->
+    <entry>
+        <id>cid:8</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="251318008"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Plombuotų nuolatinių dantų skaičius / Filled permanent tooth count -->
+                <valueQuantity>
+                    <value value="1"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūra / Specialist who made an observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.8. Nuolatiniai dantys I / Missing permanent tooth count -->
+    <entry>
+        <id>cid:9</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="251317003"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Dėl karieso išrautų nuolatinių dantų skaičius / Missing permanent tooth count -->
+                <valueQuantity>
+                    <value value="1"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam atliko apžiūrą / Patient who has been observed -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūra / Specialist who made an observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.9. Sąkandžio patologija / / Malocclusion (Bite pathology) -->
+    <entry>
+        <id>cid:10</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="47944004"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-malocclusion-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/MalocclusionStatus"/>
+                        <code value="1"/>
+                        <display value="Nėra"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- Privalomas, jei dokumentas keičiamas/atšaukiamas / Mandatory, if the document is modified/canceled  -->
+    <!-- Dokumento pateikimo/keitimo/šalinimo paaiškinimas / Document submission/update/delete description -->
+    <entry>
+        <id>cid:11</id>
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+
+                <!-- 1..* -->
+                <!-- Target resource which was created/updated/deleted -->
+                
+                <target>
+                    <reference value="Composition/2711/_history/1"/>
+                </target>
+
+                <!-- 1..1 -->
+                <!-- Atliktų pakeitimų data / When the change was made -->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+
+                <!-- 1..1 -->
+                <!-- Nurodyta dokumento atšaukimo/keitimo priežastis / Textual description why change was made -->
+				<!-- Classificator: event-type -->
+                <reason>
+                    <text value="Wrong condition specified."/>
+                </reason>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie specialistą, kuris atliko pakeitimus / Info who made a change -->
+                
+                <agent>
+                    <!-- 1..1 -->
+                    <!-- Specialisto rolė / The role that the participant played -->
+					<!-- Classificator: provenance-participant-role -->
+                    <role>
+                        <system value="http://hl7.org/fhir/provenance-participant-role"/>
+                        <code value="author"/>
+                    </role>
+
+                    <!-- 1..1 -->
+                    <!-- Specialisto tipas / The type of the participant -->
+					<!-- Classificator: provenance-participant-type -->
+                    <type>
+                        <system value="http://hl7.org/fhir/provenance-participant-type"/>
+                        <code value="practitioner"/>
+                    </type>
+
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+                    <reference value="Practitioner/123/_history/1"/>
+                </agent>
+            </Provenance>
+        </content>
+    </entry>
+</feed>

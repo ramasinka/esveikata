@@ -1,0 +1,1930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/fhir-atom.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+    
+    <entry>
+        <id>cid:1</id>
+        <!-- 1..1 -->
+        <!-- Įvykio, dėl kurio buvo pateikiamas dokumentas, aprašymas / The information of the event which cause this document submission -->
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+                
+                <!-- 1..* -->
+                <!-- Nuoroda į pateikiama dokumentą / Target resource which was created during this event -->
+                <target>
+                    <reference value="cid:2"/>
+                </target>
+                
+                <!-- 1..1 -->
+                <!-- Data ir laikas, kada įvykis buvo registruotas / When the event was registered-->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+                
+                <!-- Priežastis event code -->
+				<!-- Classificator: event-type -->
+                <reason>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/EventType"/>
+                        <code value="20"/>
+                        <display value="Medicininių pažymų suformavimas"/>
+                    </coding>
+                </reason>
+                
+                <!-- 1..1 -->
+                <!-- Informacija apie įvykį registruojantį specialistą / Event registered practitioner -->
+                <agent>
+                    <!-- 1..1 -->
+                    <!-- Dalyvio rolė įvykio kontekste / The role that the participant played -->
+					<!-- Classificator: provenance-participant-role -->
+                    <role>
+                        <system value="http://hl7.org/fhir/provenance-participant-role"/>
+                        <code value="author"/>
+                    </role>
+                    
+                    <!-- 1..1 -->
+                    <!-- Įvykio dalyvio tipas / The type of the participant -->
+					<!-- Classificator: provenance-participant-type -->
+                    <type>
+                        <system value="http://hl7.org/fhir/provenance-participant-type"/>
+                        <code value="practitioner"/>
+                    </type>
+                    
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+                    <reference value="Practitioner/123/_history/1"/>
+                </agent>
+            </Provenance>
+        </content>
+    </entry>
+    
+    <entry>
+        <id>cid:2</id>
+        <!-- 1..1 -->
+        <!-- Pagal nutylėjimą visi resursai perduodami xml formatu (text/xml) / By default all resources transmitted in XML format (text/xml) -->
+        <content type="text/xml">
+            <Composition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/composition.xsd">
+
+                <!-- 1..1 -->
+                <!-- 4.1. Gydytojo profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+                
+				<!-- Classificator: qualification-code -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                            <code value="221227"/>
+                            <display value="Gydytojas neurologas"/>
+                        </coding>
+                        
+                        <!-- 0..1 -->
+                        <!-- Jeigu nurodytos specialisto pareigos (o ne kvalifikacija) / In case position is specified instead of qualification -->
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/PractitionerPosition"/>
+                            <code value="1"/>
+                            <display value="Vyr. specialistas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- 1..1 -->
+                <!-- 3.1. Dokumento išdavimo data/ The time this document was created -->
+                
+                <date value="2013-02-01T12:30:02"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento tipas / CodeableConcept Kind of composition. What type of document is this - eg Discharge Summary, referral, Consultation note -->
+                <!-- Classificator: doc-code -->
+                <type>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Dokumento tipas / Document type -->
+                        <!-- Classificator: doc-code -->
+                        <system value="http://snomed.info/sct"/>
+                        <code value="171387006"/>
+                    </coding>
+
+                    <!-- 1..1 -->
+                    <!-- Dokumento pavadinimas / Document title -->
+                    <text value="E027-1 Vaiko sveikatos pažymėjimas: I. Fizinės būklės įvertinimas"/>
+                </type>
+
+                <!-- 1..1  -->
+                <!-- Dokumento būsena / Status of the document -->
+                <!-- Values: paruoštam pasirašymui : "final" | atšauktam dokumentui : "entered in error" -->
+				<!-- Classificator: composition-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Dokumento konfidencialumo lygis / Coding As defined by affinity domain -->
+                <!-- Classificator: confidentiality -->
+                <confidentiality>
+                    <system value="http://esveikata.lt/classifiers/Confidentiality"/>
+                    <code value="N"/>
+                </confidentiality>
+
+                <!-- 1..1 -->
+                <!-- 2.	Paciento duomenys  / Information about the patient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- 4.	Dokumentą ruošiančio naudotojo duomenys / Information about Health Care Specialist -->
+                
+                <author>
+                    <reference value="Practitioner/123/_history/1"/>
+                </author>
+
+                <!-- 1..1 -->
+                <!-- 1.	Įstaigos duomenys / Organization who is the author of the document -->
+                
+                <custodian>
+                    <reference value="Organization/123/_history/1"/>
+                </custodian>
+                
+                <!-- 1..1 -->
+                <!-- Įvykis, kurio pagrindu yra kuriamas dokumentas / The event being documented. -->
+                <!-- data-element-3 -->
+				<!-- Classificator: event-type -->
+                <event>
+                    <code>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/EventType"/>
+                            <code value="20"/>
+                            <display value="Medicininių pažymų suformavimas"/>
+                        </coding>
+                    </code>
+                    <detail>
+                        <reference value="cid:1"/>
+                    </detail>
+                </event>
+
+                <!-- 1..1 -->
+                <!-- Atvykimo duomenys / Patient Reception Data -->
+                
+                <encounter>
+                    <reference value="Encounter/38765/_history/1"/>
+                </encounter>
+
+                <!-- 1..1 -->
+                <!-- 3. Medicininiai duomenys / Clinical Data  -->
+                <!-- data-element-6 -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="55752-0"/>
+                        </coding>
+                    </code>
+                    <content>
+                        <reference value="cid:25"/>
+                    </content>
+                </section>
+
+                <!-- 0..1 -->
+                <!-- Privalomas, jei dokumentas keičiamas/atšaukiamas / Mandatory, if the document is modified/canceled  -->
+                <!-- Dokumento pateikimo/keitimo/šalinimo paaiškinimas / Document submission/update/delete description -->
+                <section>
+                    <code>
+                        <coding>
+                            <!-- 1..1 -->
+                            <!-- Classificator: doc-section-code -->
+                            <system value="http://loinc.org"/>
+                            <code value="58199-1"/>
+                        </coding>
+                    </code>
+
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į detalius duomenis / Reference to detailed info -->
+                    <content>
+                        <reference value="cid:30"/>
+                    </content>
+                </section>
+            </Composition>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3. Medicininiai duomenys / Clinical Data  -->
+    <entry>
+        <id>cid:25</id>
+        <content type="text/xml">
+            <DiagnosticReport xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/diagnosticreport.xsd">
+
+                <name>
+                    <!-- 1..1 -->
+                    <!-- Nurodo, kad sis DiagnosticReport yra E027-1 pazymos pirmos dalies / code specifies this report is for this kind of certificate -->
+					<!-- Classificator: doc-code -->
+                    <coding>
+                        <system value="http://snomed.info/sct"/>
+                        <code value="171387006"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+				<!-- Classificator: diagnostic-report-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Tyrimo atsakymo data / Test result date -->
+                <!-- data-element-1611 -->
+                
+                <issued value="2013-03-11T10:28:00+01:00"/>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie pacientą, kuriam atliktas tyrimas / Patient details -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie sveikatos priežiūros specialistą, kuris atsakingas už tyrimą / Information about Health Care Specialist who is responsible for issuing the report. Need to know whom to contact if there are queries about the results -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+
+                <!-- 0..1 -->
+                <!-- Pažymos užduoties duomenys / Diagnostic Order data -->
+                <requestDetail>
+                    <reference value="DiagnosticOrder/1/_history/1"/>
+                </requestDetail>
+
+                <!-- 1..1 -->
+                <!-- Tyrimo atlikimo data ir laikas. / The date and time when the test was performed -->
+                <diagnosticDateTime value="2013-03-11T03:45:00+01:00"/>
+
+                <!-- 1..1 -->
+                <!-- 3.3. Fizinės būklės įvertinimas procentiliniu metodu / Physical condition estimation using percentile method -->
+                <result>
+                    <reference value="cid:3"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.4. Ūgis / Height -->
+                <result>
+                    <reference value="cid:4"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.5. Kūno masė / Weight -->
+                <result>
+                    <reference value="cid:5"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.6. KMI / Body mass weight index -->
+                <result>
+                    <reference value="cid:6"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.8. / 3.9 Kraujospūdis (sistolinis ir diastolinis) / Blood presure -->
+                <result>
+                    <reference value="cid:7"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.10. Klausa / Hearing -->
+                <result>
+                    <reference value="cid:10"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.11.	Dešinės akies rega be korekcijos / Right eye acuity without correction -->
+                <result>
+                    <reference value="cid:11"/>
+                </result>
+
+                <!-- 0..1 -->
+                <!-- 3.12.	Dešinės akies rega su korekcija / Right eye acuity with correction -->
+                <result>
+                    <reference value="cid:12"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.13.	Kairės akies rega be korekcijos / Left eye acuity without correction -->
+                <result>
+                    <reference value="cid:13"/>
+                </result>
+
+                <!-- 0..1 -->
+                <!-- 3.14.	Kairės akies rega su korekcija / Left eye acuity with correction -->
+                <result>
+                    <reference value="cid:14"/>
+                </result>
+
+                <!-- 0..1 -->
+                <!-- 3.15.	Regos sutrikimai / Vision problems -->
+                <result>
+                    <reference value="cid:15"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.16 / 3.17. Kraujotakos sistemos būklė / Circulation system status -->
+                <result>
+                    <reference value="cid:16"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.18. / 3.19 Kvėpavimo sistemos būklė / Respiratory system status -->
+                <result>
+                    <reference value="cid:17"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.20 / 3.21 Nervų sistemos būklė/ Nervous system status -->
+                <result>
+                    <reference value="cid:18"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.22. / 3.23 Virškinimo sistemos būklė / Gastrointestinal system status -->
+                <result>
+                    <reference value="cid:19"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.24. / 3.25 Urogenitalinės sistemos būklė / Gastrointestinal system status -->
+                <result>
+                    <reference value="cid:20"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.26. / 3.27 Endokrininės sistemos būklė / Gastrointestinal system status -->
+                <result>
+                    <reference value="cid:21"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.28. / 3.29 Skeleto-raumenų sistemos būklė / Musculoskeletal system status -->
+                <result>
+                    <reference value="cid:22"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.30. / 3.31 Kraujo būklė / Blood status -->
+                <result>
+                    <reference value="cid:23"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.32. / 3.33 Odos ir jos priedų būklė / Skin status -->
+                <result>
+                    <reference value="cid:24"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.35 / 3.36 Dalyvavimas mokykloje vykdomoje ugdymo veikloje/ Ability to participate in physical activities at school -->
+                <result>
+                    <reference value="cid:26"/>
+                </result>
+
+                <!-- 0..1 -->
+                <!-- 3.37 / 3.38 Vaikui gali prireikti skubios pagalbos mokykloje / A child may need emergency help at school -->
+                <result>
+                    <reference value="cid:27"/>
+                </result>
+
+                <!-- 1..1 -->
+                <!-- 3.39. Fizinio ugdymo grupė / Physical activities group -->
+                <result>
+                    <reference value="cid:28"/>
+                </result>
+
+                <!-- 0..1 -->
+                <!-- 3.40. Vaikas atleistas nuo kūno kultūros pamokų iki / The child is discharged from physical education till (date) -->
+                <result>
+                    <reference value="cid:29"/>
+                </result>
+                
+                <!-- 3.34. Diagnozė /Diagnosis -->
+                <conclusion value="Diagnosis text."/>
+            </DiagnosticReport>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.3. Fizinės būklės įvertinimas procentiliniu metodu / Estimation using percentile method -->
+    <!-- data-element-620 -->
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Įvertinimo tipas (percentalinis metodas) / type of observation (percentile method) -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="11766-3"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Fizinės būklės įvertinimas /  Estimation -->
+                <valueString value="Fizinės būklės įvertinimas procentiliniu metodu."/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+                
+                <!-- 1..1 -->
+                <!-- Pacientas / Patient -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.4 Ūgis / Height-->
+    <!-- data-element-3490 -->
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="3137-7"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- 4.3.2.4 Ūgio reikšmė ir matavimo vienetai / Height value -->
+                
+                <valueQuantity>
+                    <value value="188"/>
+                    <units value="cm"/>
+                    <system value="http://unitsofmeasure.org"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- Ūgio įvertinimo data ir laikas / Height observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam matuojamas ūgis / Patient which performed height observation -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris matuoja ūgį / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.5 Kūno masė / Weight -->
+    <!-- data-element-3491 -->
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="3141-9"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- 4.3.2.5 Kūno masės reikšmė ir matavimo vienetai / Weight values -->
+                
+                <valueQuantity>
+                    <value value="76"/>
+                    <units value="kg"/>
+                    <system value="http://unitsofmeasure.org"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- Kūno svorio įvertinimo data ir laikas / Weight observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam matuojamas svoris / Patient which performed weight observation -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris matuoja svorį / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.6 KMI / Body mass weight index -->
+    <!-- data-element-3491 -->
+    <entry>
+        <id>cid:6</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="59574-4"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- KMI reikšmė ir matavimo vienetai / Body mass weight index value -->
+                
+                <valueQuantity>
+                    <value value="76"/>
+                    <units value="kg/m2"/>
+                    <system value="http://unitsofmeasure.org"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- 3.7. KMI įvertinimas / BMI interpretation -->
+				<!-- Classificator: bmi-assessment -->
+                <interpretation>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/Interpretation/BMI"/>
+                        <code value="2"/>
+                        <display value="Normalus"/>
+                    </coding>
+                </interpretation>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam matuojamas KMI / Patient which performed BMI observation -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris matuoja KMI / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.8 / 3.9 Sistolinis ir diastolinis kraujospūdis / Blood pressure systolic and diastolic observations -->
+    <entry>
+        <id>cid:7</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+
+                <name>
+                    <!-- 1..1 -->
+                    <!-- Classificator: observation-code -->
+                    <coding>
+                        <system value="http://loinc.org"/>
+                        <code value="55284-4"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- Sistolinio ir diastolinio kraujospūdžio įvertinimo data ir laikas / Blood pressure observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam matuojamas kraujo spaudimas / Patient which performed blood pressure observation -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris matuoja kraujo spaudimą / Specialist who made observation -->
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+
+                <!-- 1..1 -->
+                <!-- 4.3.2.1 Kraujospūdis: sistolinis / Systolic blood pressure -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <!-- 4.3.2.1 Kraujospūdis: sistolinio duomenys / Systolic blood pressure data -->
+                        <reference value="cid:8"/>
+                    </target>
+                </related>
+
+                <!-- 1..1 -->
+                <!-- 4.3.2.2. Kraujospūdis: diastolinis / Diastolic blood pressure: -->
+                <related>
+                    <target>
+                        <!-- 1..1 -->
+                        <!-- 4.3.2.2 Kraujospūdis: diastolinio duomenys / Diastolic blood pressure data -->
+                        <reference value="cid:9"/>
+                    </target>
+                </related>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- Privalomas, jei nurodytas kraujospūdis diastolinis / Mandatory, if the diastolic blood pressure -->
+    <!-- 3.8 Kraujospūdis: sistolinis / Systolic blood pressure -->
+    <entry>
+        <id>cid:8</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <!-- 1..1 -->
+                    <!-- Classificator: observation-code -->
+                    <coding>
+                        <system value="http://loinc.org"/>
+                        <code value="8480-6"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- 4.3.2.1 Sistolinio kraujospūdžio reikšmė ir matavimo vienetai / Systolic blood pressure value -->
+                
+                <valueQuantity>
+                    <value value="107"/>
+                    <units value="mm[Hg]"/>
+                    <system value="http://unitsofmeasure.org"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- Sistolinio kraujospūdžio įvertinimo data ir laikas / Blood pressure observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam matuojamas kraujo spaudimas / Patient which performed blood pressure observation -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris matuoja kraujo spaudimą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- Privalomas, jei nurodytas kraujospūdis sistolinis / Mandatory, if the systolic blood pressure -->
+    <!-- 3.9 Kraujospūdis: diastolinis / Diastolic blood pressure: -->
+    <entry>
+        <id>cid:9</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="8462-4"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!-- 4.3.2.2 Diastolinio kraujospūdžio reikšmė ir matavimo vienetai / Diastolic blood pressure value -->
+                <valueQuantity>
+                    <value value="60"/>
+                    <units value="mm[Hg]"/>
+                    <system value="http://unitsofmeasure.org"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- Kraujospūdžio įvertinimo data ir laikas / Blood pressure observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam matuojamas kraujo spaudimas / Pacient which performed blood pressure observation -->
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris matuoja kraujo spaudimą / Specialist who made observation -->
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.10.	Klausa /Hearing -->
+    <entry>
+        <id>cid:10</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="46678-9"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-hearing-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/HearingStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.11.	Dešinės akies rega be korekcijos / Right eye acuity wihout correction -->
+    <entry>
+        <id>cid:11</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="28679-9"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueQuantity>
+                    <value value="0.75"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.12.	Dešinės akies rega su korekcija / Right eye acuity with correction -->
+    <entry>
+        <id>cid:12</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="65893-0"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueQuantity>
+                    <value value="0.75"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.13.	Kairės akies rega be korekcijos / Left eye acuity wihout correction -->
+    <entry>
+        <id>cid:13</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="28683-1"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueQuantity>
+                    <value value="0.75"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.14.	Kairės akies rega su korekcija / Left eye acuity with correction -->
+    <entry>
+        <id>cid:14</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="65897-1"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueQuantity>
+                    <value value="0.75"/>
+                </valueQuantity>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.15.	Regos sutrikimai / Vision problems -->
+    <entry>
+        <id>cid:15</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="64757-8"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valueString value="Regos sutrikimų aprašymas laisvu tekstu."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.16. / 3.17 Kraujotakos sistemos būklė / Circulation system status  -->
+    <entry>
+        <id>cid:16</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="28254-1"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-hearing-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/CirculationStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas privalomas jei nurodyta „Sutrikusi“ / Mandatory if CirculationStatus is „Sutrikusi“ -->
+                    <!-- 3.17.	Kraujotakos sistemos sutrikimai / Circulation system problems  -->
+                    <text value="Kraujotakos sistemos sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.18. / 3.19 Kvėpavimo sistemos būklė / Respiratory system status  -->
+    <entry>
+        <id>cid:17</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="53756-3"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-respiratory-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/RespiratoryStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas  jei nurodyta „Sutrikusi“ / Mandatory field if RespiratoryStatus is „Sutrikusi“ -->
+                    <!-- 3.19.	Kvėpavimo sistemos sutrikimai / Respiratory system problems  -->
+                    <text value="Kvėpavimo sistemos sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.20. / 3.21 Nervų sistemos būklė / Nervous system status  -->
+    <entry>
+        <id>cid:18</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="8705-6"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-nervous-system-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/NervousSystemStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas jei nurodyta „Sutrikusi“ / Mandatory field if NervousSystemStatus is „Sutrikusi“ -->
+                    <!-- 3.21.	Nervų sistemos  sutrikimai / Nervous system problems  -->
+                    <text value="Nervų sistemos sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.22. / 3.23 Virškinimo sistemos būklė / Gastrointestinal system status  -->
+    <entry>
+        <id>cid:19</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="11399-3"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-gastro-system-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/GastrointestinalSystemStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas jei nurodyta „Sutrikusi“ / Mandatory field if GastrointestinalSystemStatus is „Sutrikusi“ -->
+                    <!-- 3.23.	Virškinimo sistemos  sutrikimai / Gastrointestinal system problems  -->
+                    <text value="Virškinimo sistemos sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.24. / 3.25 Urogenitalinės sistemos būklė / Genitourinary system status  -->
+    <entry>
+        <id>cid:20</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="10198-0"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-genitour-system-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/GenitourinarySystemStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas jei nurodyta  „Sutrikusi“ / Mandatory field if GenitourinarySystemStatus is „Sutrikusi“ -->
+                    <!-- 3.25.	Urogenitalinės sistemos  sutrikimai / Genitourinary system problems  -->
+                    <text value="Urogenitalinės sistemos sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.26. / 3.27 Endokrininės sistemos būklė / Endocrine system status  -->
+    <entry>
+        <id>cid:21</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="29307-6"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-endocrine-system-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/EndocrineSystemStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- 3.27.	Endokrininės sistemos  sutrikimai / Endocrine system problems  -->
+                    <text value="Endokrininės sistemos sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.28. / 3.29 Skeleto-raumenų sistemos būklė / Musculoskeletal system status  -->
+    <entry>
+        <id>cid:22</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="11410-8"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-musculo-system-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/MusculoskeletalSystemStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas jei nurodyta  „Sutrikusi“ / Mandatory field if MusculoskeletalSystemStatus is „Sutrikusi“ -->
+                    <!-- 3.29.	Skeleto-raumenų sistemos sutrikimai / Musculoskeletal system problems  -->
+                    <text value="Skeleto-raumenų sistemos sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.30. / 3.31 Kraujo būklė / Blood status  -->
+    <entry>
+        <id>cid:23</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="55429-5"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-blood-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/BloodStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas jei nurodyta „Sutrikusi“ / Mandatory field if BloodStatus is „Sutrikusi“ -->
+                    <!-- 3.31. Kraujo sutrikimai / Blood problems  -->
+                    <text value="Kraujo sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.32. / 3.33 Odos ir jos priedų būklė / Skin status  -->
+    <entry>
+        <id>cid:24</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="54572-3"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-skin-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/SkinStatus"/>
+                        <code value="1"/>
+                        <display value="Normali"/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas jei nurodyta „Sutrikusi“ / Mandatory field if SkinStatus is „Sutrikusi“ -->
+                    <!-- 3.33. Odos ir jos priedų sutrikimai / Skin problems  -->
+                    <text value="Odos ir jos priedų sutrikimų aprašymas laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.35 / 3.36 Dalyvavimas mokykloje vykdomoje ugdymo veikloje / Ability to participate in physical activities at school -->
+    <entry>
+        <id>cid:26</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="55408-9"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-physical-permitted-status -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/PhysicalActivitiesPermittedStatus"/>
+                        <code value="1"/>
+                        <display value="Vaikas gali dalyvauti mokykloje vykdomoje ugdymo veikloje, įskaitant kūno kultūros ugdymą, be jokių apribojimų."/>
+                    </coding>
+
+                    <!-- 0..1 -->
+                    <!-- Laukas yra privalomas jei nurodyta „Vaikas gali dalyvauti mokykloje vykdomoje ugdymo veikloje, laikydamasis šių rekomendacijų“ / Mandatory field if PhysicalActivitiesPermittedStatus is „Vaikas gali dalyvauti mokykloje vykdomoje ugdymo veikloje, laikydamasis šių rekomendacijų“ -->
+                    <!-- 3.36. Rekomendacijos / Recommendations  -->
+                    <text value="Rekomendacijos laisvu tekstu."/>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.37 / 3.38 Vaikui gali prireikti skubios pagalbos mokykloje / A child may need emergency help at school  -->
+    <entry>
+        <id>cid:27</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="71682-9"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <!--  3.38.	Priežastys ir pirmosios pagalbos priemonės / Reasons for emergency and required first aid equipment -->
+                <valueString value="Priežastys ir pirmosios pagalbos priemonės laisvu tekstu."/>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 1..1 -->
+    <!-- 3.39.	Fizinio ugdymo grupė / Physical activities group -->
+    <entry>
+        <id>cid:28</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="35091-8"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+				<!-- Classificator: obs-physical-activities-group -->
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Observation/PhysicalActivitiesGroup"/>
+                        <code value="1"/>
+                        <display value="Pagrindinė"/>
+                    </coding>
+                </valueCodeableConcept>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- 3.40 Vaikas atleistas nuo kūno kultūros pamokų iki / The child is discharged from physical education till (date) -->
+    <entry>
+        <id>cid:29</id>
+        <content type="text/xml">
+            <Observation xmlns="http://hl7.org/fhir">
+                <name>
+                    <coding>
+                        <!-- 1..1 -->
+                        <!-- Classificator: observation-code -->
+                        <system value="http://loinc.org"/>
+                        <code value="52525-3"/>
+                    </coding>
+                </name>
+
+                <!-- 1..1 -->
+                <valuePeriod>
+                    <end value="2012-10-17T16:13:54.031+02:00"/>
+                </valuePeriod>
+
+                <!-- 1..1 -->
+                <!-- įvertinimo data ir laikas / observations date and time -->
+                <appliesDateTime value="2012-09-17T16:13:54.031+02:00"/>
+
+                <!-- 1..1 -->
+                <!-- Apžiūros duomenų būsena "final" arba "entered in error" atšauktiems duomenims / "final" or "entered in error" for canceled -->
+                <!-- Classificator: observation-status -->
+                <status value="final"/>
+
+                <!-- 1..1 -->
+                <!-- Logikoje nenaudojamas, nurodoma pagal nutylėjimą "ok" / Not used field, so "ok" by default -->
+				<!-- Classificator: observation-reliability -->
+                <reliability value="ok"/>
+
+                <!-- 1..1 -->
+                <!-- Pacientas, kuriam buvo atlikta apžiūra / Observed pacient -->
+                
+                <subject>
+                    <reference value="Patient/32856257683256/_history/2"/>
+                </subject>
+
+                <!-- 1..1 -->
+                <!-- Specialistas, kuris atliko apžiūrą / Specialist who made observation -->
+                
+                <performer>
+                    <reference value="Practitioner/123/_history/1"/>
+                </performer>
+            </Observation>
+        </content>
+    </entry>
+
+    <!-- 0..1 -->
+    <!-- Privalomas, jei dokumentas keičiamas/atšaukiamas / Mandatory, if the document is modified/canceled  -->
+    <!-- Dokumento pateikimo/keitimo/šalinimo paaiškinimas / Document submission/update/delete description -->
+    <entry>
+        <id>cid:30</id>
+        <content type="text/xml">
+            <Provenance xmlns="http://hl7.org/fhir">
+
+                <!-- 1..* -->
+                <!-- Target resource which was created/updated/deleted -->
+                
+                <target>
+                    <reference value="cid:2"/>
+                </target>
+
+                <!-- 1..1 -->
+                <!-- Atliktų pakeitimų data / When the change was made -->
+                <recorded value="2012-11-08T23:16:03+11:00"/>
+
+                <!-- 1..1 -->
+                <!-- Nurodyta dokumento atšaukimo/keitimo priežastis / Textual description why change was made -->
+                <reason>
+                    <text value="Wrong condition specified."/>
+                </reason>
+
+                <!-- 1..1 -->
+                <!-- Informacija apie specialistą, kuris atliko pakeitimus / Info who made a change -->
+                
+                <agent>
+                    <!-- 1..1 -->
+                    <!-- Specialisto rolė / The role that the participant played -->
+					<!-- Classificator: provenance-participant-role -->
+                    <role>
+                        <system value="http://hl7.org/fhir/provenance-participant-role"/>
+                        <code value="author"/>
+                    </role>
+
+                    <!-- 1..1 -->
+                    <!-- Specialisto tipas / The type of the participant -->
+					<!-- Classificator: provenance-participant-type -->
+                    <type>
+                        <system value="http://hl7.org/fhir/provenance-participant-type"/>
+                        <code value="practitioner"/>
+                    </type>
+
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+                    <reference value="Practitioner/123/_history/1"/>
+                </agent>
+            </Provenance>
+        </content>
+    </entry>
+</feed>

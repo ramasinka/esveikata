@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <entry>
+        <id>cid:2</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                Posible values:
+                1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="LINEX"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="product"/>
+
+                <product>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#vaprisID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/VaprisID"/>
+                            <value value="2557"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#activeSubstances">
+                        <valueString value="Lactobacillus acidophilus (sp. L.gasseri), Bifidobacterium infantis, Enterococcus faecium"/>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#strength">
+                        <valueString value="&gt;=1,2x10(7)"/>
+                    </extension>
+
+                    <!-- Classificator: pharmaceutical-form -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#formEn">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                                <code value="1539"/>
+                                <display value="capsules, hard"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- Classificator: medication-group -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#group">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/MedicationGroup"/>
+                                <code value="1"/>
+                                <display value="Vaistinis preparatas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- Classificator: route -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#route">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Route"/>
+                                <code value="2"/>
+                                <display value="oral use"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#controlled">
+                        <valueBoolean value="true"/>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#observed">
+                        <valueBoolean value="false"/>
+                    </extension>
+
+                    <!-- Classificator: prescription-mark -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#prescriptionMark">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/PrescriptionMark"/>
+                                <code value="1"/>
+                                <display value="Nereceptinis"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#classificationSystems">
+                        <valueCodeableConcept>
+                            <coding>
+                                <code value="A07FA51"/>
+                                <display value="Lactic acid producing organisms, combinations"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#registrationDate">
+                        <valueDate value="1995-02-15"/>
+                    </extension>
+
+                    <!-- Classificator: pharmaceutical-form -->
+                    <form>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                            <code value="1539"/>
+                            <display value="kietosios kapsulės"/>
+                        </coding>
+                    </form>
+
+                    <ingredient>
+                        <extension url="http://esveikata.lt/Profile/ltnhr-medication#componentNumber">
+                            <valueInteger value="1"/>
+                        </extension>
+                        <item>
+                            <reference value="cid:5"/>
+                        </item>
+                    </ingredient>
+                </product>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                Posible values:
+                1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="LINEX"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1024259"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N16"/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="94"/>
+                            <display value="\ "/>
+                        </coding>
+                        <text value="bottle "/>
+                    </container>
+
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir">
+
+                <!-- 1..1 -->
+                <!-- Preparato tipas / Type to medication 
+                 Posible values:
+                 1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                 2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                 -->
+                <!-- Classificator: medication-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                            <code value="1"/>
+                            <display value="Vaistinis preparatas"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <name value="LINEX"/>
+
+                <!-- Classificator: medication-kind -->
+                <kind value="package"/>
+                <package>
+                    <extension url="http://esveikata.lt/Profile/npakID">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                            <value value="1000955"/>
+                        </valueIdentifier>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/description">
+                        <valueString value="N16"/>
+                    </extension>
+
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="7"/>
+                            <display value="\ "/>
+                        </coding>
+                        <text value="blister"/>
+                    </container>
+
+                    <content>
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <Substance xmlns="http://hl7.org/fhir">
+
+                <!-- Classificator: pharmaceutical-form -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#formEn">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                            <code value="1539"/>
+                            <display value="capsules, hard"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+
+                <!-- Classificator: substance-medication-ingredient-type -->
+                <type>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                        <code value="1539"/>
+                        <display value="kietosios kapsulės"/>
+                    </coding>
+                </type>
+
+                <description value="Kapsulėje yra"/>
+                <ingredient>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#ingredient.quantityText">
+                        <valueString value="&gt;=1,2x10(7)"/>
+                    </extension>
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#active">
+                        <valueBoolean value="true"/>
+                    </extension>
+                    <substance>
+                        <reference value="cid:6"/>
+                    </substance>
+                </ingredient>
+            </Substance>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:6</id>
+        <content type="text/xml">
+            <Substance xmlns="http://hl7.org/fhir">
+
+                <!-- Classificator: substance-medication-ingredient-type -->
+                <type>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Substance/MedicationIngredientType"/>
+                        <code value="95913"/>
+                        <display value="Lactobacillus acidophilus (sp. L.gasseri), Bifidobacterium infantis, Enterococcus faecium"/>
+                    </coding>
+                </type>
+
+            </Substance>
+        </content>
+    </entry>
+</feed>

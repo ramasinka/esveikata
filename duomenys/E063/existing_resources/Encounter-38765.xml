@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 1..1 -->
+<!-- 6.2 Atvykimo duomenys / Patient Reception Data -->
+
+<Encounter xmlns="http://hl7.org/fhir">
+
+    <!-- 1..1 -->
+    <!-- Atvykimo būsena / Current state of the encounter -->
+    <!-- Values: planned | in progress | finished | cancelled -->
+	<!-- Classificator: encounter-status -->
+    <status value="in progress"/>
+
+    <!-- 1..1 -->
+    <!-- Atvykimo įvykis / Classification of the encounter -->
+    <!-- Values: "inpatient" - Atvykimas į stacionarą; "ambulatory" - Atvykimas į SPĮ gauti paslaugų -->
+    <!-- Classificator: EncounterClass -->
+    <class value="inpatient"/>
+
+    <!-- 0..1 -->
+    <!-- Atvykimo tipas / Specific type of encounter-->
+    <type>
+
+        <!-- 0..1 -->
+        <!-- Atvyko pagal siuntimą / Array by order -->
+        <!-- Values: by_order : Siuntimas -->
+        
+		<!-- Classificator: encounter-type -->
+        <coding>
+            <system value="http://esveikata.lt/classifiers/Encounter/Type"/>
+            <code value="by_order"/>
+        </coding>
+    </type>
+
+    <!-- 1..1 -->
+    <!-- Pacientas, kuriam registruotas atvykimas / The patient present at the encounter -->
+    
+    <subject>
+        <reference value="Patient/32856257683256/_history/1"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- Atvykimo į SPĮ data ir laikas / Date and Time of Service of arrival/visit -->
+    <!-- data-element-300 -->
+    <period>
+        <!-- 1..1 date+time -->
+        <!-- Visit Date and Time / Atvykimo į SPĮ data ir laikas -->
+        <!-- data-element-301 -->
+        
+        <start value="2014-02-01T09:12:40.031+02:00"/>
+    </period>
+
+    <!-- 0..1 -->
+    <!-- Privalomas, jei atvyko pagal siuntimą / Mandatory, if type code by_order -->
+    <!-- Nuoroda į siuntimą / Reference to Order -->
+    <indication>
+        <reference value="Order/38765/_history/1"/>
+    </indication>
+
+    <!-- 1..1 -->
+    <!-- Atvykimą registruojanti organizacija / Health care organization registered the encounter -->
+    <serviceProvider>
+        <reference value="Organization/123456789/_history/1"/>
+    </serviceProvider>
+</Encounter>

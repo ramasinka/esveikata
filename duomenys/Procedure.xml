@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/procedure.xsd">
+    <!-- 1..1 -->
+    <!-- Pacientas, su kuriuo susijusi procedūra / Patient who the procedure record is associated with -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/2"/>
+    </subject>
+    
+    <!-- 1..1 -->
+    <!-- Identifikavimas procedūros / Identification of the procedure -->
+    <type>
+        <!-- 1..1 -->
+        <!-- Procedūros kodas / Procedure code -->
+        <!-- data-element-715 -->
+        <!-- Classificator: -->
+        <coding>
+            <system value="http://esveikata.lt/classifiers/ACHI"/>
+            <code value="40903-00"/>
+			<!-- Procedūros apibūdinimas / Procedure description -->
+			<!-- data-element-710 -->
+			<display value="Neuroendoskopija"/>
+        </coding>
+    </type>
+    
+    <!-- 1..1 -->
+    <!-- Specialistas, kuris atliko procedūrą / The people who performed the procedure -->
+    <performer>
+        <person>
+            <reference value="Practitioner/123/_history/1"/>
+        </person>
+    </performer>
+    
+    <!-- 1..1 -->
+    <!-- Procedūros atlikimo data / Procedure date -->
+    <!-- data-element-716 -->
+    <date>
+        <start value="2014-02-01T09:12:40.031+02:00"/>
+    </date>
+    
+    <!-- 0..1 -->
+    <!-- Papildomas tekstinis aprašymas / Procedure additional description -->
+    <notes value="Atlikta intraskilvelinė neuroendoskopija"/>
+</Procedure>

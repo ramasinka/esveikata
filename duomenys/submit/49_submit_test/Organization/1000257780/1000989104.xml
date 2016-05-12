@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/Address/Type"/>
+          <code value="registration"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.AddressID">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+        <value value="854696"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.MunicipalityID">
+      <valueString value="259"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.CityID">
+      <valueString value="11"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.StreetID">
+      <valueString value="16962"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.house">
+      <valueString value="101"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.text">
+      <valueString value="Šiaulių m. sav. Šiaulių m. Vytauto g. 101"/>
+    </extension>
+  </extension>
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.number">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/Identifier/OrganizationLicenseNumber"/>
+        <value value="1233"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/OrganizationLicenseType"/>
+          <code value="ASPI"/>
+          <display value="Asmens sveikatos priežiūros įstaiga"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.status">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+          <code value="VALID"/>
+          <display value="Galioja"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.grantingDate">
+      <valueDate value="1999-12-17T00:00:00+02:00"/>
+    </extension>
+  </extension>
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.number">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/Identifier/OrganizationLicenseNumber"/>
+        <value value="VSL-332"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.status">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+          <code value="VALID"/>
+          <display value="Galioja"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.grantingDate">
+      <valueDate value="2012-11-07T00:00:00+02:00"/>
+    </extension>
+  </extension>
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/Address/Type"/>
+          <code value="activity"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.AddressID">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+        <value value="10312296"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.MunicipalityID">
+      <valueString value="259"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.CityID">
+      <valueString value="11"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.StreetID">
+      <valueString value="16962"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.house">
+      <valueString value="101"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.hull">
+      <valueString value="101"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.text">
+      <valueString value="Vytauto g. 101, Šiauliai"/>
+    </extension>
+  </extension>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/JAR"/>
+    <value value="145370959"/>
+  </identifier>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/SPILISActivityPlaceNumber"/>
+    <value value="ef3d5283-fd6b-e511-beb0-7054d27be9b5"/>
+  </identifier>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/SVEIDRAID"/>
+    <value value="111"/>
+  </identifier>
+  <name value="Viešoji įstaiga Šiaulių centro poliklinika"/>
+  <type>
+    <coding>
+      <system value="http://hl7.org/fhir/organization-type"/>
+      <code value="prov"/>
+    </coding>
+  </type>
+  <telecom>
+    <system value="email"/>
+    <value value="info@siauliupoliklinika.lt"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(8 41) 523115"/>
+  </telecom>
+  <telecom>
+    <system value="phone"/>
+    <value value="(8 41) 523113"/>
+  </telecom>
+  <active value="true"/>
+</Organization>

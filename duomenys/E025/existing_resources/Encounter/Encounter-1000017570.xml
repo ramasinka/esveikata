@@ -1,0 +1,224 @@
+<Encounter xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/encounter.xsd">
+    <!-- 0..1 -->
+    <!-- Privaloma, jei atvežė GMP brigada / Mandatory if admission by EMS brigade -->
+    <!-- Atvežė GMP brigada / Addmision by EMS brigade info -->
+    
+    <extension url="http://esveikata.lt/Profile/ltnhr-encounter#emsAddmission">
+        
+        <!-- 1..1 -->
+        <!-- Informacija apie GMP įstaigą / EMS brigade Organization -->
+        
+        <extension url="http://esveikata.lt/Profile/ltnhr-encounter#emsAddmission.emsOrganization">
+            <valueResource>
+                <reference value="Organization/1000015891/_history/1000016946"/>
+            </valueResource>
+        </extension>
+        
+        <!-- 1..1 -->
+        <!-- Informacija apie GMP nurodytą diagnozę / EMS brigade diagnosis -->
+        
+        <extension url="http://esveikata.lt/Profile/ltnhr-encounter#emsAddmission.emsCondition">
+            <!-- 1..1 -->
+            <!-- Diagnozės kodas (TLK-10-AM kodas) /Diagnosis code -->
+            <!-- Classificator: tlk-10-am -->
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/TLK-10-AM"/>
+                    <code value="M48.42"/>
+                    <!-- Diagnozės pavadinimas -->
+                    <display value="Slankstelio lūžis dėl nuovargio, kaklo sritis"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Draustumo (PSDF) būsenos informacija / Insurance status information -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-encounter#insurance">
+        
+        <!-- 1..1 -->
+        <!-- Draustumo (PSDF) būsena /The insurance status -->
+        <!-- Values: "true" : jei pacientas draustas/if patient is insured | "false" : priešingu atveju/otherwise  -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-encounter#insurance.insured">
+            <valueBoolean value="false"/>
+        </extension>
+        
+        <!-- 1..1 -->
+        <!-- Draustumo (PSDF) būsenos tikrinimo laikas / Date and time when the insurance status was checked in registries -->
+        
+        <extension url="http://esveikata.lt/Profile/ltnhr-encounter#insurance.insuranceAssertedAt">
+            <valueDateTime value="2014-10-27T16:13:40.031+03:00"/>
+        </extension>
+        
+        <!-- 0..1 -->
+        <!-- Nurodoma, jei neapdraustas PSDF / Indicated if not insured PSDF -->
+        <!-- Draustumas kitoje šalyje / Insurance in other country -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-encounter#insurance.insuranceOtherCountry">
+            <valueCodeableConcept>
+                
+                <!-- 1..1 -->
+                <!-- Classificator: insurance-other-country -->
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/Encounter/InsuranceOtherCountry"/>
+                    <code value="1"/>
+                </coding>
+                
+                <!-- 1..1 -->
+                <text value="Apdraustas EEE šalyje ar Šveicarijoje"/>
+            </valueCodeableConcept>
+        </extension>
+        
+        <!-- 0..1 -->
+        <!-- Privaloma, jei "Apdraustas EEE šalyje ar Šveicarijoje" / Mandatory if insurance in other country and value "Apdraustas EEE šalyje ar Šveicarijoje" -->
+        <!-- Apdraudusioji valstybė / Insurance given country -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-encounter#insurance.insuranceGivenCountry">
+            <valueCodeableConcept>
+                
+                <!-- 1..1 -->
+                <!-- Apdraudusioji valstybės kodas / Insurance given country code -->
+                <!-- Classificator: country -->
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/Country"/>
+                    <code value="CH"/>
+                </coding>
+                
+                <!-- 1..1 -->
+                <!-- Apdraudusioji valstybės pavadinimas / Insurance given country name -->
+                <text value="Šveicarija"/>
+            </valueCodeableConcept>
+        </extension>
+        
+        <!-- 0..1 -->
+        <!-- Privaloma, jei draustumas kitoje šalyje / Mandatory if insurance in other country -->
+        <!-- Nuoroda į draudimo dokumentą / Reference to insurance document -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-encounter#insurance.insuranceDocument">
+			<valueResource>
+				<reference value="DocumentReference/123456789/_history/1"/>
+			</valueResource>
+		</extension>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Ligos istorijos nr. / Illness history number -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-encounter#emiNumber">
+        <valueString value="RS000003"/>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Hospitalizavimo tipas / Service Type -->
+    <!-- Values: "emergency_assistance" : Būtinoji pagalba | "planned" : Planinė pagalba | "other" : Kita -->
+    <!-- Classificator: encounter-service-type -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-encounter#serviceType">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/Encounter/ServiceType"/>
+                <code value="emergency_assistance"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 0..* -->
+    <!-- Paciento sutikimai -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-encounter#patientAgreementDocument">
+		<valueResource>
+			<reference value="DocumentReference/1000017499/_history/1000018562"/>
+		</valueResource>
+	</extension>
+    
+    <!-- 1..1 -->
+    <!-- Registruoto atvykimo būsena / Current state of the encounter -->
+    <!-- Values: "in progress" : apsilankymas aktyvus  | "finished" :  registruojamas apsilankymo pabaigos faktas arba praeina 30 dienų nuo apsilankymo registravimo | "cancelled" : atšauktas apsilankymas -->
+	<!-- Classificator: encounter-status -->
+    <status value="in progress"/>
+    
+    <!-- 1..1 -->
+    <!-- Atvykimo įvykis / Classification of the encounter  -->
+    <!-- Values: "inpatient" : Atvykimas į stacionarą/Arriving at the hospital | "ambulatory" - Atvykimas į SPĮ gauti paslaugų/ Arriving to the HIS to receive services -->
+    <!-- Classificator: encounter-class -->
+    <class value="ambulatory"/>
+    
+    <!-- 1..1 -->
+    <!-- Atvykimo tipas / Specific type of encounter -->
+    <type>
+        <!-- 0..1 -->
+        <!-- Atvyko pagal siuntimą / Arrived by order -->
+        <!-- Values: "by_order" : Siuntimas -->
+        
+		<!-- Classificator: encounter-type -->
+        <coding>
+            <system value="http://esveikata.lt/classifiers/Encounter/Type"/>
+            <code value="by_order"/>
+        </coding>
+    </type>
+    
+    <!-- 1..1 -->
+    <!-- Pacientas, kuriam registruotas atvykimas / The patient present at the encounter -->
+    
+    <subject>
+        <reference value="Patient/1000017309/_history/1000018374"/>
+    </subject>
+    
+    <!-- 1..1 -->
+    <!-- Atvykimo duomenis registruojantis specialistas / Encounter author (Practitioner) -->
+    
+	<!-- Classificator: participant-type -->
+    <participant>
+        <type>
+            <coding>
+                <system value="http://hl7.org/fhir/participant-type"/>
+                <code value="ADM"/>
+            </coding>
+        </type>
+        
+        <individual>
+            <reference value="Practitioner/1000017313/_history/1000018377"/>
+        </individual>
+    </participant>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į specialistą, pas kurį nukreiptas (registruotas) pacientas / The practitioner responsible for providing the service -->
+    
+	<!-- Classificator: participant-type -->
+    <participant>
+        <type>
+            <coding>
+                <system value="http://hl7.org/fhir/participant-type"/>
+                <code value="ATND"/>
+            </coding>
+        </type>
+        
+        <individual>
+            <reference value="Practitioner/1000015885/_history/1000016940"/>
+        </individual>
+    </participant>
+    
+    <!-- 1..1 -->
+    <!-- Atvykimo / Hospitalizavimo data ir laikas / Date and Time of Service of Hospitalization/arrival/visit -->
+    <!-- data-element-300 -->
+    <period>
+        
+        <!-- 1..1 date+time -->
+        <!-- Atvykimo į SPĮ data ir laikas / Visit Date and Time -->
+        <!-- data-element-301 -->
+        
+        <start value="2014-10-27T19:13:40.031+03:00"/>
+        
+        <!-- 0..1 date+time -->
+        <!-- Išrašymo data / End Date of Service (Discharge date) -->
+        <!-- data-element-302 -->
+        <end value="2014-02-20T16:13:54.031+02:00"/>
+    </period>
+    
+    <!-- 0..1 -->
+    <!-- Privalomas, jei atvyko pagal siuntimą / Mandatory, if type code by_order -->
+    <!-- Nuoroda į siuntimą / Reference to Order -->
+    <indication>
+        <reference value="Order/1000017569/_history/1000018633"/>
+    </indication>
+    
+    <!-- 1..1 -->
+    <!-- Informacija apie atvykimą registruojančią sveikatos priežiūros įstaigą / Health care organization registered the encounter -->
+    <serviceProvider>
+        <reference value="Organization/1000015882/_history/1000016937"/>
+    </serviceProvider>
+</Encounter>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Substance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/substance.xsd">
+
+    <!-- 0..1 -->
+    <!-- Komponento kontroliuojamos sudedamosios medžiagos tipas / Controlled substance type -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-substance#controlledType">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/ControlledType"/>
+                <code value="1"/>
+                <display value="Narkotinė"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+
+    <!-- 1..1 -->
+    <!-- Komponento farmacinė forma / Pharmaceutical Form of substance -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-substance#form">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/Medication/PharmaceuticalForm"/>
+                <code value="1"/>
+                <display value="Transderminiai pleistrai"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+
+    <!-- 1..1 -->
+    <!-- Ar komponento sudedamoji dalis yra veiklioji medžiaga? / Is an active substance?-->
+    <extension url="http://esveikata.lt/Profile/ltnhr-medication#active">
+        <valueBoolean value="true"/>
+    </extension>
+
+    <!-- 1..1 -->
+    <!-- Komponento arba jo sudedamosios dalies pavadinimas / The component or its ingredient name -->
+    <type>
+        <text value="Dezogestrelis"/>
+    </type>
+</Substance>

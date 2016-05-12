@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocumentManifest xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/documentmanifest.xsd">
+    <masterIdentifier>
+        <system value="http://esveikata.lt/classifiers/Identifier/CertificateIdentifier"/>
+        <value value="23425234234-2346"/>
+    </masterIdentifier>
+
+    <subject>
+        <reference value="Patient/123456789/_history/1"/>
+    </subject>
+
+    <recipient>
+        <reference value="Patient/65487941/_history/1"/>
+    </recipient>
+
+    <type>
+        <coding>
+            <!-- 1..1 -->
+			<!-- Classificator: doc-code -->
+            <system value="http://esveikata.lt/classifiers/Document/Code"/>
+            <code value="E027-1"/>
+        </coding>
+        <text value="E027-1 Vaiko sveikatos pažymėjimas"/>
+    </type>
+
+    <author>
+        <reference value="Practitioner/987654321/_history/1"/>
+    </author>
+
+    <created value="2004-12-25T23:50:50"/>
+
+	<!-- Classificator: document-reference-status -->
+    <status value="current"/>
+
+    <!-- Fizinės būklės įvertinimas -->
+    <content>
+        <reference value="DocumentReference/1/_history/1"/>
+    </content>
+
+    <!-- Dantų ir žandikaulių būklės įvertinimas -->
+    <content>
+        <reference value="DocumentReference/2/_history/1"/>
+    </content>
+</DocumentManifest>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <DocumentReference xmlns="http://hl7.org/fhir">
+        <extension url="http://esveikata.lt/Profile/ltnhr-composition#authorQualification">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+              <code value="226101"/>
+              <display value="Gydytojas odontologas"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="http://esveikata.lt/Profile/ltnhr-documentreference#documentCalcStatus">
+          <valueCode value="final signed"/>
+        </extension>
+        <masterIdentifier>
+          <system value="Composition"/>
+          <value value="1000629115"/>
+        </masterIdentifier>
+        <identifier>
+          <system value="Composition/_history"/>
+          <value value="1000629115/_history/1001027794"/>
+        </identifier>
+        <identifier>
+          <system value="http://esveikata.lt/Identifier/DocumentNumber"/>
+          <value value="16-000170"/>
+        </identifier>
+        <subject>
+          <reference value="Patient/1000556911/_history/1001027740"/>
+        </subject>
+        <type>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="34108-1"/>
+          </coding>
+          <text value="Ambulatorinio apsilankymo aprašymas"/>
+        </type>
+        <author>
+          <reference value="Practitioner/1000524923/_history/1001001527"/>
+        </author>
+        <custodian>
+          <reference value="Organization/1000261087/_history/1000988755"/>
+        </custodian>
+        <created value="2016-01-12T14:19:48.084+02:00"/>
+        <indexed value="2016-01-12T14:19:48.770+02:00"/>
+        <status value="current"/>
+        <docStatus>
+          <coding>
+            <system value="http://esveikata.lt/classifiers/Document/Status"/>
+            <code value="Signed"/>
+          </coding>
+        </docStatus>
+        <mimeType value="application/atom+xml"/>
+        <size value="4626"/>
+        <hash value="03f9628d0d1fc91ead73e0e195952c471debd5b6"/>
+        <location value="Binary/1000629117"/>
+      </DocumentReference>

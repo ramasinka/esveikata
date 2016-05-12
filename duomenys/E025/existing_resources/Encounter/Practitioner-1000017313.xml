@@ -1,0 +1,146 @@
+<Practitioner xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/practitioner.xsd">
+    
+    <!-- 0..* -->
+    <!-- Skyrius(iai), kur dirba specialistas / Department(s) where specialists works -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#department">
+		<valueResource>
+			<reference value="Organization/123546"/>
+		</valueResource>
+	</extension>
+    
+    <!-- 0..1 -->
+    <!-- Specialisto nuotrauka / Specialist photo -  -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#binaryPhoto">
+		<valueResource>
+			<reference value="Media/123546789"/>
+		</valueResource>
+	</extension>
+    
+    <!-- 0..1 -->
+    <!-- Privalomas jei asmuo turi asmens kodą / Mandatory if personal code exist -->
+    <!-- Specialisto asmens kodas / Health Care Specialist personal Code -->
+    <!-- data-element-101 -->
+    
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/PersonalCode"/>
+        <value value="7512090011"/>
+    </identifier>
+    
+    <!-- 1..1 -->	
+    <!-- Sveikatos priežiūros specialisto spaudo informacija / Health Care Specialist‘s stamp information -->
+    <identifier>
+        <system value="http://esveikata.lt/Identifier/StampCode"/>
+        <value value="3000"/>
+        <period>
+            <start value="2006-09-01"/>
+            <end value="2019-02-06"/>
+        </period>
+    </identifier>
+    
+    <!-- 1..1 -->
+    <!-- Specialisto vardas, pavardė / Health Care Specialist name -->
+    <!-- data-element-220 -->
+    <name>
+        <!-- 1..* -->
+        <!-- Last Name / Pavardė -->
+        <!--data-element-222 -->
+        <family value="Rakauskaitė"/>
+        
+        <!-- 1..* -->
+        <!-- First Name / Vardas -->
+        <!-- data-element-221 -->
+        <given value="Renata"/>
+    </name>
+    
+    <!-- 0..* -->
+    <!-- Specialisto el. pašto adresas / Specialist e-mail -->
+    
+    <telecom>
+        <system value="email"/>
+        <value value="renata.rakauskaite@nortal.com"/>
+    </telecom>
+    
+    <!-- 1..* -->
+    <!-- Specialisto telefono nr. / Specialist phone number -->
+    
+    <telecom>
+        <system value="phone"/>
+        <value value="+37067800000"/>
+    </telecom>
+    
+    <!-- 1..1 -->
+    <!-- Sveikatos priežiūros įstaiga, kurioje specialistas dirba / Hospital in which the specialist works -->
+    <!-- data-element-251 -->
+    <organization>
+        <reference value="Organization/1000015882"/>
+    </organization>
+    
+    <!-- 0..* -->
+    <!-- Vaidmuo, kurią specialistas yra atlieka sveikatos priežiūros įstaigoje / Roles which this practitioner is authorized to perform -->
+	<!-- Classificator: role-code -->
+    <role>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/RoleCode"/>
+            <code value="nurse"/>
+            <display value="Vyr. seselė"/>
+        </coding>
+    </role>
+    
+    <!-- 1..1 -->
+    <!-- Sveikatos priežiūros specialisto profesija / Health Care Specialist‘s profession -->
+    <!-- Classificator: qualification-code -->
+	<specialty>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+            <code value="221105"/>
+        </coding>
+        <text value="Medicinos slaugytojas"/>
+    </specialty>
+    
+    <!-- 1..1 -->
+    <!-- Laikotarpis, kurį specialistas dirba gydymo įstaigoje / The period during which the person is working in organization -->
+    <period>
+        <start value="2010-01-19"/>
+        <end value="2016-01-19"/>
+    </period>
+    
+    <!-- 1..* -->
+    <!-- Sveikatos priežiūros specialisto profesinė kvalifikacija / Health Care Specialist‘s Qualification -->
+    <!-- data-element-250 -->
+    
+    <qualification>
+        <!-- 1..1 Licencijos būsena / License status -->
+		<!-- Classificator: license-status -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-practitioner#licenseStatus">
+            <valueCoding>
+                <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+                <code value="VALID"/>
+                <display value="Galioja"></display>
+            </valueCoding>
+        </extension>
+        
+        <!-- 1..1 Licencijos numeris / License number -->	
+        <code>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/LicenseCode"/>
+                <code value="MPL-06365"/>
+            </coding>
+            
+            <!-- 1..1 Profesinės kvalifikacijos kodas / Qualification code -->
+			<!-- Classificator: qualification-code -->
+            <coding>
+                <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                <code value="221228"/>
+                <!-- 1..1 Profesinės kvalifikacijos pavadinimas / Qualification name -->
+                <display value="Medicinos slaugytojas"/>
+            </coding>
+        </code>
+        
+        <!-- 0..1 -->
+        <!-- Licencijos galiojimo laikotarpis / The period during which license is valid -->
+        <period>
+            <start value="2009-02-27"/>
+            <end value="2016-01-19"/>
+        </period>
+    </qualification>
+</Practitioner>

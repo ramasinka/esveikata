@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<List xmlns="http://hl7.org/fhir">
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="11535-2"/>
+    </coding>
+  </code>
+  <mode value="working"/>
+  <entry>
+    <item>
+      <reference value="Condition/1000629095/_history/1001027759"/>
+    </item>
+  </entry>
+</List>

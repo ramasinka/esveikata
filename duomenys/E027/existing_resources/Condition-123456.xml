@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 0..1 -->
+<!-- Siuntimo diagnozė / Referral Diagnosis -->
+<!-- data-element-624 -->
+<Condition xmlns="http://hl7.org/fhir">
+
+    <!-- 1..1 -->
+    <!-- Nuoroda į pacientą, kuriam buvo nustatyta ši diagnozė / Patient who the condition record is associated with -->
+    <subject>
+        <reference value="Patient/32856257683256/_history/2"/>
+    </subject>
+
+    <!-- 1..1 -->
+    <!-- 4.2.3 - 4.2.4 Siuntimo diagnozės kodas ir pavadinimas / Diagnosis code and name -->
+    <!-- data-element-1932 -->
+    <code>
+        <coding>
+            <!-- 1..1 -->
+            <!-- 4.2.4 Siuntimo diagnozės kodas (TLK-10-AM kodas) / Diagnosis code -->
+            <!-- Classificator: tlk-10-am -->
+            <system value="http://esveikata.lt/classifiers/TLK-10-AM"/>
+            <code value="T21.0"/>
+        </coding>
+
+        <!-- 1..1 -->
+        <!-- 4.2.3 Siuntimo diagnozės pavadinimas / Diagnosis name -->
+        <text value="Burn of unspecified degree of trunk"/>
+    </code>
+
+    <!-- 1..1 -->
+    <!-- Nenaudojamas laukas, tačiau privalomas / Not used, but mandatory -->
+    <!-- Diagnozės būsena / The clinical status of the condition -->
+    <!-- Values: confirmed (by default) -->
+	<!-- Classificator: condition-status -->
+    <status value="confirmed"/>
+</Condition>

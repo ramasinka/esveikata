@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/provenance.xsd">
+    
+    <!-- 1..* -->
+    <!-- Nuoroda į dokumento, kuris buvo kuriamas/keičiamas/atšaukiamas įvykio metu, resursą / Target resource which was created/updated/deleted  during this event -->
+    <target>
+        <reference value="Composition/25/_history/1"/>
+    </target>
+
+    <!-- 1..1 -->    
+    <!-- Data ir laikas, kada įvykis buvo registruotas / When the event was registered-->
+    <recorded value="2012-11-08T23:16:03+11:00"/>
+
+    <!-- Priežastis event code -->
+    <reason>
+        <coding>
+            <system value="http://esveikata.lt/classifiers/EventType"/>
+            <code value="2"/>
+            <display value="Ambulatorinės gydymo paslaugos suteikimas (apsilankymas)"/>
+        </coding>
+    </reason>
+
+    <!-- 1..1 -->
+    <!-- Informacija apie įvykį registruojantį specialistą / Event registered practitioner -->
+    <agent>
+        <!-- 1..1 -->
+        <!-- Dalyvio rolė įvykio kontekste / The role that the participant played -->
+        <role>
+            <system value="http://hl7.org/fhir/provenance-participant-role"/>
+            <code value="author"/>
+        </role>
+        
+        <!-- 1..1 -->
+        <!-- Įvykio dalyvio tipas / The type of the participant -->
+        <type>
+            <system value="http://hl7.org/fhir/provenance-participant-type"/>
+            <code value="practitioner"/>
+        </type>
+        
+        <!-- 1..1 -->
+        <!-- Nuoroda į specialisto resursą / Reference to the practitioner resource -->
+        <reference value="Practitioner/123/_history/1"/>
+    </agent>
+</Provenance>

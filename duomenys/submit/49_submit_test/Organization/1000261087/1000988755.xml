@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/Address/Type"/>
+          <code value="registration"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.AddressID">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+        <value value="2630899"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.MunicipalityID">
+      <valueString value="112"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.CityID">
+      <valueString value="7"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.StreetID">
+      <valueString value="21671"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.house">
+      <valueString value="3"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.text">
+      <valueString value="Klaipėdos m. sav. Klaipėdos m. S. Nėries g. 3"/>
+    </extension>
+  </extension>
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.number">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/Identifier/OrganizationLicenseNumber"/>
+        <value value="1674"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/OrganizationLicenseType"/>
+          <code value="ASPI"/>
+          <display value="Asmens sveikatos priežiūros įstaiga"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.status">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+          <code value="VALID"/>
+          <display value="Galioja"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.grantingDate">
+      <valueDate value="2000-09-04T00:00:00+02:00"/>
+    </extension>
+  </extension>
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/Address/Type"/>
+          <code value="activity"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.AddressID">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/classifiers/Address/AddressIdentifier"/>
+        <value value="10392682"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.MunicipalityID">
+      <valueString value="112"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.CityID">
+      <valueString value="7"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.StreetID">
+      <valueString value="21671"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.house">
+      <valueString value="3"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.hull">
+      <valueString value="3"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#addressIdentifier.text">
+      <valueString value="S. Nėries g. 3, Klaipėda"/>
+    </extension>
+  </extension>
+  <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses">
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.number">
+      <valueIdentifier>
+        <system value="http://esveikata.lt/Identifier/OrganizationLicenseNumber"/>
+        <value value="0782"/>
+      </valueIdentifier>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/OrganizationLicenseType"/>
+          <code value="PHARMACY"/>
+          <display value="Vaistinės veiklos licencija"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.status">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://esveikata.lt/classifiers/LicenseStatus"/>
+          <code value="VALID"/>
+          <display value="Galioja"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.grantingDate">
+      <valueDate value="2009-02-11T00:00:00+02:00"/>
+    </extension>
+    <extension url="http://esveikata.lt/Profile/ltnhr-organization#licenses.statusChangedDate">
+      <valueDate value="2012-12-30T00:00:00+02:00"/>
+    </extension>
+  </extension>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/JAR"/>
+    <value value="191340088"/>
+  </identifier>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/SVEIDRAID"/>
+    <value value="451"/>
+  </identifier>
+  <identifier>
+    <system value="http://esveikata.lt/Identifier/SPILISActivityPlaceNumber"/>
+    <value value="373d5283-fd6b-e511-beb0-7054d27be9b5"/>
+  </identifier>
+  <name value="Viešoji įstaiga Respublikinė Klaipėdos ligoninė"/>
+  <type>
+    <coding>
+      <system value="http://hl7.org/fhir/organization-type"/>
+      <code value="prov"/>
+    </coding>
+  </type>
+  <telecom>
+    <system value="phone"/>
+    <value value="8~46 410711"/>
+  </telecom>
+  <active value="true"/>
+</Organization>

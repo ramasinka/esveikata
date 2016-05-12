@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/fhir-atom.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom">
+    <entry>
+        <id>cid:1</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/medication.xsd">
+
+                <!-- 1..1 -->
+                <!-- Preparato (sugalvotas) pavadinimas / Medication name -->
+                <name value="Duosol K 4"/>
+                
+                <!-- 0..1 -->
+                <!-- Vaisto identifikatorius suteiktas VAPRIS / Medication code issued by VAPRIS -->
+                <code>
+                    <!-- 0..* -->
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Identifier/VaprisID"/>
+                        <code value="16464"/>
+                    </coding>
+                </code>
+
+                <!-- Medication resurso tipas (vaistas : "product", pakuotė : "package") / Medication kind (drug : "product", drug package : "package") -->
+				<!-- Classificator: medication-kind -->
+                <kind value="product"/>
+
+                <product>
+                    
+                    <!-- 1..1 -->
+                    <!-- Veikliųjų medžiagų LT pavadinimų, atskirtų „/“ simboliu, sąrašas; jei VP sudaro keli komponentai, tai atskiriami "+" simboliu / List of active substances separated by "/" symbol; If medication consists of some components they are separated by "+" symbol -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#activeSubstances">
+                        <valueString value="Arnica extractum+Capsicum fructescens fructus+Capsicum fructescens extractum"/>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Veikliųjų medžiagų stiprumų, atskirtu „/“ simboliu, sąrašas; jei VP sudaro keli komponentai, tai jų stiprumai atskiriami "+" simboliu / Medication strength -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#strength">
+                        <valueString value="55mg+1,205-1,631g+72mg/patch"/>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Grupė / Group  -->
+					<!-- Classificator: medication-group -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#group">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/MedicationGroup"/>
+                                <code value="1"/>
+                                <display value="Vaistinė-medicininė priemonė"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Pogrupis / Subgroup  -->
+                    <!-- Classificator: medication-subgroup -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#subgroup">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/MedicationSubgroup"/>
+                                <code value="1"/>
+                                <display value="Cheminis vaistas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Vartojimo būdas / Type of use  -->
+					<!-- Classificator: route -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#route">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Route"/>
+                                <code value="1"/>
+                                <display value="Vartoti per burną"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- 0..1 -->
+                    <!-- Kontroliuojamos medžiagos tipas / Controlled medication type -->
+                    <!-- Classificator: controlled-type -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#controlledType">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/ControlledType"/>
+                                <code value="1"/>
+                                <display value="Narkotinė"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Ar stebimas / Is observed ?  -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#observed">
+                        <valueBoolean value="false"/>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Recepto poreikis / Special mark for prescription  -->
+					<!-- Classificator: prescription-mark -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#prescriptionMark">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/PrescriptionMark"/>
+                                <code value="2"/>
+                                <display value="Receptinis"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+ 
+                    <!-- 0..1 -->
+                    <!-- Klasifikavimo sistemos / Classifier in different systems  -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#classificationSystems">
+                        <valueCodeableConcept>
+                            <!-- 1..* -->
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/AtcCode" />
+                                <code value="B05ZB"/>
+                                <display value="Hemofiltrates"/>
+                            </coding>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/AtcCode" />
+                                <code value="N02BE01"/>
+                                <display value="Paracetamol"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Rinkodaros teisės turėtojas / Marketing authorization holder -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#mah">
+                        <valueString value="B.Braun Avitum AG, Vokietija"/>
+                    </extension>
+
+                    <!-- 1..1 -->
+                    <!-- Registravimo data / Date of registration -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#registrationDate">
+                        <valueDate value="1998-12-23"/>
+                    </extension>
+
+                    <!-- 0..1 -->
+                    <!-- Perregistravimo data / Date of renewal -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#renewalDate">
+                        <valueDate value="2007-12-20"/>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Preparato tipas / Type to medication 
+                    Posible values:
+                     1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+                     2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+                        -->
+                    <!-- Classificator: medication-product-type -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                                <code value="1"/>
+                                <display value="Vaistinis preparatas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Preparato galiojimo būsena / Medication status -->
+                    <!-- Classificator: medication-status -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationStatus">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/productStatus"/>
+                                <code value="1"/>
+                                <display value="Registruotas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#distributionBaseType">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/DistributionBaseType"/>
+                                <code value="2"/>
+                                <display value="Lygiagretus importas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+
+                    <!-- Classificator: pharmaceutical-form -->
+					<form>
+					    <!-- 0..1 -->
+					    <!-- Vaistinio preparato farmacinė forma lietuvių kalba / Pharmaceutical form in lithuanian -->
+					    <!-- Classificator: pharmaceutical-form -->
+					    <coding>
+					        <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+					        <code value="1"/>
+					        <!-- Pilnas pavadinimas lietuvių kalba -->
+					        <display value="hemofiltracijos tirpalas">
+					            <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+					                <valueCode value="lt:LT"/>
+					            </extension>
+					            
+					            <!-- 0..1 -->
+					            <!-- Vaistinio preparato farmacinė forma anglų kalba / Pharmaceutical form in english -->
+					            <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+					                <valueString value="haemofiltration solution">
+					                    <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+					                        <valueCode value="en:EN"/>
+					                    </extension>
+					                </valueString>
+					            </extension>
+					        </display>
+					    </coding>
+					    <!-- 0..1 -->
+					    <!-- Trumpas pavadinimas lietuvių kalba -->
+					    <text value="hem. tirpalas">
+					        <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+					            <valueCode value="lt:LT"/>
+					        </extension>
+					        
+					        <!-- 0..1 -->
+					        <!-- Trumpas pavadinimas anglų kalba / Short name in english -->
+					        <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+					            <valueString value="haem. solution">
+					                <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+					                    <valueCode value="en:EN"/>
+					                </extension>
+					            </valueString>
+					        </extension>
+					    </text>
+                    </form>
+
+
+                    <!-- 0..* -->
+                    <!-- Komponento sudėtis / Component composition -->
+                    <ingredient>
+                        <!-- 1..1 -->
+                        <!-- Komponento Eil. nr. / Component number -->
+                        <extension url="http://esveikata.lt/Profile/ltnhr-medication#componentNumber">
+                            <valueInteger value="1"/>
+                        </extension>
+                        
+                        <!-- 0..1 -->
+                        <!-- Komponento duomenys -->
+                        <item>
+                            <reference value="cid:2"/>
+                        </item>
+                        
+                        <!-- 0..1 -->
+                        <!-- Struktūrizuotas komponento kiekis, kuriame aprašomas medžiagų stiprumas /  -->
+                        <amount>
+                            <numerator>
+                                <value value="15.2"/>
+                                <units value="g"/>
+                                <system value="http://esveikata.lt/classifiers/StrengthUnit"/>
+                                <code value="1"/>
+                            </numerator>
+                        </amount>
+                    </ingredient>
+                </product>
+            </Medication>
+        </content>
+    </entry>
+
+    <entry>
+        <id>cid:2</id>
+        <content type="text/xml">
+            <Substance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/substance.xsd">
+
+                <!-- 0..1 -->
+                <!-- Komponento farmacinė forma lietuvių kalba / The component pharmaceutical form in Lithuanian-->
+                <!-- Classificator: substance-medication-ingredient-type -->
+                <type>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                        <code value="1"/>
+                        <!-- Pilnas pavadinimas lietuvių kalba -->
+                        <display value="polietileninis maišelis">
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                <valueCode value="lt:LT"/>
+                            </extension>
+                            
+                            <!-- 0..1 -->
+                            <!-- Komponento preparato farmacinė forma anglų kalba / Pharmaceutical form in english -->
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                                <valueString value="polyetilen packet">
+                                    <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                        <valueCode value="en:EN"/>
+                                    </extension>
+                                </valueString>
+                            </extension>
+                        </display>
+                    </coding>
+                    <!-- 0..1 -->
+                    <!-- Trumpas pavadinimas lietuvių kalba -->
+                    <text value="maišelis">
+                        <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                            <valueCode value="lt:LT"/>
+                        </extension>
+                        
+                        <!-- 0..1 -->
+                        <!-- Trumpas pavadinimas anglų kalba / Short name in english -->
+                        <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                            <valueString value="packet">
+                                <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                    <valueCode value="en:EN"/>
+                                </extension>
+                            </valueString>
+                        </extension>
+                    </text>
+                </type>
+                
+                <!-- 0..1 -->
+                <!-- Komponento aprašymas (Pavadinimas) / The component title -->
+                <description value="Prieš sumaišymą didžiojoje kameroje (4445 ml) yra"/>
+                
+                <!-- 0..* -->
+                <!-- Komponento sudėtis / Component ingredient substances -->
+                <ingredient>
+                    <!-- 1..1 -->
+                    <!-- Veikliosios medžiagos Eil. nr. / Ingredient number -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#ingredient.ingredientNumber">
+                        <valueInteger value="1"/>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Kiekis ir mato vienetas / quantity + measurement unit -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#ingredient.quantityText">
+                        <valueString value="27,47 g"/>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Ar komponento sudedamoji dalis yra veiklioji medžiaga? / Is an active substance? -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#active">
+                        <valueBoolean value="true"/>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į vaistinio preparato komponento sudedamąją medžiagą / Ingredient substance -->
+                    <substance>
+                        <reference value="cid:3"/>
+                    </substance>
+                </ingredient>
+                
+                <ingredient>
+                    <!-- 1..1 -->
+                    <!-- Veikliosios medžiagos Eil. nr. / Ingredient number -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#ingredient.ingredientNumber">
+                        <valueInteger value="2"/>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Stiprumas (Kiekis ir mato vienetas) / Strength (quantity + measurement unit) -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#ingredient.quantityText">
+                        <valueString value="15,96g/4445ml"/>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Ar komponento sudedamoji dalis yra veiklioji medžiaga? / Is an active substance?-->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#ingredient.active">
+                        <valueBoolean value="true"/>
+                    </extension>
+                    
+                    <!-- 0..1 -->
+                    <!-- Vaistinio preparato medžiagos kiekis "iki" komponento kiekyje  -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-substance#ingredient.quantityRange">
+                        <valueRange>
+                            <high>
+                                <value value="15.96"/>
+                                <comparator value="&lt;"/>
+                                <units value="g"/>
+                                <!-- Classificator: strength-units -->
+                                <system value="http://esveikata.lt/classifiers/StrengthUnit"/>
+                                <code value="1"/>
+                            </high>
+                        </valueRange>
+                    </extension>
+                    
+                    <!-- 0..1-->
+                    <!-- Vaistinio preparato medžiagos kiekis -->
+                    <quantity>
+                        <numerator>                
+                            <value value="15.96"/>
+                            <comparator value="&lt;"/>
+                            <units value="g"/>
+                            <!-- Classificator: strength-units -->
+                            <system value="http://esveikata.lt/classifiers/StrengthUnit"/>
+                            <code value="1"/>
+                        </numerator>
+                    </quantity>
+                    
+                    <!-- 1..1 -->
+                    <!-- Nuoroda į vaistinio preparato komponento sudedamąją medžiagą / Ingredient substance -->
+                    <substance>
+                        <reference value="cid:4"/>
+                    </substance>
+                </ingredient>
+            </Substance>
+        </content>
+    </entry>
+
+    <entry>
+        <id>cid:3</id>
+        <content type="text/xml">
+            <Substance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/substance.xsd">
+
+                <!-- 0..1 -->
+                <!-- Kontroliuojamos medžiagos tipas / Controlled substance type -->
+                <!-- Classificator: controlled-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#controlledType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/ControlledType"/>
+                            <code value="1"/>
+                            <display value="Narkotinė"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                
+                <!-- 0..1 -->
+                <!-- Veikliosios medžiagos šaltinis / Substance source -->
+                <!-- Classificator: substance-source -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#substanceSource">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Substance/SubstanceSource"/>
+                            <code value="1"/>
+                            <display value="INN"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                
+                <!-- 0..1 -->
+                <!-- Požymis ar medžiaga yra veiklioji / active ingridient -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#active">
+                    <valueBoolean value="true"/>
+                </extension>
+                
+                <!-- 0..1 -->
+                <!-- Požymis ar medžiaga yra pagalbinė / auxiliary ingridient -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#auxiliary">
+                    <valueBoolean value="true"/>
+                </extension>
+                
+                <!-- 1..1 -->
+                <!-- Sudedamosios medžiagos pavadinimas / The name of substance -->
+                <!-- Classificator: substance-medication-ingredient-type -->
+                <type>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Substance/MedicationIngredientType"/>
+                        <code value="1"/>
+                        <!-- Pilnas pavadinimas lietuvių kalba / full name of substance in LT -->
+                        <display value="Natrio-vandenilis">
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                <valueCode value="lt:LT"/>
+                            </extension>
+                            
+                            <!-- 0..1 -->
+                            <!-- Sudedamosios medžiagos pavadinimas anglų kalba / The name of substance in english -->
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                                <valueString value="Sodium hydrogen">
+                                    <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                        <valueCode value="en:EN"/>
+                                    </extension>
+                                </valueString>
+                            </extension>
+                            
+                            <!-- 0..1 -->
+                            <!-- Sudedamosios medžiagos pavadinimas lotynų kalba / The name of substance in latin -->
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                                <valueString value="Sodium hydrogen">
+                                    <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                        <valueCode value="la:LA"/>
+                                    </extension>
+                                </valueString>
+                            </extension>
+                        </display>
+                    </coding>
+                </type>
+            </Substance>
+        </content>
+    </entry>
+
+    <entry>
+        <id>cid:4</id>
+        <content type="text/xml">
+            <Substance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/substance.xsd">
+
+                <!-- 0..1 -->
+                <!-- Kontroliuojamos medžiagos tipas / Controlled substance type -->
+                <!-- Classificator: controlled-type -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#controlledType">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/ControlledType"/>
+                            <code value="1"/>
+                            <display value="Narkotinė"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                
+                <!-- 0..1 -->
+                <!-- Veikliosios medžiagos šaltinis / Substance source -->
+                <!-- Classificator: substance-source -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#substanceSource">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Substance/SubstanceSource"/>
+                            <code value="1"/>
+                            <display value="INN"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                
+                <!-- 0..1 -->
+                <!-- Požymis ar medžiaga yra veiklioji / active ingridient -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#active">
+                    <valueBoolean value="true"/>
+                </extension>
+                
+                <!-- 0..1 -->
+                <!-- Požymis ar medžiaga yra pagalbinė / auxiliary ingridient -->
+                <extension url="http://esveikata.lt/Profile/ltnhr-substance#auxiliary">
+                    <valueBoolean value="true"/>
+                </extension>
+                
+                <!-- 1..1 -->
+                <!-- Sudedamosios medžiagos pavadinimas / The name of substance -->
+                <!-- Classificator: substance-medication-ingredient-type -->
+                <type>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Substance/MedicationIngredientType"/>
+                        <code value="1"/>
+                        <!-- Pilnas pavadinimas lietuvių kalba / full name of substance in LT -->
+                        <display value="Natrio-vandenilio karbonatas">
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                <valueCode value="lt:LT"/>
+                            </extension>
+                            
+                            <!-- 0..1 -->
+                            <!-- Sudedamosios medžiagos pavadinimas anglų kalba / The name of substance in english -->
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                                <valueString value="Sodium hydrogen carbonate">
+                                    <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                        <valueCode value="en:EN"/>
+                                    </extension>
+                                </valueString>
+                            </extension>
+                            
+                            <!-- 0..1 -->
+                            <!-- Sudedamosios medžiagos pavadinimas lotynų kalba / The name of substance in latin -->
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                                <valueString value="Sodium hydrogen carbonate">
+                                    <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                        <valueCode value="la:LA"/>
+                                    </extension>
+                                </valueString>
+                            </extension>
+                        </display>
+                    </coding>
+                </type>
+            </Substance>
+        </content>
+    </entry>
+    <entry>
+        <id>cid:5</id>
+        <content type="text/xml">
+            <Medication xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/medication.xsd">
+                
+                <!-- 0..1 -->
+                <!-- NPAKID-7  / NPAKID  -->
+                <code>
+                    <!-- 0..* -->
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Identifier/NPAKID-7"/>
+                        <code value="1020497"/>
+                    </coding>
+                    <coding>
+                        <system value="http://esveikata.lt/classifiers/Identifier/NPAKID"/>
+                        <code value="20497"/>
+                    </coding>
+                </code>
+                
+                <!-- Medication resurso tipas (vaistas : "product", pakuotė : "package") / Medication kind (drug : "product", drug package : "package") -->
+				<!-- Classificator: medication-kind -->
+                <kind value="package"/>
+                
+                <!-- 0..1 -->
+                <!-- Pakuotė / Package -->
+                <package>
+                    
+                    <!-- 0..* -->
+                    <!-- Priskirta liga / Disease assigned to medication -->
+                    <!-- Classificator: tlk-10-am -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#assignedDisease">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/TLK-10-AM"/>
+                                <code value="1101"/>
+                                <!-- Diagnozės pavadinimas -->
+                                <display value="APENDICITAS"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Pakuotės aprašymas / package description  -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#description">
+                        <valueString value="5000 ml (dviejų kamerų maišeliai 4445 ml + 555 ml) N2"/>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Rinkodaros teisės (registracijos) pažymėjimo numeris / Registration certificate number -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#registrationNumber">
+                        <valueIdentifier>
+                            <system value="http://esveikata.lt/classifiers/Identifier/PackageRegistrationNumber"/>
+                            <value value="LT/1/05/0322/003"/>
+                        </valueIdentifier>
+                    </extension>
+                    
+                    <!-- 0..* -->
+                    <!-- Vaistinio preparato ar MPP kompensavimas /  Medication compensation data -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#compensation">
+                        
+                        <!-- 0..* -->
+                        <!-- Vaistinio preparato ar MPP kompensavimo rūšis / Compensation type -->
+                        <!-- Classificator: compensation-type -->
+                        <extension url="http://esveikata.lt/Profile/ltnhr-medication#compensation.compensationCode">
+                            <valueCodeableConcept>
+                                <coding>
+                                    <system value="http://esveikata.lt/classifiers/Medication/CompensationCode"/>
+                                    <code value="1"/> 
+                                    <display value="Vaikui"/>
+                                </coding>
+                            </valueCodeableConcept>
+                        </extension>
+                        
+                        <!-- 0..1 -->
+                        <!-- Vaistinio preparato ar MPP kompensavimo periodas / Compensation period -->
+                        <extension url="http://esveikata.lt/Profile/ltnhr-medication#compensation.compensationPeriod">
+                            <valuePeriod>
+                                <start value="2012-12-01"/>
+                                <end value="3000-01-01"/>
+                            </valuePeriod>
+                        </extension>
+                        
+                        <!-- 0..1 -->
+                        <!-- Vaistinio preparato ar MPP kompensavimo procentas / Compensation percentage -->
+                        <extension url="http://esveikata.lt/Profile/ltnhr-medication#compensation.percentage">
+                            <valueInteger value="80"/>
+                        </extension>
+                        
+                        <!-- 0..1 -->
+                        <!-- Vaistinio preparato ar MPP priemoka  / Surcharge -->
+                        <extension url="http://esveikata.lt/Profile/ltnhr-medication#compensation.surcharge">
+                            <valueQuantity>
+                                <value value="5.15"/>
+                                <units value="LTL"/>
+                                <system value="urn:std:iso:4217"/>
+                            </valueQuantity>
+                        </extension>
+                    </extension>
+                    
+                    <!-- 0..1 -->
+                    <!-- Bazinė kaina / Compensation cost -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#compensation.compensationCost">
+                        <valueQuantity>
+                            <value value="5.15"/>
+                            <units value="LTL"/>
+                            <system value="urn:std:iso:4217"/>
+                        </valueQuantity>
+                    </extension>
+                    
+                    <!-- 0..1 -->
+                    <!-- Mažmeninė kaina / Retail price -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#compensation.retailPrice">
+                        <valueQuantity>
+                            <value value="15.55"/>
+                            <units value="LTL"/>
+                            <system value="urn:std:iso:4217"/>
+                        </valueQuantity>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Preparato tipas / Type to medication 
+        Posible values:
+        1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+        2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+        -->
+                    <!-- Classificator: medication-product-type -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                                <code value="1"/>
+                                <display value="Vaistinis preparatas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    
+                    <!-- 1..1 -->
+                    <!-- Preparato pakuotės galiojimo būsena / Medication package status -->
+                    <!-- Classificator: medication-status -->
+                    <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationStatus">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://esveikata.lt/classifiers/Medication/packageStatus"/>
+                                <code value="1"/>
+                                <display value="Registruotas"/>
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    
+                    <!-- 0..1 -->
+                    <!-- Pakuotės tipas / Package type -->
+                    <!-- Classificator: medication-package-type -->
+                    <container>
+                        <coding>
+                            <system value="http://esveikata.lt/classifiers/Medication/PackageType"/>
+                            <code value="1"/>
+                            <!-- 1..1 -->
+                            <!-- Pavadinimas lietuvių kalba -->
+                            <display value="maišelis">
+                                <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                    <valueCode value="lt:LT"/>
+                                </extension>
+                                
+                                <!-- 0..1 -->
+                                <!-- Pavadinimas anglų kalba / Name in english -->
+                                <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                                    <valueString value="packet">
+                                        <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                            <valueCode value="en:EN"/>
+                                        </extension>
+                                    </valueString>
+                                </extension>
+                            </display>
+                        </coding>
+                    </container>
+                    
+                    <!-- 0..1 -->
+                    <!-- Pakuotėje esantis vaistas / Package contained medication -->
+                    <content>
+                        <item>
+                            <reference value="cid:1"/>
+                        </item>
+                    </content>
+                </package>
+            </Medication>
+        </content>
+    </entry>
+</feed>

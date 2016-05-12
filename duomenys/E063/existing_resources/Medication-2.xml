@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vaisto duomenys / Medication (drug) data -->
+<Medication xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/medication.xsd">
+
+    <!-- 1..1 -->
+    <!-- Preparato tipas / Type to medication 
+    Posible values:
+    1 - Vaistinis preparatas (jeigu tai yra gaunama iš VAPRIS)
+    2 - MPP (jeigu tai yra iš iDrug gaunama preparatas)
+    -->
+    <!-- Classificator: medication-type -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-medication#medicationType">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/Medication/MedicationType"/>
+                <code value="1"/>
+                <display value="Vaistinis preparatas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- 6.3.3.	Vaisto prekinis pavadinimas / Medication market name -->
+    <name value="Duosol K 4"/>
+
+    <!-- 0..1 -->
+    <!-- Vaisto identifikatorius suteiktas VAPRIS / Medication code issued by VAPRIS -->
+    <code>
+        <!-- 0..* -->
+        <coding>
+            <system value="http://esveikata.lt/classifiers/Identifier/VaprisID"/>
+            <code value="16464"/>
+        </coding>
+    </code>
+
+    <!-- Medication resurso tipas (vaistas : "product", pakuotė : "package") / Medication kind (drug : "product", drug package : "package") -->
+    <!-- Classificator: medication-kind -->
+    <kind value="product"/>
+
+    <product>
+        <!-- 0..1 -->
+        <!-- 6.3.4.	Vaisto bendrinis pavadinimas / General medication name -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#activeSubstances">
+            <valueString value="Arnica extractum"/>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- 6.3.7.	Vaisto stiprumas / Medication strength -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#strength">
+            <valueString value="55mg+1,205-1,631g+72mg/patch"/>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Grupė / Group  -->
+        <!-- Classificator: medication-group -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#group">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/Medication/MedicationGroup"/>
+                    <code value="1"/>
+                    <display value="Vaistinė-medicininė priemonė"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 1..1 -->
+        <!-- Pogrupis / Subgroup  -->
+        <!-- Classificator: medication-subgroup -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#subgroup">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="http://esveikata.lt/classifiers/Medication/MedicationSubgroup"/>
+                    <code value="1"/>
+                    <display value="Cheminis vaistas"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+
+        <!-- 0..1 -->
+        <!-- 6.3.9.	Rinkodaros teisių turėtojo pavadinimas arba gamintojo pavadinimas / Marketing authorization holder -->
+        <extension url="http://esveikata.lt/Profile/ltnhr-medication#mah">
+            <valueString value="B.Braun Avitum AG, Vokietija"/>
+        </extension>
+
+        <!-- 6.3.5.	Vaisto farmacinė forma -->
+        <form>
+            <!-- 0..1 -->
+            <!-- Vaistinio preparato farmacinė forma lietuvių kalba / Pharmaceutical form in lithuanian -->
+            <!-- Classificator: pharmaceutical-form -->
+            <coding>
+                <system value="http://esveikata.lt/classifiers/PharmaceuticalForm"/>
+                <code value="1"/>
+                <!-- Pilnas pavadinimas lietuvių kalba -->
+                <display value="hemofiltracijos tirpalas">
+                    <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                        <valueCode value="lt:LT"/>
+                    </extension>
+
+                    <!-- 0..1 -->
+                    <!-- Vaistinio preparato farmacinė forma anglų kalba / Pharmaceutical form in english -->
+                    <extension url="http://hl7.org/fhir/Profile/iso-21090#string-translation">
+                        <valueString value="haemofiltration solution">
+                            <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                                <valueCode value="en:EN"/>
+                            </extension>
+                        </valueString>
+                    </extension>
+                </display>
+            </coding>
+
+            <!-- 0..1 -->
+            <!-- Trumpas pavadinimas lietuvių kalba -->
+            <text value="hem. tirpalas">
+                <extension url="http://hl7.org/fhir/Profile/iso-21090#language">
+                    <valueCode value="lt:LT"/>
+                </extension>
+            </text>
+        </form>
+    </product>
+</Medication>

@@ -1,0 +1,20 @@
+<OrderResponse xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/Atom http://www.hl7.org/implement/standards/fhir/orderresponse.xsd">
+
+	<request>
+		<reference value="Order/123/_history/1"/>
+	</request>
+
+	<date value="2012-12-28T13:10:56+11:00"/>
+	
+	<who>
+		<reference value="Practitioner/987654321/_history/1"/>
+	</who>
+	
+	<!-- Classificator: order-outcome-status -->
+	<code value="complete"/>
+
+	<fulfillment>
+		<reference value="DocumentReference/123/_history/1"/>
+	</fulfillment>
+	
+</OrderResponse>

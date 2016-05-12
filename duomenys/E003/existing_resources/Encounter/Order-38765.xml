@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 0..1 -->
+<!-- Privalomas, jei atvyko pagal siuntimą / Mandatory, if type code by_order -->
+<!-- Siuntimo duomenys / Order data -->
+<Order xmlns="http://hl7.org/fhir">
+    
+    <!-- 0..1 -->
+    <!-- Paskyrimo tipas / Order type -->
+    <!-- Classificator: order-type -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-order#type">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://esveikata.lt/classifiers/OrderType"/>
+                <code value="1"/>
+                <display value="Siuntimo konsultuoti, gydyti skyrimas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- 2.2.10. Siuntusio gydytojo profesinė kvalifikacija / Health Care Specialist‘s who made this order Qualification -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-order#sourceQualification">
+        <valueCodeableConcept>
+            <!-- 1..1 -->
+            <!-- Specialisto prof. kvalifikacijos kodas / Target specialist prof qualification code -->
+			<!-- Classificator: qualification-code -->
+            <coding>
+                <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                <code value="221227"/>
+                <display value="Gydytojas neurologas"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 0..1 -->
+    <!-- Specialisto, pas kurį siunčiama pacientas, prof. kvalifikacija arba skyriaus specializacija / Target specialist Qualification or target department Specialization -->
+    <!-- data-element-325 -->
+    <extension url="http://esveikata.lt/Profile/ltnhr-order#targetQualification">
+        <valueCodeableConcept>
+            
+            <!-- 1..1 -->
+            <!-- Specialisto profesinė kvalifikacija (LPK 2012 kodas ir pavadinimas) / Target specialist prof qualification code -->
+            <!-- Classificator: qualification-code -->
+            <coding>
+                <system value="http://esveikata.lt/classifiers/QualificationCode"/>
+                <code value="221227"/>
+                <display value="Gydytojas neurologas"/>
+            </coding>
+            
+            <!-- 0..1 -->
+            <!-- Skyriaus specializacija (jeigu nenurodyta prof. kvalifikacija) / Department specialization (in case prof qualification is missing) -->
+            <text value="Neurologijos skyrius"/>
+        </valueCodeableConcept>
+    </extension>
+    
+    <!-- 1..1 -->
+    <!-- Siuntimo data / Order issue date -->
+    <!-- data-element-1910 -->
+    <date value="2014-02-21T09:03:04+11:00"/>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į paciento, kuriam sukurtas siuntimas, resursą / Patient who has been ordered -->
+    <!-- data-element-1 -->
+    <subject>
+        <reference value="Patient/123456789/_history/1"/>
+    </subject>
+    
+    <!-- 1..1 -->
+    <!-- Nuoroda į sveikatos priežiūros specialisto, kuris sukūrė siuntimą, resursą / Health care specialist who made this order -->
+    <!-- data-element-20 -->
+    <source>
+        <reference value="Practitioner/987654321/_history/1"/>
+    </source>
+    
+    <!-- 1..1 -->
+    <!-- Siuntimo diagnozių sąrašas / List of Referral Diagnosis -->
+    <!-- data-element-330 -->
+    <reasonResource>
+        <reference value="List/335/_history/1"/>
+    </reasonResource>
+    
+    <!-- 1..1 -->
+    <!-- Detalūs paskyrimo duomenys / Detailed info about what is ordered and its status -->
+    <detail>
+        <reference value="DiagnosticOrder/123654/_history/1"/>
+    </detail>
+</Order>
