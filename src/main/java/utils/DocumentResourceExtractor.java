@@ -50,14 +50,16 @@ public class DocumentResourceExtractor {
                         resourceType = result[0];
                         id = result[1];
                         versionId = result[3];
-                        String filePath = file.getPath();
+                        String absolutePath = file.getAbsolutePath();
+                        String filePath = absolutePath.
+                                substring(0,absolutePath.lastIndexOf(File.separator));
                         File file = new File(filePath + "/output/");
                         file.mkdirs();
                         file = new File(filePath + "/output/" + resourceType);
                         file.mkdirs();
                         file = new File(filePath +"/output/" + resourceType + "/" + id);
                         file.mkdirs();
-                        f = xmlFile.createXmlFile("input/output/", resourceType + "/", id + "/", versionId);
+                        f = xmlFile.createXmlFile(filePath + "/output/", resourceType + "/", id + "/", versionId);
                         try {
                             xmlFile.writeToXmlFile(xmlEditor, f);
                         } catch (IOException e) {
