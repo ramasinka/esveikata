@@ -1,33 +1,21 @@
 package utils;
 
-import org.jdom.JDOMException;
-import org.jdom.input.SAXBuilder;
 import org.w3c.dom.*;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.StringReader;
 import java.io.StringWriter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import javax.xml.xpath.*;
 
-/**
- * Created by Romcikas on 5/12/2016.
- */
 public class UtilsXml {
     File file;
-    String path;
 
-    public UtilsXml(File file, String path) {
+    public UtilsXml(File file) {
         this.file = file;
-        this.path = path;
     }
 
     public void parseXmlFile() {
@@ -61,7 +49,11 @@ public class UtilsXml {
                         resourceType = result[0];
                         id = result[1];
                         versionId = result[3];
-                        f = xmlFileWriter.createXmlFile(path, resourceType, id, versionId);
+                        File file = new File(resourceType);
+                        file.mkdir();
+                        file = new File(resourceType + "/" + id);
+                        file.mkdir();
+                        f = xmlFileWriter.createXmlFile(resourceType + "/", id + "/", versionId);
                         try {
                             xmlFileWriter.writeToXmlFile(xmlEditor, f);
                         } catch (IOException e) {
@@ -71,8 +63,10 @@ public class UtilsXml {
                 }
                 if (tempNode.getNodeName() == "content") {
                     try {
-                        contentData = nodeToString(tempNode);
-                        xmlFileWriter.writeToXmlFile(contentData, f);
+                        for(int i = 0;i<tempNode.getChildNodes().getLength();i++){
+                            contentData = nodeToString(tempNode.getChildNodes().item(i));
+                            xmlFileWriter.writeToXmlFile(contentData, f);
+                        }
                         break;
                     } catch (TransformerConfigurationException e) {
                         e.printStackTrace();

@@ -2,12 +2,9 @@ package utils;
 
 import java.io.*;
 
-/**
- * Created by Romcikas on 5/11/2016.
- */
 public class UtilsXmlFile {
-    public File createXmlFile(String path, String resourceType, String id, String versionId) {
-        File file = new File(path + resourceType + "." + id + "." + versionId + ".xml");
+    public File createXmlFile(String resourceType, String id, String versionId) {
+        File file = new File(resourceType + id + versionId + ".xml");
         return file;
     }
 
