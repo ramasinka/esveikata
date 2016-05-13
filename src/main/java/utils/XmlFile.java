@@ -2,7 +2,7 @@ package utils;
 
 import java.io.*;
 
-public class UtilsXmlFile {
+public class XmlFile {
     public File createXmlFile(String path, String resourceType, String id, String versionId) {
         File file = new File(path + resourceType + id + versionId + ".xml");
         return file;

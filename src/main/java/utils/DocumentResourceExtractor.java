@@ -31,7 +31,7 @@ public class DocumentResourceExtractor {
 
     public void getNodeData(NodeList nodeList) {
         File f = null;
-        UtilsXmlFile xmlFileWriter = new UtilsXmlFile();
+        XmlFile xmlFile = new XmlFile();
         String xmlEditor = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
         String resourceType = null;
         String id = null;
@@ -56,9 +56,9 @@ public class DocumentResourceExtractor {
                         file.mkdir();
                         file = new File("input/output/" + resourceType + "/" + id);
                         file.mkdir();
-                        f = xmlFileWriter.createXmlFile("input/output/", resourceType + "/", id + "/", versionId);
+                        f = xmlFile.createXmlFile("input/output/", resourceType + "/", id + "/", versionId);
                         try {
-                            xmlFileWriter.writeToXmlFile(xmlEditor, f);
+                            xmlFile.writeToXmlFile(xmlEditor, f);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -68,7 +68,7 @@ public class DocumentResourceExtractor {
                     try {
                         for (int i = 0; i < tempNode.getChildNodes().getLength(); i++) {
                             contentData = nodeToString(tempNode.getChildNodes().item(i));
-                            xmlFileWriter.writeToXmlFile(contentData, f);
+                            xmlFile.writeToXmlFile(contentData, f);
                         }
                         break;
                     } catch (TransformerConfigurationException e) {
