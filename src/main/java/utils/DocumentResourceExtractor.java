@@ -50,13 +50,10 @@ public class DocumentResourceExtractor {
                         resourceType = result[0];
                         id = result[1];
                         versionId = result[3];
-                        File file = new File("input/output/");
-                        file.mkdir();
-                        file = new File("input/output/" + resourceType);
-                        file.mkdir();
-                        file = new File("input/output/" + resourceType + "/" + id);
-                        file.mkdir();
-                        f = xmlFile.createXmlFile("input/output/", resourceType + "/", id + "/", versionId);
+                        String filePath = file.getPath();
+                        file = new File(filePath + "/output/" + resourceType + "/" + id);
+                        file.mkdirs();
+                        f = xmlFile.createXmlFile(filePath + "/output/", resourceType + "/", id + "/", versionId);
                         try {
                             xmlFile.writeToXmlFile(xmlEditor, f);
                         } catch (IOException e) {
@@ -71,11 +68,9 @@ public class DocumentResourceExtractor {
                             xmlFile.writeToXmlFile(contentData, f);
                         }
                         break;
-                    } catch (TransformerConfigurationException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     } catch (TransformerException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
