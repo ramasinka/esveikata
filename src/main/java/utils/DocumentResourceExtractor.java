@@ -52,12 +52,12 @@ public class DocumentResourceExtractor {
                         versionId = result[3];
                         String absolutePath = file.getAbsolutePath();
                         String filePath = absolutePath.
-                                substring(0,absolutePath.lastIndexOf(File.separator));
+                                substring(0, absolutePath.lastIndexOf(File.separator));
                         File file = new File(filePath + "/output/");
                         file.mkdirs();
                         file = new File(filePath + "/output/" + resourceType);
                         file.mkdirs();
-                        file = new File(filePath +"/output/" + resourceType + "/" + id);
+                        file = new File(filePath + "/output/" + resourceType + "/" + id);
                         file.mkdirs();
                         f = xmlFile.createXmlFile(filePath + "/output/", resourceType + "/", id + "/", versionId);
                         try {
@@ -74,9 +74,7 @@ public class DocumentResourceExtractor {
                             xmlFile.writeToXmlFile(contentData, f);
                         }
                         break;
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (TransformerException e) {
+                    } catch (IOException | TransformerException e) {
                         e.printStackTrace();
                     }
                 }
