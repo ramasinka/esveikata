@@ -1,4 +1,4 @@
-import utils.UtilsXml;
+import utils.DocumentResourceExtractor;
 
 import java.io.File;
 
@@ -6,10 +6,9 @@ import java.io.File;
 
 public class Main {
     public static void main(String args[]) throws Exception {
-        File file = new File("E://data/49.xml");
-        String path = "E://data/submit/";
-        UtilsXml readXmlFile = new UtilsXml(file);
-        readXmlFile.parseXmlFile();
+        File file = new File(args[0]);
+        DocumentResourceExtractor documentResourceExtractor = new DocumentResourceExtractor(file);
+        documentResourceExtractor.extractResources();
     }
 }
 

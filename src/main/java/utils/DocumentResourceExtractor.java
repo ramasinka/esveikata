@@ -11,14 +11,14 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-public class UtilsXml {
+public class DocumentResourceExtractor {
     File file;
 
-    public UtilsXml(File file) {
+    public DocumentResourceExtractor(File file) {
         this.file = file;
     }
 
-    public void parseXmlFile() {
+    public void extractResources() {
         try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance()
                     .newDocumentBuilder();
@@ -37,6 +37,7 @@ public class UtilsXml {
         String id = null;
         String versionId = null;
         String contentData = null;
+
         for (int count = 0; count < nodeList.getLength(); count++) {
             Node tempNode = nodeList.item(count);
             if (tempNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -49,11 +50,13 @@ public class UtilsXml {
                         resourceType = result[0];
                         id = result[1];
                         versionId = result[3];
-                        File file = new File(resourceType);
+                        File file = new File("input/output/");
                         file.mkdir();
-                        file = new File(resourceType + "/" + id);
+                        file = new File("input/output/" + resourceType);
                         file.mkdir();
-                        f = xmlFileWriter.createXmlFile(resourceType + "/", id + "/", versionId);
+                        file = new File("input/output/" + resourceType + "/" + id);
+                        file.mkdir();
+                        f = xmlFileWriter.createXmlFile("input/output/", resourceType + "/", id + "/", versionId);
                         try {
                             xmlFileWriter.writeToXmlFile(xmlEditor, f);
                         } catch (IOException e) {
@@ -63,7 +66,7 @@ public class UtilsXml {
                 }
                 if (tempNode.getNodeName() == "content") {
                     try {
-                        for(int i = 0;i<tempNode.getChildNodes().getLength();i++){
+                        for (int i = 0; i < tempNode.getChildNodes().getLength(); i++) {
                             contentData = nodeToString(tempNode.getChildNodes().item(i));
                             xmlFileWriter.writeToXmlFile(contentData, f);
                         }
